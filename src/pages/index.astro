@@ -1,41 +1,105 @@
 ---
 import Page from '../layouts/Page.astro';
+
+const base = import.meta.env.BASE_URL;
+const integrantes = [
+	{
+		nombre: 'Lizeth Andrea Caro Silva',
+		foto: `${base}lizeth.jpg`,
+		rol: 'Integrante CIPA Uno',
+	},
+	{
+		nombre: 'Juan Camilo Giraldo Perdomo',
+		foto: `${base}camilo.png`,
+		rol: 'Integrante CIPA Uno',
+	},
+	{
+		nombre: 'Carlos Stiven Villada Quiceno',
+		foto: `${base}carlos.jpg`,
+		rol: 'Integrante CIPA Uno',
+	},
+];
 ---
 <Page title="Inicio — Ingeniería Legal CIPA Uno">
-	<section class="max-w-3xl mx-auto space-y-8">
-		<div class="text-center space-y-3">
-			<h1 class="text-3xl sm:text-4xl font-bold text-emerald-900">Ingeniería Legal</h1>
-			<p class="text-neutral-600 text-lg">Semestre VIII · Programa de Ingeniería de Sistemas · Modalidad distancia</p>
-		</div>
-
-		<div class="bg-white border border-emerald-100 rounded-2xl p-6 shadow-sm">
-			<h2 class="text-lg font-semibold text-emerald-900 mb-3">Sobre el curso</h2>
-			<p class="text-neutral-700 leading-relaxed text-sm sm:text-base">
-				<strong>Ingeniería Legal</strong> forma al ingeniero de sistemas para intervenir de manera idónea en procesos de contratación
-				relacionados con tecnología informática: diseño de documentos, pliegos y propuestas cuando actúa como proponente.
-				El curso articula la gestión de la información y las TIC con la normativa aplicable, la transparencia y la eficiencia en la inversión
-				pública y privada, en coherencia con los propósitos del programa y el enfoque de investigación formativa del IDEAD.
+	<div class="max-w-4xl mx-auto space-y-10 pb-4">
+		<!-- Hero -->
+		<section class="relative overflow-hidden rounded-3xl border border-emerald-200/60 bg-gradient-to-br from-emerald-50/95 via-white to-teal-50/90 px-6 py-10 sm:px-10 shadow-[0_24px_60px_-20px_rgba(5,150,105,0.35)]">
+			<div class="pointer-events-none absolute -right-16 top-0 h-40 w-40 rounded-full bg-emerald-400/25 blur-3xl"></div>
+			<div class="pointer-events-none absolute -left-10 bottom-0 h-36 w-36 rounded-full bg-teal-300/30 blur-3xl"></div>
+			<p class="relative text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">Universidad del Tolima · IDEAD · Semestre VIII</p>
+			<h1 class="relative mt-2 text-3xl font-extrabold tracking-tight text-emerald-950 sm:text-4xl md:text-5xl">
+				Ingeniería Legal
+			</h1>
+			<p class="relative mt-3 max-w-2xl text-base text-neutral-700 sm:text-lg">
+				Formación para intervenir en <strong>contratación de tecnología</strong>: pliegos, propuestas y normativa aplicable, con enfoque en transparencia y eficiencia en el sector público y privado.
 			</p>
-		</div>
-
-		<div class="grid sm:grid-cols-2 gap-4">
-			<div class="bg-white border border-emerald-200 rounded-2xl p-5 shadow-sm">
-				<h2 class="text-lg font-semibold text-emerald-900 mb-3">Integrantes CIPA Uno</h2>
-				<ul class="list-disc list-inside text-neutral-700 space-y-1 text-sm">
-					<li>Lizeth Andrea Caro Silva</li>
-					<li>Juan Camilo Giraldo Perdomo</li>
-					<li>Carlos Stiven Villada Quiceno</li>
-				</ul>
+			<div class="relative mt-6 flex flex-wrap gap-3">
+				<a
+					href={`${base}justificacion`}
+					class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-600/25 transition hover:-translate-y-0.5 hover:shadow-xl"
+				>
+					Leer justificación del curso
+				</a>
+				<a
+					href={`${base}tutoria-uno`}
+					class="inline-flex items-center justify-center rounded-xl border-2 border-emerald-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-emerald-900 shadow-sm transition hover:border-emerald-500 hover:bg-white"
+				>
+					Ir a Tutoría Uno (Guía N.° 1)
+				</a>
 			</div>
-			<div class="bg-white border border-teal-200 rounded-2xl p-5 shadow-sm">
-				<h2 class="text-lg font-semibold text-emerald-900 mb-3">Tutor</h2>
-				<p class="text-neutral-700 text-sm">Salatiel Moreno Toro</p>
-				<p class="text-neutral-500 text-xs mt-2">Guía N.° 1 — Las normas y la contratación (2026).</p>
-			</div>
-		</div>
+		</section>
 
-		<p class="text-center text-sm text-neutral-500">
-			Navega por <strong>Tutoría Uno</strong> para ver los temas de la guía y la actividad lúdica, o revisa la <strong>justificación</strong> académica del curso.
-		</p>
-	</section>
+		<!-- Sobre el curso -->
+		<section class="rounded-2xl border border-emerald-100/90 bg-white/80 p-6 shadow-sm backdrop-blur-sm sm:p-8">
+			<h2 class="text-xl font-bold text-emerald-900">Sobre el curso</h2>
+			<p class="mt-4 text-neutral-700 leading-relaxed text-sm sm:text-base">
+				<strong>Ingeniería Legal</strong> forma al ingeniero de sistemas para intervenir de manera idónea en procesos de contratación relacionados con tecnología informática: diseño de documentos, pliegos y propuestas cuando actúa como proponente. El curso articula la gestión de la información y las TIC con la normativa aplicable, la transparencia y la eficiencia en la inversión pública y privada, en coherencia con los propósitos del programa y el enfoque de investigación formativa del IDEAD.
+			</p>
+		</section>
+
+		<!-- Integrantes con fotos -->
+		<section class="space-y-5">
+			<div class="text-center sm:text-left">
+				<h2 class="text-xl font-bold text-emerald-900">Integrantes CIPA Uno</h2>
+				<p class="mt-1 text-sm text-neutral-600">Equipo del curso · Ingeniería de Sistemas (distancia)</p>
+			</div>
+			<div class="grid gap-6 sm:grid-cols-3">
+				{
+					integrantes.map((p) => (
+						<article class="group flex flex-col overflow-hidden rounded-2xl border border-emerald-100 bg-white/90 shadow-md shadow-emerald-900/5 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-900/10">
+							<div class="relative aspect-[4/5] overflow-hidden bg-gradient-to-b from-emerald-100/80 to-teal-50">
+								<img
+									src={p.foto}
+									alt={`Foto de ${p.nombre}`}
+									class="h-full w-full object-cover object-center transition duration-500 group-hover:scale-[1.03]"
+									loading="lazy"
+									width="400"
+									height="500"
+								/>
+								<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-emerald-950/40 via-transparent to-transparent opacity-60" />
+							</div>
+							<div class="flex flex-1 flex-col p-4">
+								<h3 class="text-center text-sm font-bold leading-snug text-emerald-950 sm:text-base">{p.nombre}</h3>
+								<p class="mt-1 text-center text-xs text-emerald-700">{p.rol}</p>
+							</div>
+						</article>
+					))
+				}
+			</div>
+		</section>
+
+		<!-- Tutor -->
+		<section class="rounded-2xl border border-teal-200/80 bg-gradient-to-br from-teal-50/50 to-white p-6 sm:p-8">
+			<div class="flex flex-col items-center gap-4 sm:flex-row sm:items-start sm:justify-between">
+				<div>
+					<h2 class="text-lg font-bold text-emerald-900">Tutor</h2>
+					<p class="mt-2 text-lg font-semibold text-teal-900">Salatiel Moreno Toro</p>
+					<p class="mt-1 max-w-md text-sm text-neutral-600">Acompañamiento en las tutorías y materiales de la asignatura.</p>
+				</div>
+				<div class="rounded-xl border border-teal-200 bg-white/90 px-4 py-3 text-center text-xs font-medium text-teal-800 shadow-sm">
+					Guía N.° 1 y actividades en el sitio
+				</div>
+			</div>
+		</section>
+	</div>
 </Page>

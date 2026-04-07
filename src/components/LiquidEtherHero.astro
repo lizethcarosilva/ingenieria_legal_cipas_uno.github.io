@@ -1,0 +1,52 @@
+---
+/* Fondo orgánico inspirado en paleta LiquidEther (#5227FF, #FF9FFC, #B19EEF) — solo CSS/Tailwind, sin Three.js */
+---
+<div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
+	<div class="absolute -top-1/2 -left-1/4 h-[120%] w-[70%] rounded-full bg-[#5227FF] opacity-35 blur-[100px] ether-blob-1"></div>
+	<div class="absolute top-1/4 -right-1/4 h-[90%] w-[60%] rounded-full bg-[#FF9FFC] opacity-30 blur-[90px] ether-blob-2"></div>
+	<div class="absolute bottom-0 left-1/3 h-[70%] w-[55%] rounded-full bg-[#B19EEF] opacity-35 blur-[110px] ether-blob-3"></div>
+	<div class="absolute inset-0 bg-gradient-to-b from-emerald-50/80 via-white/40 to-white mix-blend-soft-light"></div>
+	<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.9),_transparent_55%)] opacity-90"></div>
+</div>
+
+<style>
+	@keyframes ether-float-1 {
+		0%,
+		100% {
+			transform: translate(0, 0) scale(1);
+		}
+		33% {
+			transform: translate(8%, 6%) scale(1.05);
+		}
+		66% {
+			transform: translate(-4%, 10%) scale(0.98);
+		}
+	}
+	@keyframes ether-float-2 {
+		0%,
+		100% {
+			transform: translate(0, 0) scale(1);
+		}
+		50% {
+			transform: translate(-10%, -8%) scale(1.08);
+		}
+	}
+	@keyframes ether-float-3 {
+		0%,
+		100% {
+			transform: translate(0, 0) rotate(0deg);
+		}
+		50% {
+			transform: translate(6%, -12%) rotate(8deg) scale(1.06);
+		}
+	}
+	.ether-blob-1 {
+		animation: ether-float-1 18s ease-in-out infinite;
+	}
+	.ether-blob-2 {
+		animation: ether-float-2 22s ease-in-out infinite;
+	}
+	.ether-blob-3 {
+		animation: ether-float-3 26s ease-in-out infinite;
+	}
+</style>

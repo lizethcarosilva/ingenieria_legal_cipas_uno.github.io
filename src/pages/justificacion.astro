@@ -1,41 +1,94 @@
 ---
 import Page from '../layouts/Page.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 <Page title="Justificación — Ingeniería Legal">
-	<article class="max-w-3xl mx-auto">
-		<h1 class="text-3xl font-bold text-emerald-900 mb-6">Importancia de Ingeniería Legal</h1>
-		<p class="text-neutral-700 leading-relaxed mb-4">
-			El sector productivo —organizaciones públicas y privadas que inciden en la economía regional y nacional— ha evolucionado en cómo sus
-			<strong>sistemas de información</strong> exigen transformar procesos para convertirlos en un elemento estratégico de competitividad.
-			La gestión de la información mediante <strong>TIC</strong> (almacenamiento, procesamiento, comunicación y seguridad) sitúa a la información
-			como un activo central en la toma de decisiones.
-		</p>
-		<p class="text-neutral-700 leading-relaxed mb-4">
-			Invertir en tecnología informática busca altos niveles de <strong>eficiencia</strong> en el procesamiento de datos y resultados oportunos,
-			apoyados en servicios convergentes y telecomunicaciones. Tanto quienes consumen como quienes producen tecnología participan en
-			<strong>procesos de contratación</strong>, herramienta básica para garantizar transparencia y efectividad en la inversión, orientada al
-			beneficio de las actividades organizacionales que involucran el procesamiento de información con TIC.
-		</p>
-		<p class="text-neutral-700 leading-relaxed mb-4">
-			Desde <strong>Ingeniería Legal</strong> se desarrollan competencias para que el ingeniero de sistemas intervenga adecuadamente al aplicar
-			conocimientos orientados al diseño de documentos en procesos de contratación o en las propuestas cuando actúa como proponente.
-			Así se articula la formación integral del programa y el PEP: capacidad de incidir en procesos administrativos y contractuales ligados a
-			tecnología informática.
-		</p>
-		<h2 class="text-xl font-semibold text-emerald-900 mt-8 mb-3">Propósitos de formación (resumen)</h2>
-		<p class="text-neutral-700 leading-relaxed mb-3">
-			<strong>General:</strong> apropiar conocimientos, métodos y herramientas del proceso de contratación para implementarlos en actividades
-			contractuales de tecnología informática, de modo que el ingeniero pueda actuar como asesor, diseñador y desarrollador de los elementos
-			requeridos en las etapas de adquisición tecnológica.
-		</p>
-		<ul class="list-disc list-inside text-neutral-700 space-y-2 mb-6">
-			<li>Apropiar elementos legales vinculados a contratación con adquisición de tecnología informática.</li>
-			<li>Identificar y aplicar métodos y herramientas para que las etapas contractuales respondan a las necesidades de la organización.</li>
-			<li>Reconocer y aplicar componentes de la etapa poscontractual como interventor o supervisor.</li>
-		</ul>
-		<p class="text-neutral-500 text-sm border-t border-emerald-100 pt-4">
-			Contenido sintetizado a partir del microcurrículo oficial del curso <em>Ingeniería Legal</em> (Facultad IDEAD, Ingeniería de Sistemas, semestre VIII).
-			El borrador de acuerdo en formato Word no contenía texto extraíble en el entorno de trabajo; si añades párrafos allí, se pueden incorporar aquí.
-		</p>
+	<article class="max-w-3xl mx-auto space-y-10 pb-6">
+		<!-- Cabecera -->
+		<header class="relative overflow-hidden rounded-3xl border border-emerald-200/70 bg-gradient-to-br from-emerald-50 via-white to-cyan-50/80 px-6 py-8 sm:px-10 sm:py-10 shadow-[0_20px_50px_-18px_rgba(16,185,129,0.25)]">
+			<div class="pointer-events-none absolute right-0 top-0 h-32 w-32 rounded-full bg-emerald-300/30 blur-2xl"></div>
+			<p class="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">Justificación académica</p>
+			<h1 class="mt-2 text-3xl font-extrabold tracking-tight text-emerald-950 sm:text-4xl">Importancia de Ingeniería Legal</h1>
+			<p class="mt-4 max-w-2xl text-base leading-relaxed text-neutral-700">
+				El curso conecta la <strong>gestión de sistemas de información</strong> con los <strong>procesos de contratación</strong> que hoy son herramienta esencial de transparencia y efectividad en la inversión tecnológica.
+			</p>
+		</header>
+
+		<div class="prose prose-neutral max-w-none space-y-6">
+			<section class="rounded-2xl border border-emerald-100 bg-white/85 p-6 shadow-sm backdrop-blur-sm">
+				<h2 class="mt-0 flex items-center gap-2 text-lg font-bold text-emerald-900">
+					<span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-600 text-sm text-white" aria-hidden="true">1</span>
+					Información y competitividad
+				</h2>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700 sm:text-base">
+					El sector productivo —organizaciones públicas y privadas que inciden en la economía regional y nacional— ha evolucionado en cómo sus
+					<strong>sistemas de información</strong> exigen transformar procesos para convertirlos en un elemento estratégico de competitividad.
+					La gestión de la información mediante <strong>TIC</strong> (almacenamiento, procesamiento, comunicación y seguridad) sitúa a la información
+					como un activo central en la toma de decisiones.
+				</p>
+			</section>
+
+			<section class="rounded-2xl border border-teal-100 bg-gradient-to-b from-white to-teal-50/40 p-6 shadow-sm">
+				<h2 class="mt-0 flex items-center gap-2 text-lg font-bold text-emerald-900">
+					<span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-teal-600 text-sm text-white" aria-hidden="true">2</span>
+					Eficiencia y contratación
+				</h2>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700 sm:text-base">
+					Invertir en tecnología informática busca altos niveles de <strong>eficiencia</strong> en el procesamiento de datos y resultados oportunos,
+					apoyados en servicios convergentes y telecomunicaciones. Tanto quienes consumen como quienes producen tecnología participan en
+					<strong>procesos de contratación</strong>, herramienta básica para garantizar transparencia y efectividad en la inversión, orientada al
+					beneficio de las actividades organizacionales que involucran el procesamiento de información con TIC.
+				</p>
+			</section>
+
+			<section class="rounded-2xl border border-cyan-100 bg-white/85 p-6 shadow-sm">
+				<h2 class="mt-0 flex items-center gap-2 text-lg font-bold text-emerald-900">
+					<span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-cyan-600 text-sm text-white" aria-hidden="true">3</span>
+					Competencias del ingeniero
+				</h2>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700 sm:text-base">
+					Desde <strong>Ingeniería Legal</strong> se desarrollan competencias para que el ingeniero de sistemas intervenga adecuadamente al aplicar
+					conocimientos orientados al diseño de documentos en procesos de contratación o en las propuestas cuando actúa como proponente.
+					Así se articula la formación integral del programa y el PEP: capacidad de incidir en procesos administrativos y contractuales ligados a
+					tecnología informática.
+				</p>
+			</section>
+		</div>
+
+		<section class="rounded-2xl border border-amber-200/80 bg-gradient-to-br from-amber-50/90 to-orange-50/50 p-6 sm:p-8">
+			<h2 class="text-xl font-bold text-amber-950">Propósitos de formación (resumen)</h2>
+			<p class="mt-4 text-sm leading-relaxed text-neutral-800 sm:text-base">
+				<strong>General:</strong> apropiar conocimientos, métodos y herramientas del proceso de contratación para implementarlos en actividades
+				contractuales de tecnología informática, de modo que el ingeniero pueda actuar como asesor, diseñador y desarrollador de los elementos
+				requeridos en las etapas de adquisición tecnológica.
+			</p>
+			<ul class="mt-4 space-y-3 text-sm text-neutral-800 sm:text-base">
+				<li class="flex gap-3 rounded-xl bg-white/70 px-4 py-3 shadow-sm">
+					<span class="mt-0.5 text-emerald-600" aria-hidden="true">✓</span>
+					<span>Apropiar elementos legales vinculados a contratación con adquisición de tecnología informática.</span>
+				</li>
+				<li class="flex gap-3 rounded-xl bg-white/70 px-4 py-3 shadow-sm">
+					<span class="mt-0.5 text-emerald-600" aria-hidden="true">✓</span>
+					<span>Identificar y aplicar métodos y herramientas para que las etapas contractuales respondan a las necesidades de la organización.</span>
+				</li>
+				<li class="flex gap-3 rounded-xl bg-white/70 px-4 py-3 shadow-sm">
+					<span class="mt-0.5 text-emerald-600" aria-hidden="true">✓</span>
+					<span>Reconocer y aplicar componentes de la etapa poscontractual como interventor o supervisor.</span>
+				</li>
+			</ul>
+		</section>
+
+		<footer class="flex flex-col gap-4 border-t border-emerald-100 pt-6 sm:flex-row sm:items-center sm:justify-between">
+			<p class="text-xs leading-relaxed text-neutral-500">
+				Contenido sintetizado a partir del microcurrículo oficial del curso <em>Ingeniería Legal</em> (Facultad IDEAD, Ingeniería de Sistemas, semestre VIII).
+			</p>
+			<a
+				href={`${base}`}
+				class="inline-flex shrink-0 items-center justify-center rounded-xl border border-emerald-200 bg-white px-4 py-2 text-sm font-semibold text-emerald-800 shadow-sm transition hover:bg-emerald-50"
+			>
+				Volver al inicio
+			</a>
+		</footer>
 	</article>
 </Page>

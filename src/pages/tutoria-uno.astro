@@ -3,238 +3,1192 @@ import Page from '../layouts/Page.astro';
 import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
 ---
 <Page title="Tutoría Uno — Guía N.° 1">
-	<div class="max-w-5xl mx-auto space-y-12">
-		<header class="text-center space-y-2">
-			<p class="text-xs uppercase tracking-widest text-emerald-600 font-semibold">Guía N.° 1 · Las normas y la contratación</p>
-			<h1 class="text-3xl font-bold text-emerald-900">Tutoría Uno</h1>
-			<p class="text-neutral-600 text-sm max-w-2xl mx-auto">
-				Contenidos alineados con la <strong>GUIA 1</strong> y la <strong>GUÍA N.° 1</strong> (IDEAD, Ingeniería Legal, 2026). El tema de jerarquía normativa no aparece como ítem del menú principal:
-				vive aquí, dentro de la Tutoría Uno, como primer bloque temático e interactivo.
-			</p>
-		</header>
+	<div class="max-w-5xl mx-auto space-y-8">
+		<!-- Hero -->
+		<div class="relative overflow-hidden rounded-3xl border border-white/60 bg-white/50 p-8 shadow-[0_20px_60px_-15px_rgba(82,39,255,0.25)] backdrop-blur-xl">
+			<div class="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#5227FF]/20 blur-3xl"></div>
+			<div class="pointer-events-none absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-[#FF9FFC]/25 blur-3xl"></div>
+			<p class="text-xs uppercase tracking-[0.2em] text-violet-700 font-semibold">Guía N.° 1 · Las normas y la contratación (Salatiel Moreno Toro, 2026)</p>
+			<h1 class="mt-2 text-4xl font-extrabold tracking-tight text-emerald-950 sm:text-5xl">Tutoría Uno</h1>
+	
+		</div>
 
-		<nav class="sticky top-[72px] z-10 bg-emerald-50/95 backdrop-blur border border-emerald-100 rounded-2xl p-3 shadow-sm" aria-label="Secciones Tutoría Uno">
-			<p class="text-xs text-neutral-500 mb-2 font-medium">Ir a sección</p>
-			<div class="flex flex-wrap gap-2">
-				<a href="#tema-1" class="px-3 py-1.5 rounded-lg bg-white border border-emerald-100 text-emerald-900 text-xs font-medium hover:bg-emerald-100 transition">1. Jerarquía de normas</a>
-				<a href="#tema-2" class="px-3 py-1.5 rounded-lg bg-white border border-emerald-100 text-emerald-900 text-xs font-medium hover:bg-emerald-100 transition">2. Contratación TI</a>
-				<a href="#tema-3" class="px-3 py-1.5 rounded-lg bg-white border border-emerald-100 text-emerald-900 text-xs font-medium hover:bg-emerald-100 transition">3. Elementos legales</a>
-				<a href="#tema-4" class="px-3 py-1.5 rounded-lg bg-white border border-emerald-100 text-emerald-900 text-xs font-medium hover:bg-emerald-100 transition">4. Licenciamiento</a>
-				<a href="#actividad" class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-medium hover:opacity-95 transition">Actividad lúdica</a>
+		<!-- Pestañas temas -->
+		<div class="sticky top-[76px] z-20 rounded-2xl border border-white/80 bg-white/80 p-3 shadow-lg backdrop-blur-md" role="navigation" aria-label="Temas de la tutoría">
+			<p class="mb-2 px-1 text-xs font-semibold uppercase tracking-wide text-neutral-500">Elegir tema</p>
+			<div class="flex flex-wrap gap-2" role="tablist">
+				<button type="button" role="tab" aria-selected="true" id="tab-tema-1" data-tema="1" class="tema-tab rounded-xl border-2 border-emerald-500 bg-emerald-50 px-3 py-2 text-left text-xs font-bold text-emerald-900 shadow-sm sm:text-sm">
+					1 · Jerarquía de normas
+				</button>
+				<button type="button" role="tab" aria-selected="false" id="tab-tema-2" data-tema="2" class="tema-tab rounded-xl border border-neutral-200 bg-white px-3 py-2 text-left text-xs font-medium text-neutral-700 hover:border-teal-300 sm:text-sm">
+					2 · Contratación TI
+				</button>
+				<button type="button" role="tab" aria-selected="false" id="tab-tema-3" data-tema="3" class="tema-tab rounded-xl border border-neutral-200 bg-white px-3 py-2 text-left text-xs font-medium text-neutral-700 hover:border-cyan-300 sm:text-sm">
+					3 · Elementos legales
+				</button>
+				<button type="button" role="tab" aria-selected="false" id="tab-tema-4" data-tema="4" class="tema-tab rounded-xl border border-neutral-200 bg-white px-3 py-2 text-left text-xs font-medium text-neutral-700 hover:border-indigo-300 sm:text-sm">
+					4 · Licenciamiento
+				</button>
 			</div>
-		</nav>
+		</div>
 
-		<section id="tema-1" class="scroll-mt-28 space-y-4">
-			<h2 class="text-2xl font-bold text-emerald-900 border-b border-emerald-200 pb-2">1. Jerarquía de normas que rigen los procesos contractuales</h2>
-			<p class="text-neutral-700 text-sm leading-relaxed">
-				La <strong>jerarquía normativa</strong> (pirámide kelsiana) ordena las fuentes del derecho para saber cuál prevalece. El <strong>proceso contractual</strong> tiene tres etapas:
-				precontractual, contractual y postcontractual. La etapa precontractual comprende planeación, selección del contratista, negociación y elaboración del contrato;
-				la contractual incluye formalización, ejecución y seguimiento; la postcontractual abarca cierre, liquidación y evaluación.
-			</p>
-			<p class="text-neutral-700 text-sm leading-relaxed">
-				La <strong>tipología de normas</strong> distingue constitucionales, imperativas (operativas), programáticas, teleológicas, ordinarias, reglamentarias e individualizadas.
-				La guía también enlaza la <strong>responsabilidad contractual y extracontractual</strong> con el estudio del ordenamiento aplicable.
-			</p>
-			<div class="bg-white border border-emerald-100 rounded-2xl p-4 shadow-sm">
+		<!-- ========== PANEL TEMA 1 ========== -->
+		<section id="panel-tema-1" class="tema-panel space-y-6" data-panel="1" role="tabpanel" aria-labelledby="tab-tema-1">
+			<div class="rounded-2xl border border-emerald-200/80 bg-white/70 p-6 shadow-sm">
+				<h2 class="text-xl font-bold text-emerald-950">1. Jerarquía de normas que rigen los procesos contractuales</h2>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
+					La <strong>jerarquía normativa</strong> (pirámide kelsiana) ordena las fuentes para determinar cuál prevalece. El <strong>proceso contractual</strong> tiene etapas
+					<strong>precontractual</strong> (planeación, selección del contratista, negociación, elaboración del contrato), <strong>contractual</strong> (formalización, ejecución, seguimiento)
+					y <strong>postcontractual</strong> (cierre, liquidación, evaluación). La guía distingue tipologías: constitucionales, imperativas, programáticas, teleológicas, ordinarias, reglamentarias e individualizadas.
+				</p>
+			</div>
+			<div class="rounded-2xl border border-emerald-100/90 bg-white/70 p-4 shadow-inner backdrop-blur-sm">
 				<JerarquiaNormasBlock />
 			</div>
-		</section>
-
-		<section id="tema-2" class="scroll-mt-28 space-y-4">
-			<h2 class="text-2xl font-bold text-emerald-900 border-b border-emerald-200 pb-2">2. Contratación para compra y venta de hardware y software en Colombia</h2>
-			<div class="grid md:grid-cols-2 gap-4 text-sm text-neutral-700 leading-relaxed">
-				<div class="bg-white rounded-xl border border-emerald-50 p-4">
-					<h3 class="font-semibold text-emerald-800 mb-2">Contratos y bienes informáticos</h3>
-					<p class="mb-2">
-						Los <strong>contratos informáticos</strong> regulan operaciones sobre bienes, suministros y servicios informáticos. Los <strong>bienes informáticos</strong> incluyen hardware y software;
-						los <strong>suministros</strong> abastecen y mantienen el sistema; los <strong>servicios informáticos</strong> apoyan el funcionamiento y la optimización.
-					</p>
+			<div class="rounded-2xl border border-amber-200/90 bg-gradient-to-br from-amber-50/90 via-white to-orange-50/80 p-5 shadow-lg shadow-amber-500/10">
+				<h3 class="flex items-center gap-2 text-lg font-bold text-amber-900">
+					<span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500 text-sm text-white">A</span>
+					Actividad del tema 1 · Sopa de letras
+				</h3>
+				<p class="mt-2 text-sm text-neutral-600">
+					Vocabulario del <strong>tema 1 · Jerarquía de normas y proceso contractual</strong> (pirámide kelsiana, etapas, tipología). <strong>Marca las letras</strong> de cada palabra (horizontal o vertical). Al completarla se <strong>subraya en la lista</strong>; al hallar todas: <strong>¡Completado!</strong> Usa <strong>Mostrar solución</strong> o <strong>Nueva sopa</strong> si lo necesitas.
+				</p>
+				<div class="mt-3 flex flex-wrap gap-2" id="t1-sopa-palabras"></div>
+				<div id="t1-sopa-complete" class="mt-3 hidden rounded-xl border-2 border-emerald-400 bg-emerald-50 px-4 py-3 text-center shadow-sm" role="status">
+					<p class="text-sm font-bold text-emerald-800">¡Completado! Encontraste todas las palabras del tema 1.</p>
 				</div>
-				<div class="bg-white rounded-xl border border-emerald-50 p-4">
-					<h3 class="font-semibold text-emerald-800 mb-2">Servicios según TI</h3>
-					<p>
-						La guía menciona soporte a distancia, desarrollo de software, formación, instalación y mantenimiento de hardware, servicios en la nube, correo electrónico,
-						seguridad de red (cortafuegos, antivirus, VPN), monitoreo, SaaS, VoIP, consultoría, ciberseguridad e integración con IA/ML, entre otros.
-					</p>
+				<div class="mt-3 overflow-x-auto rounded-xl border border-amber-200/80 bg-white/80 p-3">
+					<table class="border-collapse text-center font-mono text-sm" id="t1-sopa-tabla" aria-label="Sopa de letras tema 1"></table>
+				</div>
+				<div class="mt-3 flex flex-wrap gap-2">
+					<button type="button" id="t1-sopa-sol" class="rounded-xl bg-amber-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-amber-700">Mostrar solución</button>
+					<button type="button" id="t1-sopa-hide" class="rounded-xl border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-900 hover:bg-amber-50">Ocultar solución</button>
+					<button type="button" id="t1-sopa-clear-pick" class="rounded-xl border border-emerald-400 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-100">Quitar marcas</button>
+					<button type="button" id="t1-sopa-new" class="rounded-xl border border-amber-500 bg-amber-50 px-4 py-2 text-sm font-semibold text-amber-900 hover:bg-amber-100">Nueva sopa</button>
 				</div>
 			</div>
-			<div class="bg-teal-50 border border-teal-100 rounded-xl p-4 text-sm text-neutral-700">
-				<h3 class="font-semibold text-teal-900 mb-2">Conceptos clave (actividad 2 de la guía)</h3>
-				<ul class="list-disc list-inside space-y-1">
-					<li><strong>TVEC:</strong> Tienda Virtual del Estado Colombiano (Colombia Compra Eficiente).</li>
-					<li><strong>SECOP II:</strong> plataforma transaccional de contratación pública.</li>
-					<li><strong>AMP:</strong> Acuerdo Marco de Precios para bienes y servicios de uso común.</li>
-					<li><strong>Pliego de condiciones:</strong> reglas, requisitos y criterios del proceso de selección.</li>
-				</ul>
+		</section>
+
+		<!-- ========== PANEL TEMA 2 ========== -->
+		<section id="panel-tema-2" class="tema-panel ambient-tema ambient-tema-2 hidden space-y-6" data-panel="2" role="tabpanel" aria-labelledby="tab-tema-2" hidden>
+			<div class="rounded-2xl border border-teal-200/80 bg-white/70 p-6 shadow-sm">
+				<h2 class="text-xl font-bold text-teal-950">2. Contratación para la compra y venta de hardware y software en Colombia</h2>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
+					<strong>Contratos informáticos</strong> son acuerdos entre dos o más partes para regular operaciones comerciales sobre bienes, suministros y/o servicios informáticos (GUIA 1). En la práctica incluyen desde la compra de equipos y licencias hasta el mantenimiento de sistemas y la nube.
+				</p>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
+					La contratación puede orientarse a <strong>adquisición</strong> (comprar o arrendar bienes TI), <strong>prestación de servicios</strong> (soporte, desarrollo, consultoría) o <strong>obra</strong> cuando implique un resultado concreto. Conocer si el proceso es <strong>público o privado</strong> define qué normas, plataformas y controles aplican.
+				</p>
+			</div>
+			<div class="rounded-2xl border border-teal-100/90 bg-white/70 p-4 shadow-inner backdrop-blur-sm">
+				<div class="tema-subte-block max-w-5xl mx-auto">
+					
+					<div class="flex flex-wrap gap-2 mb-6 justify-center" role="tablist" aria-label="Subtemas tema 2">
+						<button type="button" class="t2-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-teal-600" data-sub="1" aria-selected="true">Naturaleza TI</button>
+						<button type="button" class="t2-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-teal-900 border-teal-100 hover:bg-teal-50" data-sub="2" aria-selected="false">Pública y privada</button>
+						<button type="button" class="t2-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-teal-900 border-teal-100 hover:bg-teal-50" data-sub="3" aria-selected="false">Instrumentos</button>
+					</div>
+					<div id="t2-sub-1" class="t2-sub-panel tab-panel space-y-3">
+						<div class="bg-white border border-teal-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-teal-100 text-teal-800 mb-3 uppercase tracking-wide">Subtema 1</span>
+							<h3 class="text-lg font-semibold text-teal-900 mb-2">Bienes, suministros y servicios informáticos</h3>
+							<div class="subte-viz subte-viz--t2 mb-4 rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 via-white to-cyan-50 p-4 shadow-inner">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-teal-800 mb-3">Visualización · tres familias de objeto contractual</p>
+								<div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
+									<div class="subte-card rounded-xl bg-gradient-to-br from-teal-600 to-cyan-600 px-3 py-4 text-center shadow-md">
+										<p class="text-sm font-bold text-white">Bienes informáticos</p>
+										<p class="mt-1 text-[11px] leading-snug text-teal-50">Hardware y software como producto adquirido o arrendado</p>
+									</div>
+									<div class="subte-card rounded-xl bg-teal-700 px-3 py-4 text-center shadow-md">
+										<p class="text-sm font-bold text-white">Suministros</p>
+										<p class="mt-1 text-[11px] leading-snug text-teal-100">Insumos, medios, licencias de usuario para operar el sistema</p>
+									</div>
+									<div class="subte-card rounded-xl bg-cyan-800 px-3 py-4 text-center shadow-md">
+										<p class="text-sm font-bold text-white">Servicios TI</p>
+										<p class="mt-1 text-[11px] leading-snug text-cyan-100">Prestaciones de apoyo: soporte, nube, desarrollo, seguridad</p>
+									</div>
+								</div>
+								<p class="mt-3 text-center text-[11px] text-neutral-600">Según GUÍA 1: los <strong>contratos informáticos</strong> regulan operaciones sobre bienes, suministros y/o servicios informáticos entre dos o más partes.</p>
+							</div>
+							<p class="text-sm text-neutral-700 leading-relaxed mb-3">
+								La guía distingue tres familias de objeto contractual: lo <strong>material</strong> (hardware y software como producto), lo necesario para <strong>operar y abastecer</strong> el sistema (consumibles, licencias de usuario, medios) y lo <strong>intangible vinculado a actividad humana</strong> (asesoría, mesa de ayuda, desarrollo a medida, ciberseguridad). Los <strong>bienes informáticos</strong> abarcan elementos materiales del sistema y programas; los <strong>suministros</strong> permiten registrar información y mantener componentes; los <strong>servicios</strong> optimizan sistemas mediante actividades de apoyo especializado.
+							</p>
+							<div class="grid gap-3 md:grid-cols-3 mt-3">
+								<div class="rounded-xl border border-teal-100 bg-teal-50/50 p-3">
+									<h4 class="font-semibold text-teal-900">Bienes</h4>
+									<p class="mt-1 text-xs text-neutral-700 sm:text-sm">Equipos, componentes y programas licenciados que constituyen el activo informático de la organización.</p>
+								</div>
+								<div class="rounded-xl border border-teal-100 bg-teal-50/50 p-3">
+									<h4 class="font-semibold text-teal-900">Suministros</h4>
+									<p class="mt-1 text-xs text-neutral-700 sm:text-sm">Insumos recurrentes, medios de almacenamiento, licencias por volumen y elementos que mantienen la operación.</p>
+								</div>
+								<div class="rounded-xl border border-teal-100 bg-teal-50/50 p-3">
+									<h4 class="font-semibold text-teal-900">Servicios</h4>
+									<p class="mt-1 text-xs text-neutral-700 sm:text-sm">Soporte, desarrollo, nube, VoIP, consultoría y todo servicio que optimice o proteja los sistemas.</p>
+								</div>
+							</div>
+							<div class="mt-5 rounded-xl border border-dashed border-teal-200 bg-white/80 p-4">
+								<h4 class="text-sm font-bold text-teal-900">Tipos de servicios según la GUÍA 1 (extracto)</h4>
+								<p class="mt-2 text-xs text-neutral-700 leading-relaxed">
+									Apoyo a distancia, desarrollo de software, formación tecnológica, instalación y mantenimiento de hardware, servicios en la nube, correo electrónico, seguridad de red (cortafuegos, antivirus, VPN), seguimiento, solución de problemas, copias de seguridad, software como servicio (SaaS), presentación de información, VoIP, ciberseguridad, inteligencia artificial y machine learning, análisis de datos y big data, entre otros.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="t2-sub-2" class="t2-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-teal-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-teal-100 text-teal-800 mb-3 uppercase tracking-wide">Subtema 2</span>
+							<h3 class="text-lg font-semibold text-teal-900 mb-2">Contratación pública y privada</h3>
+							<div class="subte-viz subte-viz--t2 mb-4 rounded-xl border border-sky-200 bg-gradient-to-b from-sky-50 to-slate-50 p-4">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-slate-800 mb-3">Visualización · dos regímenes (tarjetas rectangulares)</p>
+								<div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+									<div class="subte-card rounded-xl border-2 border-sky-500 bg-white px-4 py-4 shadow-sm">
+										<p class="text-center text-sm font-bold text-sky-900">Contratación pública</p>
+										<p class="mt-2 text-xs leading-relaxed text-sky-950">
+											Entidades gubernamentales; fondos públicos; <strong>plataforma TVEC</strong>, <strong>SECOP II</strong>, <strong>AMP</strong>; normativa Ley 80 y reglas de Colombia Compra Eficiente. Proceso típico: solicitud de cotización → evaluación de ofertas → orden de compra → entrega y soporte.
+										</p>
+									</div>
+									<div class="subte-card rounded-xl border-2 border-slate-400 bg-white px-4 py-4 shadow-sm">
+										<p class="text-center text-sm font-bold text-slate-900">Contratación privada</p>
+										<p class="mt-2 text-xs leading-relaxed text-slate-800">
+											Particulares y empresas sin participación estatal directa. <strong>Código Civil y Código de Comercio</strong>; negociación directa; buenas prácticas: estudios de mercado, especificaciones técnicas, garantías y formalización por contrato u orden de compra.
+										</p>
+									</div>
+								</div>
+								<div class="mt-3 flex flex-wrap justify-center gap-2 text-[10px] font-semibold text-slate-600">
+									<span class="rounded-md bg-white px-2 py-1 shadow-sm border border-slate-200">Plataforma TVEC vs negociación directa</span>
+									<span class="rounded-md bg-white px-2 py-1 shadow-sm border border-slate-200">Ley 80 / AMP vs Civil · Comercio</span>
+								</div>
+							</div>
+							<p class="text-sm text-neutral-700 leading-relaxed">
+								<strong>Pública:</strong> el Estado y las entidades territoriales adquieren con recursos públicos. Rigen principios de transparencia, selección objetiva, eficiencia y publicidad; la Ley 80 de 1993 y el régimen de <strong>SECOP</strong> ordenan el ciclo de planeación, convocatoria, evaluación y celebración.
+							</p>
+							<p class="mt-2 text-sm text-neutral-700 leading-relaxed">
+								<strong>Privada:</strong> entre empresas o personas la libertad contractual es mayor dentro de los límites del Código Civil y de Comercio. No hay convocatoria pública obligatoria; prima la autonomía de la voluntad y la negociación directa, salvo normas sectoriales especiales.
+							</p>
+						</div>
+					</div>
+					<div id="t2-sub-3" class="t2-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-teal-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-teal-100 text-teal-800 mb-3 uppercase tracking-wide">Subtema 3</span>
+							<h3 class="text-lg font-semibold text-teal-900 mb-2">Conceptos e instrumentos (GUÍA N.° 1)</h3>
+							<div class="subte-viz subte-viz--t2 mb-4 overflow-x-auto rounded-xl border border-violet-200 bg-violet-50/50 p-4">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-violet-900 mb-3">Visualización · flujo de instrumentos estatales</p>
+								<div class="flex min-w-[280px] flex-wrap items-center justify-center gap-2 sm:gap-3">
+									<div class="subte-card rounded-lg bg-violet-600 px-3 py-2 text-center text-white shadow">
+										<p class="text-[10px] font-bold uppercase">TVEC</p>
+										<p class="text-[9px] opacity-90">Tienda virtual</p>
+									</div>
+									<span class="text-slate-400">→</span>
+									<div class="subte-card rounded-lg bg-fuchsia-600 px-3 py-2 text-center text-white shadow">
+										<p class="text-[10px] font-bold uppercase">AMP</p>
+										<p class="text-[9px] opacity-90">Precios marco</p>
+									</div>
+									<span class="text-slate-400">→</span>
+									<div class="subte-card rounded-lg bg-indigo-600 px-3 py-2 text-center text-white shadow">
+										<p class="text-[10px] font-bold uppercase">SECOP II</p>
+										<p class="text-[9px] opacity-90">Gestión procesos</p>
+									</div>
+								</div>
+								<p class="mt-3 text-center text-[11px] text-violet-900">El <strong>pliego</strong> y la <strong>oferta</strong> conectan al <strong>proponente</strong> con la entidad hasta el <strong>contratista</strong> seleccionado.</p>
+							</div>
+							<p class="text-sm text-neutral-700 leading-relaxed mb-3">
+								Estas herramientas conectan la teoría con la práctica de compras del Estado y de quienes participan en procesos de selección. La GUÍA 1 presenta interrogantes sobre cada concepto (qué es TVEC, SECOP, AMP, pliego, proponente, contratista, oferta, etc.) para asegurar dominio operativo.
+							</p>
+							<ul class="list-inside list-disc space-y-2 text-sm text-neutral-800 leading-relaxed">
+								<li><strong>TVEC:</strong> Tienda Virtual del Estado; canal para compras ágiles asociadas a <strong>AMP</strong> (Colombia Compra Eficiente).</li>
+								<li><strong>SECOP / SECOP II:</strong> registro y gestión electrónica de procesos; trazabilidad de actuaciones e hitos.</li>
+								<li><strong>AMP:</strong> Acuerdo Marco de Precios — condiciones de precio, cantidad y calidad pactadas de antemano para acelerar compras.</li>
+								<li><strong>Pliego:</strong> documento que concreta objeto, requisitos de elegibilidad, criterios de evaluación y condiciones contractuales.</li>
+								<li><strong>Proponente, contratista, oferta:</strong> quien concursa; quien resulta adjudicado y firma el contrato; documento mediante el cual se acoge a la convocatoria.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rounded-2xl border border-violet-200/90 bg-gradient-to-br from-violet-50/90 via-white to-fuchsia-50/70 p-5 shadow-lg shadow-violet-500/15">
+				<h3 class="flex items-center gap-2 text-lg font-bold text-violet-900">
+					<span class="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-600 text-sm text-white">A</span>
+					Actividad del tema 2 · Relaciona conceptos
+				</h3>
+				<p class="mt-2 text-sm text-neutral-600">Elige una tarjeta de la columna A y otra de la B que correspondan (según la guía).</p>
+				<div class="mt-4 grid gap-3 sm:grid-cols-2" id="t2-match-root"></div>
+				<p class="mt-3 text-sm font-semibold text-violet-800" id="t2-match-status">Pares encontrados: 0 / 4</p>
 			</div>
 		</section>
 
-		<section id="tema-3" class="scroll-mt-28 space-y-4">
-			<h2 class="text-2xl font-bold text-emerald-900 border-b border-emerald-200 pb-2">3. Elementos legales de un proceso de contratación pública y privada</h2>
-			<p class="text-neutral-700 text-sm leading-relaxed">
-				El <strong>Código Civil</strong> (Ley 57 de 1887) regula relaciones entre particulares (contratos, obligaciones). El <strong>Código de Comercio</strong> regula actos mercantiles y contratos comerciales.
-				En contratación pública rigen principios constitucionales de eficacia y eficiencia.
-			</p>
-			<p class="text-neutral-700 text-sm leading-relaxed">
-				<strong>Efectivo</strong> se refiere a obtener el resultado real esperado; <strong>eficaz</strong>, alcanzar los objetivos (hacer lo correcto); <strong>eficiente</strong>, lograrlo optimizando recursos.
-				La guía contrasta además <strong>moral</strong> (normas y valores compartidos) y <strong>ética</strong> (reflexión racional sobre esos principios), relevante para la rectitud en contratación estatal.
-			</p>
-		</section>
-
-		<section id="tema-4" class="scroll-mt-28 space-y-4">
-			<h2 class="text-2xl font-bold text-emerald-900 border-b border-emerald-200 pb-2">4. Contratos de licenciamiento de software</h2>
-			<p class="text-neutral-700 text-sm leading-relaxed">
-				El <strong>licenciamiento</strong> autoriza el uso del software sin transferir la propiedad intelectual, con límites de tiempo, territorio y forma de uso (Ley 23 de 1982 y Decisión 351 de la CAN).
-			</p>
-			<ul class="list-disc list-inside text-sm text-neutral-700 space-y-1">
-				<li><strong>Contratante y contratista:</strong> quien encarga la prestación y quien la ejecuta a cambio de remuneración.</li>
-				<li><strong>Cesión de contrato:</strong> traslado de la posición contractual a un tercero con consentimiento de la contraparte.</li>
-				<li><strong>Interventor y supervisor:</strong> supervisión técnica, administrativa y jurídica del contrato.</li>
-				<li><strong>Garante:</strong> responde por obligaciones del deudor principal (pólizas en sector público).</li>
-			</ul>
-		</section>
-
-		<section id="actividad" class="scroll-mt-28 space-y-4 pb-8">
-			<h2 class="text-2xl font-bold text-amber-900 border-b border-amber-200 pb-2">Actividad lúdica: sopa de letras</h2>
-			<p class="text-neutral-600 text-sm">
-				Encuentra las palabras relacionadas con normas y contratación (horizontal o vertical). Pulsa <strong>Mostrar solución</strong> para resaltar las celdas correctas.
-			</p>
-			<div class="flex flex-wrap gap-2 mb-3" id="sopa-palabras"></div>
-			<div class="overflow-x-auto rounded-xl border border-amber-200 bg-amber-50/50 p-3 inline-block min-w-0">
-				<table class="border-collapse text-center text-sm font-mono" id="sopa-tabla" aria-label="Sopa de letras"></table>
+		<!-- ========== PANEL TEMA 3 ========== -->
+		<section id="panel-tema-3" class="tema-panel ambient-tema ambient-tema-3 hidden space-y-6" data-panel="3" role="tabpanel" aria-labelledby="tab-tema-3" hidden>
+			<div class="rounded-2xl border border-cyan-200/80 bg-white/70 p-6 shadow-sm">
+				<h2 class="text-xl font-bold text-cyan-950">3. Elementos legales de un proceso de contratación pública y privada</h2>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
+					Además de las normas de fondo (qué se puede contratar y con qué requisitos), el proceso exige atender <strong>códigos sustantivos</strong>, criterios de gestión pública y una dimensión <strong>ética</strong> que va más allá del cumplimiento formal.
+				</p>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
+					En contratación estatal, la Constitución y la jurisprudencia han insistido en que los recursos públicos se administren con <strong>eficacia y eficiencia</strong>, sin confundir ahorro con precariedad: se busca el mejor resultado posible con uso racional del presupuesto.
+				</p>
 			</div>
-			<div class="flex gap-2 flex-wrap">
-				<button type="button" id="sopa-solucion" class="px-4 py-2 rounded-xl bg-amber-600 text-white text-sm font-medium hover:bg-amber-700 transition">Mostrar solución</button>
-				<button type="button" id="sopa-ocultar" class="px-4 py-2 rounded-xl border border-amber-300 text-amber-900 text-sm font-medium hover:bg-amber-100 transition">Ocultar solución</button>
+			<div class="rounded-2xl border border-cyan-100/90 bg-white/70 p-4 shadow-inner backdrop-blur-sm">
+				<div class="tema-subte-block max-w-5xl mx-auto">
+				
+					<div class="flex flex-wrap gap-2 mb-6 justify-center" role="tablist" aria-label="Subtemas tema 3">
+						<button type="button" class="t3-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-cyan-600 to-sky-600 text-white border-cyan-600" data-sub="1" aria-selected="true">Códigos</button>
+						<button type="button" class="t3-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-cyan-900 border-cyan-100 hover:bg-cyan-50" data-sub="2" aria-selected="false">Efectivo · eficaz · eficiente</button>
+						<button type="button" class="t3-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-cyan-900 border-cyan-100 hover:bg-cyan-50" data-sub="3" aria-selected="false">Ética y moral</button>
+					</div>
+					<div id="t3-sub-1" class="t3-sub-panel tab-panel space-y-2">
+						<div class="bg-white border border-cyan-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 mb-3 uppercase tracking-wide">Subtema 1</span>
+							<h3 class="text-lg font-semibold text-cyan-900 mb-2">Código Civil y Código de Comercio</h3>
+							<div class="subte-viz subte-viz--t3 mb-4 rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-cyan-50/40 p-4">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-cyan-900 mb-3">Visualización · marco normativo (contratación pública)</p>
+								<div class="grid grid-cols-1 gap-2 sm:grid-cols-3">
+									<div class="subte-card rounded-lg border-2 border-cyan-500 bg-white px-3 py-3 text-center shadow-sm">
+										<p class="text-[10px] font-bold text-cyan-900">Ley 80 de 1993</p>
+										<p class="mt-1 text-[10px] leading-snug text-neutral-700">Estatuto General de Contratación del Estado</p>
+									</div>
+									<div class="subte-card rounded-lg border-2 border-sky-500 bg-white px-3 py-3 text-center shadow-sm">
+										<p class="text-[10px] font-bold text-sky-900">Ley 1150 de 2007</p>
+										<p class="mt-1 text-[10px] leading-snug text-neutral-700">Modernización de modalidades de selección</p>
+									</div>
+									<div class="subte-card rounded-lg border-2 border-teal-600 bg-white px-3 py-3 text-center shadow-sm">
+										<p class="text-[10px] font-bold text-teal-900">Constitución</p>
+										<p class="mt-1 text-[10px] leading-snug text-neutral-700">Arts. 83, 209, 90 (buena fe, función, responsabilidad)</p>
+									</div>
+								</div>
+								<p class="mt-3 text-center text-[11px] text-neutral-600">En paralelo, el <strong>Código Civil</strong> y el <strong>Código de Comercio</strong> ordenan obligaciones entre particulares y actividad mercantil.</p>
+							</div>
+							<p class="text-sm text-neutral-700 leading-relaxed">
+								<strong>Código Civil</strong> (Ley 57 de 1887): sistema de reglas para personas, familia, bienes, sucesiones y obligaciones contractuales no mercantiles. Muchos contratos de TI entre particulares se interpretan primero con lentes civiles (incumplimiento, perjuicios, garantías).
+							</p>
+							<p class="mt-2 text-sm text-neutral-700 leading-relaxed">
+								<strong>Código de Comercio</strong> (Decreto 410 de 1971): contratos de tracto sucesivo, compraventa mercantil, prestación de servicios empresariales, títulos valores y sociedades. La contratación TI “entre comerciantes” o con habitualidad suele encuadrarse aquí.
+							</p>
+							<p class="mt-3 text-xs text-neutral-700 leading-relaxed border-t border-cyan-100 pt-3">
+								<strong>Contratación pública (GUÍA 1):</strong> destacan la <strong>Ley 80 de 1993</strong> (Estatuto General de Contratación), la <strong>Ley 1150 de 2007</strong> (modernización de modalidades de selección) y artículos de la <strong>Constitución</strong> (p. ej. 83, 209, 90) sobre buena fe, función administrativa y responsabilidad estatal.
+							</p>
+						</div>
+					</div>
+					<div id="t3-sub-2" class="t3-sub-panel tab-panel hidden space-y-2">
+						<div class="bg-white border border-cyan-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 mb-3 uppercase tracking-wide">Subtema 2</span>
+							<h3 class="text-lg font-semibold text-cyan-900 mb-2">Efectivo, eficaz y eficiente</h3>
+							<div class="subte-viz subte-viz--t3 mb-4 rounded-xl border border-cyan-200 bg-gradient-to-br from-cyan-50 via-white to-teal-50 p-4 shadow-inner">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-cyan-800 mb-3">Visualización · triple E del servicio público (tarjetas escalonadas)</p>
+								<div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
+									<div class="subte-card flex flex-col justify-end rounded-xl border-2 border-cyan-400 bg-cyan-100/80 px-3 py-3 text-center shadow-sm min-h-[100px]">
+										<p class="text-sm font-bold text-cyan-900">Efectivo</p>
+										<p class="mt-1 text-[11px] text-cyan-950">Resultado concreto en la realidad</p>
+									</div>
+									<div class="subte-card flex flex-col justify-end rounded-xl border-2 border-sky-500 bg-sky-100/90 px-3 py-3 text-center shadow-sm min-h-[120px]">
+										<p class="text-sm font-bold text-sky-900">Eficaz</p>
+										<p class="mt-1 text-[11px] text-sky-950">Alcanza fines y metas institucionales</p>
+									</div>
+									<div class="subte-card flex flex-col justify-end rounded-xl border-2 border-teal-600 bg-teal-50 px-3 py-3 text-center shadow-sm min-h-[140px]">
+										<p class="text-sm font-bold text-teal-900">Eficiente</p>
+										<p class="mt-1 text-[11px] text-teal-950">Buena relación costo-beneficio en recursos públicos</p>
+									</div>
+								</div>
+								<p class="mt-3 text-center text-[11px] text-neutral-600">La Constitución y la jurisprudencia exigen administrar recursos con <strong>eficacia y eficiencia</strong> sin confundir ahorro con precariedad.</p>
+							</div>
+							<p class="text-sm text-neutral-700 leading-relaxed mb-3">
+								Son criterios complementarios: un proceso puede ser eficaz pero costoso (poco eficiente), o barato pero sin lograr el objeto (poco efectivo). En contratación estatal, la triple E orienta la evaluación: no basta cumplir formalidades si el bien o servicio no resuelve el problema (efectividad), ni alcanzar metas a cualquier costo sin racionalidad presupuestal (eficiencia).
+							</p>
+							<ul class="list-inside list-disc space-y-2 text-sm text-neutral-800 leading-relaxed">
+								<li><strong>Efectivo:</strong> produce el resultado esperado en la realidad (entrega útil, no solo formal).</li>
+								<li><strong>Eficaz:</strong> alcanza los fines propuestos; puede implicar más recursos si el objetivo lo amerita.</li>
+								<li><strong>Eficiente:</strong> optimiza medios (tiempo, dinero, personal) para lograr fines; en el Estado es principio constitucional junto a la eficacia.</li>
+							</ul>
+						</div>
+					</div>
+					<div id="t3-sub-3" class="t3-sub-panel tab-panel hidden space-y-2">
+						<div class="bg-white border border-cyan-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 mb-3 uppercase tracking-wide">Subtema 3</span>
+							<h3 class="text-lg font-semibold text-cyan-900 mb-2">Ética y moral</h3>
+							<div class="subte-viz subte-viz--t3 mb-4 rounded-xl border border-teal-200 bg-teal-50/40 p-4">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-teal-900 mb-3">Visualización · moral (costumbre) vs. ética (discurso racional)</p>
+								<div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+									<div class="subte-card rounded-lg border-2 border-teal-500 bg-white p-4 shadow-sm">
+										<p class="text-xs font-bold uppercase tracking-wide text-teal-900">Moral</p>
+										<p class="mt-2 text-[11px] leading-relaxed text-neutral-800">Creencias y costumbres compartidas sobre lo permitido y lo reprobable en una comunidad.</p>
+									</div>
+									<div class="subte-card rounded-lg border-2 border-cyan-600 bg-white p-4 shadow-sm">
+										<p class="text-xs font-bold uppercase tracking-wide text-cyan-900">Ética</p>
+										<p class="mt-2 text-[11px] leading-relaxed text-neutral-800">Reflexión y criterios para evaluar normas, dilemas y conflictos de valores.</p>
+									</div>
+								</div>
+							</div>
+							<p class="text-sm text-neutral-800 leading-relaxed">
+								<strong>Moral:</strong> conjunto de creencias y costumbres sobre lo permitido y lo reprobable en un grupo. <strong>Ética:</strong> discurso racional que evalúa esas normas y sus conflictos. En contratación pública, la integridad y la transparencia no se agotan en “cumplir la ley”: se espera conducta ejemplar frente a conflictos de interés y uso de información privilegiada.
+							</p>
+							<p class="mt-3 text-sm text-neutral-700 leading-relaxed">
+								En compras de TI, la dimensión ética se traduce en <strong>imparcialidad en evaluación de ofertas</strong>, <strong>protección de datos</strong> de proponentes, <strong>evitar favorecimientos</strong> y documentar decisiones. La moral del equipo de contratación y la ética institucional refuerzan la confianza ciudadana más allá del texto legal.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rounded-2xl border border-cyan-200/90 bg-gradient-to-br from-cyan-50/90 via-white to-sky-50/70 p-5 shadow-lg shadow-cyan-500/10">
+				<h3 class="flex items-center gap-2 text-lg font-bold text-cyan-900">
+					<span class="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-600 text-sm text-white">A</span>
+					Actividad del tema 3 · V/F (una por vez)
+				</h3>
+				<p class="mt-1 text-xs text-neutral-600">Tres afirmaciones; responde y avanza. Al final verás el resumen.</p>
+				<div class="mt-4 min-h-[140px] rounded-xl border border-cyan-100 bg-white/95 p-4 shadow-inner" id="t3-carousel-root"></div>
+				<p class="mt-3 text-sm font-semibold text-cyan-900" id="t3-carousel-score"></p>
+			</div>
+		</section>
+
+		<!-- ========== PANEL TEMA 4 ========== -->
+		<section id="panel-tema-4" class="tema-panel ambient-tema ambient-tema-4 hidden space-y-6 pb-8" data-panel="4" role="tabpanel" aria-labelledby="tab-tema-4" hidden>
+			<div class="rounded-2xl border border-indigo-200/80 bg-white/70 p-6 shadow-sm">
+				<h2 class="text-xl font-bold text-indigo-950">4. Contratos de licenciamiento de software</h2>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
+					El software es una <strong>obra del intelecto</strong> protegida por derecho de autor; su explotación económica suele hacerse mediante <strong>licencias de uso</strong>, distintas de la venta del soporte o de la obra en sí.
+				</p>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
+					En la contratación estatal, el licenciamiento debe compatibilizarse con pliegos, garantías y términos de uso; en la privada, prima la negociación de alcance (usuarios, sedes, actualizaciones, soporte).
+				</p>
+			</div>
+			<div class="rounded-2xl border border-indigo-100/90 bg-white/70 p-4 shadow-inner backdrop-blur-sm">
+				<div class="tema-subte-block max-w-5xl mx-auto">
+					
+					<div class="flex flex-wrap gap-2 mb-6 justify-center" role="tablist" aria-label="Subtemas tema 4">
+						<button type="button" class="t4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-indigo-600 to-violet-600 text-white border-indigo-600" data-sub="1" aria-selected="true">Licenciamiento</button>
+						<button type="button" class="t4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-indigo-900 border-indigo-100 hover:bg-indigo-50" data-sub="2" aria-selected="false">Partes y figuras</button>
+						<button type="button" class="t4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-indigo-900 border-indigo-100 hover:bg-indigo-50" data-sub="3" aria-selected="false">Autor y control</button>
+					</div>
+					<div id="t4-sub-1" class="t4-sub-panel tab-panel space-y-2">
+						<div class="bg-white border border-indigo-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 mb-3 uppercase tracking-wide">Subtema 1</span>
+							<h3 class="text-lg font-semibold text-indigo-900 mb-2">Licenciamiento de software</h3>
+							<div class="subte-viz subte-viz--t4 mb-4 rounded-xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-violet-50 p-4 shadow-inner">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-indigo-800 mb-3">Visualización · flujo Licenciante → Licencia → Licenciatario</p>
+								<div class="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center">
+									<div class="subte-card rounded-xl bg-indigo-600 px-4 py-4 text-center text-white shadow-md sm:min-w-[120px]">
+										<p class="text-xs font-bold uppercase tracking-wide opacity-90">Licenciante</p>
+										<p class="mt-1 text-sm font-bold">Titular del software</p>
+									</div>
+									<div class="hidden text-slate-400 sm:block">→</div>
+									<div class="subte-card rounded-xl bg-violet-600 px-4 py-4 text-center text-white shadow-md sm:min-w-[140px]">
+										<p class="text-xs font-bold uppercase tracking-wide opacity-90">Contrato</p>
+										<p class="mt-1 text-sm font-bold">Licencia de uso</p>
+										<p class="mt-1 text-[10px] text-violet-100">Sin ceder la titularidad (GUÍA 1)</p>
+									</div>
+									<div class="hidden text-slate-400 sm:block">→</div>
+									<div class="subte-card rounded-xl bg-purple-500 px-4 py-4 text-center text-white shadow-md sm:min-w-[120px]">
+										<p class="text-xs font-bold uppercase tracking-wide opacity-90">Licenciatario</p>
+										<p class="mt-1 text-sm font-bold">Usuario autorizado</p>
+									</div>
+								</div>
+								<div class="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+									<div class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-[11px] text-neutral-800">
+										<strong>Licencia exclusiva / no exclusiva:</strong> si solo el licenciatario puede explotar o el titular puede licenciar a más usuarios.
+									</div>
+									<div class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-[11px] text-neutral-800">
+										<strong>Transferible / sublicenciable:</strong> según el contrato, el usuario puede o no ceder o sublicenciar el uso (GUÍA 1).
+									</div>
+								</div>
+							</div>
+							<p class="text-sm text-neutral-700 leading-relaxed">
+								El <strong>licenciamiento</strong> es el acto jurídico por el cual el titular autoriza a un tercero a usar el programa bajo condiciones: número de equipos o usuarios, vigencia, territorio, actualizaciones y nivel de soporte, <strong>sin transferir la titularidad del derecho de autor</strong> (Ley 23 de 1982; normas sobre derechos conexos y Andina).
+							</p>
+							<p class="mt-2 text-sm text-neutral-700 leading-relaxed">
+								Debe distinguirse de la <strong>cesión total</strong> de derechos patrimoniales (menos frecuente en software de masas) y del mero arrendamiento de equipos con software preinstalado.
+							</p>
+							<p class="mt-3 text-xs text-neutral-700 leading-relaxed border-t border-indigo-100 pt-3">
+								<strong>Tipos de licencia (GUÍA 1):</strong> la licencia puede ser <strong>exclusiva o no exclusiva</strong> (si solo el licenciatario explota o el titular puede licenciar a otros); y <strong>transferible o no</strong> (si puede sublicenciar o ceder el uso a terceros). Lo más habitual en el mercado es la licencia <strong>no exclusiva e intransferible</strong>.
+							</p>
+						</div>
+					</div>
+					<div id="t4-sub-2" class="t4-sub-panel tab-panel hidden space-y-2">
+						<div class="bg-white border border-indigo-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 mb-3 uppercase tracking-wide">Subtema 2</span>
+							<h3 class="text-lg font-semibold text-indigo-900 mb-2">Partes y figuras</h3>
+							<div class="subte-viz subte-viz--t4 mb-4 rounded-xl border border-violet-200 bg-violet-50/50 p-4">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-violet-900 mb-3">Visualización · triángulo contractual (necesidad → ejecución)</p>
+								<div class="mx-auto flex max-w-md flex-col items-center gap-2 sm:flex-row sm:justify-between sm:gap-4">
+									<div class="subte-card w-full rounded-lg border-2 border-indigo-500 bg-white px-3 py-3 text-center shadow-sm sm:w-[32%]">
+										<p class="text-[10px] font-bold uppercase text-indigo-900">Contratante</p>
+										<p class="mt-1 text-[10px] text-neutral-700">Necesidad, pliego, pago</p>
+									</div>
+									<span class="text-slate-400 sm:rotate-0">↔</span>
+									<div class="subte-card w-full rounded-lg border-2 border-fuchsia-600 bg-white px-3 py-3 text-center shadow-sm sm:w-[32%]">
+										<p class="text-[10px] font-bold uppercase text-fuchsia-900">Contratista</p>
+										<p class="mt-1 text-[10px] text-neutral-700">Entrega, soporte, garantías</p>
+									</div>
+								</div>
+								<div class="mt-3 rounded-lg border border-dashed border-violet-300 bg-white/80 px-3 py-2 text-center text-[10px] text-neutral-700">
+									<strong>Cesión del contrato:</strong> traslado de la posición a un tercero con consentimiento, salvo pacto en contrario (C. Com. art. 887 y normas especiales).
+								</div>
+							</div>
+							<ul class="list-inside list-disc space-y-2 text-sm text-neutral-800 leading-relaxed">
+								<li><strong>Contratante:</strong> quien tiene la necesidad y suscribe el contrato; en el sector público, la entidad estatal y sus representantes (Ley 80).</li>
+								<li><strong>Contratista:</strong> quien ejecuta la prestación o entrega y percibe la contraprestación; puede ser editor, distribuidor o integrador.</li>
+								<li><strong>Cesión de contrato:</strong> traslado de la posición contractual a un tercero con consentimiento de la contraparte, salvo pacto en contrario (C. Com. art. 887 y régimen especial).</li>
+							</ul>
+						</div>
+					</div>
+					<div id="t4-sub-3" class="t4-sub-panel tab-panel hidden space-y-2">
+						<div class="bg-white border border-indigo-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 mb-3 uppercase tracking-wide">Subtema 3</span>
+							<h3 class="text-lg font-semibold text-indigo-900 mb-2">Derecho de autor y roles</h3>
+							<div class="subte-viz subte-viz--t4 mb-4 rounded-xl border border-indigo-200 bg-gradient-to-b from-indigo-50 to-white p-4">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-indigo-900 mb-3">Visualización · obra y explotación</p>
+								<div class="mx-auto max-w-lg space-y-2">
+									<div class="subte-card rounded-lg border-2 border-indigo-600 bg-indigo-600 px-4 py-2 text-center text-white">
+										<p class="text-xs font-bold">Software = obra del intelecto (Ley 23/82)</p>
+									</div>
+									<div class="grid grid-cols-2 gap-2">
+										<div class="subte-card rounded-lg border border-indigo-300 bg-white p-2 text-center text-[10px] text-neutral-800">
+											<strong class="text-indigo-800">Derechos morales</strong><br />Paternidad, integridad
+										</div>
+										<div class="subte-card rounded-lg border border-indigo-300 bg-white p-2 text-center text-[10px] text-neutral-800">
+											<strong class="text-indigo-800">Derechos patrimoniales</strong><br />Licencias, explotación
+										</div>
+									</div>
+									<div class="flex flex-wrap justify-center gap-2 pt-1">
+										<span class="rounded-md bg-slate-100 px-2 py-1 text-[9px] font-semibold text-slate-700">Interventor</span>
+										<span class="rounded-md bg-slate-100 px-2 py-1 text-[9px] font-semibold text-slate-700">Supervisor</span>
+										<span class="rounded-md bg-slate-100 px-2 py-1 text-[9px] font-semibold text-slate-700">Garante</span>
+									</div>
+								</div>
+								<p class="mt-2 text-center text-[10px] text-neutral-600">Roles de control y afianzamiento en contratos estatales (pliego, seguimiento, pólizas).</p>
+							</div>
+							<p class="text-sm text-neutral-800 leading-relaxed">
+								<strong>Derecho de autor:</strong> reconoce derechos morales (paternidad, integridad) y patrimoniales (explotación) sobre el software como obra literaria.
+								<strong>Interventor / supervisor / garante:</strong> supervisan técnica o administrativamente; el servidor de planta en la entidad; quien afianza obligaciones mediante pólizas u otras garantías exigidas en contratación pública.
+							</p>
+							<p class="mt-3 text-sm text-neutral-700 leading-relaxed">
+								En licencias estatales conviene explicitar <strong>alcance territorial y de usuarios</strong>, <strong>actualizaciones</strong> y <strong>responsabilidad por infracción de terceros</strong>, alineando el contrato con las obligaciones de transparencia y trazabilidad del proceso de selección.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rounded-2xl border border-indigo-200/90 bg-gradient-to-br from-indigo-50/90 via-white to-purple-50/70 p-5 shadow-lg shadow-indigo-500/10">
+				<h3 class="flex items-center gap-2 text-lg font-bold text-indigo-900">
+					<span class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-sm text-white">A</span>
+					Actividad del tema 4 · Mini test (3 preguntas)
+				</h3>
+				<p class="mt-1 text-xs text-neutral-600">Elige la opción correcta; al terminar verás cuántas acertaste.</p>
+				<div class="mt-4 rounded-xl border border-indigo-100 bg-white/90 p-4 shadow-inner" id="t4-mcq-root"></div>
 			</div>
 		</section>
 	</div>
 
-	<style>
+	<style is:global>
 		.sopa-celda {
 			width: 28px;
 			height: 28px;
-			border: 1px solid #d6d3d1;
+			border: 1px solid #e7e5e4;
 			background: #fff;
-			user-select: none;
+			cursor: pointer;
+			font-size: 12px;
+			line-height: 1;
+			touch-action: manipulation;
+			transition: background 0.12s ease, box-shadow 0.12s ease;
+		}
+		.sopa-celda.sopa-pick {
+			background: #bbf7d0;
+			box-shadow: inset 0 0 0 2px #22c55e;
+			font-weight: 700;
+			color: #14532d;
 		}
 		.sopa-celda.sol {
-			background: #fde68a;
+			background: #fde68a !important;
 			font-weight: 700;
 			color: #92400e;
+			box-shadow: inset 0 0 0 2px #d97706;
+		}
+		.sopa-celda.sopa-found {
+			background: #a7f3d0 !important;
+			color: #065f46;
+			font-weight: 800;
+			text-decoration: underline;
+			text-underline-offset: 2px;
+			box-shadow: inset 0 0 0 2px #059669;
+		}
+		.sopa-chip {
+			transition:
+				background 0.2s,
+				border-color 0.2s,
+				transform 0.15s;
+		}
+		.sopa-chip.sopa-chip-found {
+			border-color: #059669 !important;
+			background: #ecfdf5 !important;
+			color: #047857 !important;
+			text-decoration: underline;
+			text-underline-offset: 3px;
+			transform: scale(1.02);
+		}
+		.match-card {
+			cursor: pointer;
+			border-radius: 0.75rem;
+			border: 2px solid transparent;
+			padding: 0.75rem 1rem;
+			font-size: 0.875rem;
+			font-weight: 600;
+			transition:
+				transform 0.15s,
+				box-shadow 0.15s;
+		}
+		.match-card:hover:not(:disabled) {
+			transform: translateY(-2px);
+		}
+		.match-card.selected {
+			border-color: #7c3aed;
+			box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
+		}
+		.match-card.ok {
+			cursor: default;
+			opacity: 0.85;
+		}
+
+		/* Ambiente y animación · temas 2, 3 y 4 */
+		.ambient-tema {
+			position: relative;
+			isolation: isolate;
+		}
+		.ambient-tema::before {
+			content: '';
+			position: absolute;
+			inset: -4px;
+			z-index: -1;
+			border-radius: 1.25rem;
+			opacity: 0.55;
+			pointer-events: none;
+			background: radial-gradient(ellipse 90% 60% at 50% 0%, var(--ambient-glow, rgba(45, 212, 191, 0.22)), transparent 55%);
+			animation: ambientBreath 9s ease-in-out infinite;
+		}
+		.ambient-tema-2 {
+			--ambient-glow: rgba(45, 212, 191, 0.28);
+		}
+		.ambient-tema-3 {
+			--ambient-glow: rgba(34, 211, 238, 0.26);
+		}
+		.ambient-tema-4 {
+			--ambient-glow: rgba(129, 140, 248, 0.28);
+		}
+		@keyframes ambientBreath {
+			0%,
+			100% {
+				opacity: 0.45;
+				transform: scale(1);
+			}
+			50% {
+				opacity: 0.75;
+				transform: scale(1.01);
+			}
+		}
+
+		.subte-viz {
+			position: relative;
+			overflow: hidden;
+		}
+		.subte-viz::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(
+				115deg,
+				transparent 0%,
+				rgba(255, 255, 255, 0.35) 45%,
+				transparent 70%
+			);
+			transform: translateX(-120%);
+			animation: vizShine 7s ease-in-out infinite;
+			pointer-events: none;
+			mix-blend-mode: soft-light;
+		}
+		.subte-viz--t2::after {
+			animation-duration: 6.5s;
+		}
+		.subte-viz--t3::after {
+			animation-duration: 7.5s;
+		}
+		.subte-viz--t4::after {
+			animation-duration: 8s;
+		}
+		@keyframes vizShine {
+			0%,
+			100% {
+				transform: translateX(-130%);
+			}
+			40%,
+			60% {
+				transform: translateX(130%);
+			}
+		}
+
+		.subte-card {
+			transition:
+				transform 0.35s cubic-bezier(0.34, 1.45, 0.64, 1),
+				box-shadow 0.35s ease;
+		}
+		@media (prefers-reduced-motion: no-preference) {
+			.subte-viz .subte-card {
+				animation: subteCardIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+			}
+			.subte-viz .grid > .subte-card:nth-child(1) {
+				animation-delay: 0.04s;
+			}
+			.subte-viz .grid > .subte-card:nth-child(2) {
+				animation-delay: 0.12s;
+			}
+			.subte-viz .grid > .subte-card:nth-child(3) {
+				animation-delay: 0.2s;
+			}
+			.subte-viz .flex > .subte-card:nth-child(1) {
+				animation-delay: 0.05s;
+			}
+			.subte-viz .flex > .subte-card:nth-child(3) {
+				animation-delay: 0.14s;
+			}
+			.subte-viz .flex > .subte-card:nth-child(5) {
+				animation-delay: 0.24s;
+			}
+			.subte-viz .flex.flex-col > .subte-card:nth-child(1) {
+				animation-delay: 0.06s;
+			}
+			.subte-viz .flex.flex-col > .subte-card:nth-child(3) {
+				animation-delay: 0.16s;
+			}
+			.subte-viz .flex.flex-col > .subte-card:nth-child(5) {
+				animation-delay: 0.26s;
+			}
+		}
+		@keyframes subteCardIn {
+			from {
+				opacity: 0;
+				transform: translateY(14px) scale(0.97);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0) scale(1);
+			}
+		}
+		.subte-card:hover {
+			transform: translateY(-5px) scale(1.02);
+			box-shadow: 0 14px 28px -10px rgba(15, 23, 42, 0.22);
+		}
+		@media (prefers-reduced-motion: reduce) {
+			.ambient-tema::before,
+			.subte-viz::after {
+				animation: none;
+			}
+			.subte-viz .subte-card {
+				animation: none;
+			}
 		}
 	</style>
 
 	<script is:inline>
 		(function () {
-			const PALABRAS = ['SECOP', 'NORMA', 'LEY', 'PLIEGO', 'TVEC', 'AMP', 'CONTRATO', 'ETAPA'];
-			const FILAS = 12;
-			const COLS = 14;
-			const ABC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			/* ── Pestañas: un solo tema visible ── */
+			const panels = document.querySelectorAll('.tema-panel');
+			const tabs = document.querySelectorAll('.tema-tab');
 
+			const tabStyles = {
+				active: 'rounded-xl border-2 border-emerald-500 bg-emerald-50 px-3 py-2 text-left text-xs font-bold text-emerald-900 shadow-sm sm:text-sm',
+				inactive: 'rounded-xl border border-neutral-200 bg-white px-3 py-2 text-left text-xs font-medium text-neutral-700 hover:border-teal-300 sm:text-sm'
+			};
+
+			function showTema(n) {
+				const num = String(n);
+				panels.forEach((p) => {
+					const on = p.getAttribute('data-panel') === num;
+					p.classList.toggle('hidden', !on);
+					p.toggleAttribute('hidden', !on);
+				});
+				tabs.forEach((t) => {
+					const on = t.getAttribute('data-tema') === num;
+					t.setAttribute('aria-selected', on ? 'true' : 'false');
+					t.className = 'tema-tab ' + (on ? tabStyles.active : tabStyles.inactive);
+				});
+				try {
+					history.replaceState(null, '', '#tema-' + num);
+				} catch (e) {}
+			}
+
+			tabs.forEach((t) => {
+				t.addEventListener('click', () => showTema(t.getAttribute('data-tema')));
+			});
+
+			if (location.hash && /^#tema-[1-4]$/.test(location.hash)) {
+				showTema(location.hash.replace('#tema-', ''));
+			} else {
+				showTema('1');
+			}
+
+			/* ── Sopa de letras Tema 1 (horizontal y vertical; rejilla estable) ── */
+			/* Palabras del tema 1 — Jerarquía de normas y proceso contractual (GUÍA 1) */
+			const T1_WORDS = ['PIRAMIDE', 'NORMA', 'ETAPA', 'LEY', 'NIVEL', 'PACTO'];
+			const SOPA_ROWS = 10;
+			const SOPA_COLS = 14;
+			const ABC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 			function randLetter() {
 				return ABC[Math.floor(Math.random() * ABC.length)];
 			}
-
-			function crearGrilla() {
+			function emptyGrid() {
 				const g = [];
-				for (let r = 0; r < FILAS; r++) {
+				for (let r = 0; r < SOPA_ROWS; r++) {
 					const row = [];
-					for (let c = 0; c < COLS; c++) row.push({ ch: randLetter(), sol: false });
+					for (let c = 0; c < SOPA_COLS; c++) row.push({ ch: randLetter(), sol: false });
 					g.push(row);
 				}
 				return g;
 			}
-
-			function colocarPalabra(g, palabra) {
-				const limpia = palabra.replace(/\s/g, '').toUpperCase();
-				for (let intento = 0; intento < 80; intento++) {
-					const horiz = Math.random() < 0.5;
-					const r = Math.floor(Math.random() * FILAS);
-					const c = Math.floor(Math.random() * COLS);
-					let ok = true;
-					for (let i = 0; i < limpia.length; i++) {
-						const rr = horiz ? r : r + i;
-						const cc = horiz ? c + i : c;
-						if (rr >= FILAS || cc >= COLS) {
-							ok = false;
-							break;
-						}
-					}
-					if (!ok) continue;
-					for (let i = 0; i < limpia.length; i++) {
-						const rr = horiz ? r : r + i;
-						const cc = horiz ? c + i : c;
-						const cell = g[rr][cc];
-						if (cell.sol && cell.ch !== limpia[i]) {
-							ok = false;
-							break;
-						}
-					}
-					if (!ok) continue;
-					for (let i = 0; i < limpia.length; i++) {
-						const rr = horiz ? r : r + i;
-						const cc = horiz ? c + i : c;
-						g[rr][cc].ch = limpia[i];
-						g[rr][cc].sol = true;
-					}
-					return true;
+			function canPlace(g, w, horiz, r, c) {
+				for (let i = 0; i < w.length; i++) {
+					const rr = horiz ? r : r + i;
+					const cc = horiz ? c + i : c;
+					const cell = g[rr][cc];
+					if (cell.sol && cell.ch !== w[i]) return false;
 				}
-				return false;
+				return true;
 			}
-
-			function renderizar(g) {
-				const tabla = document.getElementById('sopa-tabla');
-				const palWrap = document.getElementById('sopa-palabras');
+			function applyPlace(g, w, horiz, r, c) {
+				const cells = [];
+				for (let i = 0; i < w.length; i++) {
+					const rr = horiz ? r : r + i;
+					const cc = horiz ? c + i : c;
+					g[rr][cc].ch = w[i];
+					g[rr][cc].sol = true;
+					cells.push([rr, cc]);
+				}
+				return cells;
+			}
+			function tryPlaceWord(g, word) {
+				const w = word.replace(/\s/g, '').toUpperCase();
+				if (w.length === 0) return null;
+				for (let t = 0; t < 400; t++) {
+					const horiz = Math.random() < 0.5;
+					let r, c;
+					if (horiz) {
+						r = Math.floor(Math.random() * SOPA_ROWS);
+						c = Math.floor(Math.random() * Math.max(1, SOPA_COLS - w.length + 1));
+					} else {
+						r = Math.floor(Math.random() * Math.max(1, SOPA_ROWS - w.length + 1));
+						c = Math.floor(Math.random() * SOPA_COLS);
+					}
+					if (canPlace(g, w, horiz, r, c)) {
+						const cells = applyPlace(g, w, horiz, r, c);
+						return { word: word, cells: cells };
+					}
+				}
+				return null;
+			}
+			function buildGrid() {
+				const order = [...T1_WORDS].sort((a, b) => b.length - a.length);
+				for (let attempt = 0; attempt < 80; attempt++) {
+					const g = emptyGrid();
+					const placements = [];
+					let ok = true;
+					for (const p of order) {
+						const res = tryPlaceWord(g, p);
+						if (!res) {
+							ok = false;
+							break;
+						}
+						placements.push(res);
+					}
+					if (ok) return { grid: g, placements: placements };
+				}
+				return { grid: emptyGrid(), placements: [] };
+			}
+			function renderSopa1(bundle, foundWords) {
+				const tabla = document.getElementById('t1-sopa-tabla');
+				const palWrap = document.getElementById('t1-sopa-palabras');
+				const g = bundle.grid;
+				const placements = bundle.placements;
+				if (!tabla || !palWrap) return;
 				tabla.innerHTML = '';
-				palWrap.innerHTML = PALABRAS.map((p) => `<span class="px-2 py-1 rounded-lg bg-white border border-amber-200 text-amber-900 text-xs font-semibold">${p}</span>`).join('');
-
-				for (let r = 0; r < FILAS; r++) {
+				palWrap.innerHTML = T1_WORDS.map((p) => {
+					const done = foundWords.has(p);
+					return (
+						'<span data-sopa-word="' +
+						p +
+						'" class="sopa-chip rounded-lg border border-amber-200 bg-white px-2 py-1 text-xs font-bold text-amber-900 ' +
+						(done ? 'sopa-chip-found' : '') +
+						'">' +
+						p +
+						'</span>'
+					);
+				}).join('');
+				for (let r = 0; r < SOPA_ROWS; r++) {
 					const tr = document.createElement('tr');
-					for (let c = 0; c < COLS; c++) {
+					for (let c = 0; c < SOPA_COLS; c++) {
 						const td = document.createElement('td');
 						td.className = 'sopa-celda';
 						td.textContent = g[r][c].ch;
+						td.dataset.r = String(r);
+						td.dataset.c = String(c);
 						if (g[r][c].sol) td.dataset.sol = '1';
+						const isFoundCell = placements.some(
+							(pl) => foundWords.has(pl.word) && pl.cells.some((x) => x[0] === r && x[1] === c)
+						);
+						if (isFoundCell) td.classList.add('sopa-found');
 						tr.appendChild(td);
 					}
 					tabla.appendChild(tr);
 				}
-			}
-
-			function generarConPalabras() {
-				const ordenadas = [...PALABRAS].sort((a, b) => b.length - a.length);
-				for (let attempt = 0; attempt < 400; attempt++) {
-					const g = crearGrilla();
-					let ok = true;
-					for (const p of ordenadas) {
-						if (!colocarPalabra(g, p)) {
-							ok = false;
-							break;
-						}
-					}
-					if (ok) return g;
+				function getTd(rr, cc) {
+					const row = tabla.rows[rr];
+					return row ? row.cells[cc] : null;
 				}
-				return crearGrilla();
+				function cellMarked(cell) {
+					return (
+						cell &&
+						(cell.classList.contains('sopa-pick') || cell.classList.contains('sopa-found'))
+					);
+				}
+				function checkWords() {
+					placements.forEach((pl) => {
+						if (foundWords.has(pl.word)) return;
+						const ok = pl.cells.every(([rr, cc]) => cellMarked(getTd(rr, cc)));
+						if (ok) {
+							foundWords.add(pl.word);
+							pl.cells.forEach(([rr, cc]) => {
+								const cell = getTd(rr, cc);
+								if (cell) {
+									cell.classList.remove('sopa-pick');
+									cell.classList.add('sopa-found');
+								}
+							});
+							const chip = palWrap.querySelector('[data-sopa-word="' + pl.word + '"]');
+							if (chip) chip.classList.add('sopa-chip-found');
+						}
+					});
+					if (foundWords.size === T1_WORDS.length) {
+						const el = document.getElementById('t1-sopa-complete');
+						if (el) el.classList.remove('hidden');
+					}
+				}
+				tabla.querySelectorAll('.sopa-celda').forEach((td) => {
+					td.addEventListener('click', function () {
+						if (this.classList.contains('sopa-found')) return;
+						this.classList.toggle('sopa-pick');
+						checkWords();
+					});
+				});
+			}
+			function toggleT1(on) {
+				document.querySelectorAll('#t1-sopa-tabla .sopa-celda').forEach((td) => {
+					if (td.dataset.sol === '1') td.classList.toggle('sol', on);
+				});
+			}
+			function initT1() {
+				const b1 = document.getElementById('t1-sopa-sol');
+				const b2 = document.getElementById('t1-sopa-hide');
+				const b3 = document.getElementById('t1-sopa-new');
+				const bClear = document.getElementById('t1-sopa-clear-pick');
+				if (!b1 || !b2 || !b3 || !bClear || b1.dataset.bound === '1') return;
+				b1.dataset.bound = '1';
+				let foundWords = new Set();
+				let currentBundle = { grid: [], placements: [] };
+				function paint() {
+					toggleT1(false);
+					foundWords = new Set();
+					const doneEl = document.getElementById('t1-sopa-complete');
+					if (doneEl) doneEl.classList.add('hidden');
+					currentBundle = buildGrid();
+					renderSopa1(currentBundle, foundWords);
+				}
+				paint();
+				b1.addEventListener('click', () => toggleT1(true));
+				b2.addEventListener('click', () => toggleT1(false));
+				bClear.addEventListener('click', () => {
+					document.querySelectorAll('#t1-sopa-tabla .sopa-pick').forEach((td) => td.classList.remove('sopa-pick'));
+				});
+				b3.addEventListener('click', paint);
 			}
 
-			function nuevaSopa() {
-				renderizar(generarConPalabras());
+			/* ── Relaciona Tema 2 ── */
+			const PAIRS = [
+				['TVEC', 'Tienda Virtual del Estado'],
+				['SECOP II', 'Contratación pública en línea'],
+				['AMP', 'Acuerdo Marco de Precios'],
+				['Pliego', 'Reglas del proceso de selección'],
+			];
+			function initT2() {
+				const root = document.getElementById('t2-match-root');
+				const status = document.getElementById('t2-match-status');
+				if (!root || root.dataset.ready === '1') return;
+				root.dataset.ready = '1';
+				const left = PAIRS.map((p, i) => ({ id: i, label: p[0], done: false }));
+				const right = PAIRS.map((p, i) => ({ id: i, label: p[1], done: false })).sort(() => Math.random() - 0.5);
+				let selected = null;
+				let found = 0;
+				function render() {
+					root.innerHTML = '';
+					const colA = document.createElement('div');
+					const colB = document.createElement('div');
+					colA.className = 'space-y-2';
+					colB.className = 'space-y-2';
+					const h = (t) => {
+						const p = document.createElement('p');
+						p.className = 'text-xs font-bold uppercase text-violet-600';
+						p.textContent = t;
+						return p;
+					};
+					colA.appendChild(h('Columna A'));
+					colB.appendChild(h('Columna B'));
+					left.forEach((item) => {
+						if (item.done) return;
+						const b = document.createElement('button');
+						b.type = 'button';
+						b.className = 'match-card w-full bg-violet-100 text-violet-900';
+						b.textContent = item.label;
+						b.dataset.side = 'L';
+						b.dataset.id = String(item.id);
+						b.addEventListener('click', onPick);
+						colA.appendChild(b);
+					});
+					right.forEach((item) => {
+						if (item.done) return;
+						const b = document.createElement('button');
+						b.type = 'button';
+						b.className = 'match-card w-full bg-fuchsia-100 text-fuchsia-900';
+						b.textContent = item.label;
+						b.dataset.side = 'R';
+						b.dataset.id = String(item.id);
+						b.addEventListener('click', onPick);
+						colB.appendChild(b);
+					});
+					root.appendChild(colA);
+					root.appendChild(colB);
+				}
+				function onPick(ev) {
+					const btn = ev.currentTarget;
+					if (!selected) {
+						selected = btn;
+						btn.classList.add('selected');
+						return;
+					}
+					if (selected === btn) {
+						selected.classList.remove('selected');
+						selected = null;
+						return;
+					}
+					if (selected.dataset.side === btn.dataset.side) {
+						selected.classList.remove('selected');
+						selected = btn;
+						btn.classList.add('selected');
+						return;
+					}
+					const idA = selected.dataset.side === 'L' ? +selected.dataset.id : +btn.dataset.id;
+					const idB = selected.dataset.side === 'R' ? +selected.dataset.id : +btn.dataset.id;
+					selected.classList.remove('selected');
+					selected = null;
+					if (idA === idB) {
+						left.find((x) => x.id === idA).done = true;
+						right.find((x) => x.id === idB).done = true;
+						found++;
+						status.textContent = 'Pares encontrados: ' + found + ' / 4';
+						render();
+					}
+				}
+				render();
 			}
 
-			function toggleSol(mostrar) {
-				document.querySelectorAll('.sopa-celda').forEach((td) => {
-					if (td.dataset.sol === '1') td.classList.toggle('sol', mostrar);
+			/* ── Carrusel V/F Tema 3 (una afirmación por pantalla) ── */
+			const T3_VF = [
+				{ q: 'El Código Civil regula principalmente relaciones entre particulares.', a: true },
+				{ q: 'Ser eficiente implica siempre ignorar el costo de los recursos.', a: false },
+				{ q: 'La ética reflexiona de forma crítica sobre principios morales.', a: true }
+			];
+			function initT3() {
+				const root = document.getElementById('t3-carousel-root');
+				const scoreEl = document.getElementById('t3-carousel-score');
+				if (!root || root.dataset.ready === '1') return;
+				root.dataset.ready = '1';
+				let idx = 0;
+				let ok = 0;
+				function render() {
+					if (scoreEl) scoreEl.textContent = '';
+					if (idx >= T3_VF.length) {
+						root.innerHTML =
+							'<p class="text-sm font-semibold text-cyan-900">Resultado: ' +
+							ok +
+							' / ' +
+							T3_VF.length +
+							' correctas.</p><button type="button" id="t3vf-retry" class="mt-3 rounded-xl bg-cyan-600 px-4 py-2 text-sm font-bold text-white">Repetir</button>';
+						document.getElementById('t3vf-retry').addEventListener('click', () => {
+							idx = 0;
+							ok = 0;
+							render();
+						});
+						return;
+					}
+					const item = T3_VF[idx];
+					let answered = false;
+					root.innerHTML =
+						'<p class="text-xs font-bold text-cyan-700">Pregunta ' +
+						(idx + 1) +
+						' / ' +
+						T3_VF.length +
+						'</p><p class="mt-2 text-sm font-medium text-neutral-900">' +
+						item.q +
+						'</p><div class="mt-4 flex flex-wrap gap-2"><button type="button" class="t3vf-b rounded-lg bg-emerald-600 px-4 py-2 text-sm font-bold text-white hover:bg-emerald-700" data-v="1">Verdadero</button><button type="button" class="t3vf-b rounded-lg border border-cyan-300 bg-white px-4 py-2 text-sm font-bold text-cyan-900 hover:bg-cyan-50" data-v="0">Falso</button></div><p id="t3vf-fb" class="mt-3 hidden text-sm font-semibold"></p><button type="button" id="t3vf-next" class="mt-2 hidden rounded-xl bg-cyan-600 px-4 py-2 text-sm font-bold text-white">Siguiente</button>';
+					const fb = document.getElementById('t3vf-fb');
+					const next = document.getElementById('t3vf-next');
+					root.querySelectorAll('.t3vf-b').forEach((b) => {
+						b.addEventListener('click', () => {
+							if (answered) return;
+							answered = true;
+							const v = b.dataset.v === '1';
+							const right = item.a === v;
+							if (right) ok++;
+							fb.classList.remove('hidden');
+							fb.textContent = right ? 'Correcto.' : 'Revisa el subtema correspondiente arriba.';
+							fb.className = 'mt-3 text-sm font-semibold ' + (right ? 'text-emerald-700' : 'text-rose-600');
+							root.querySelectorAll('.t3vf-b').forEach((x) => (x.disabled = true));
+							next.classList.remove('hidden');
+						});
+					});
+					next.addEventListener('click', () => {
+						idx++;
+						render();
+					});
+				}
+				render();
+			}
+
+			/* ── Mini test Tema 4 (una pregunta, auto-avance) ── */
+			const T4_MCQ = [
+				{
+					q: 'El licenciamiento de software permite usar el programa sin:',
+					opts: ['Ceder la propiedad intelectual', 'Cumplir el pliego de condiciones', 'Registrar obligatoriamente en SECOP'],
+					ok: 0
+				},
+				{
+					q: 'Quien ejecuta el servicio u obra frente a contraprestación suele ser:',
+					opts: ['El contratante', 'El contratista', 'El garante'],
+					ok: 1
+				},
+				{
+					q: 'La cesión del contrato, en términos generales, requiere:',
+					opts: ['Solo publicar en la TVEC', 'Consentimiento de la contraparte', 'Anuncio en medios masivos'],
+					ok: 1
+				}
+			];
+			function initT4() {
+				const root = document.getElementById('t4-mcq-root');
+				if (!root || root.dataset.ready === '1') return;
+				root.dataset.ready = '1';
+				let i = 0;
+				let score = 0;
+				function render() {
+					if (i >= T4_MCQ.length) {
+						root.innerHTML =
+							'<p class="text-sm font-semibold text-indigo-900">Puntuación: ' +
+							score +
+							' / ' +
+							T4_MCQ.length +
+							'</p><button type="button" id="t4-retry" class="mt-3 rounded-xl bg-indigo-600 px-4 py-2 text-sm font-bold text-white">Repetir</button>';
+						document.getElementById('t4-retry').addEventListener('click', () => {
+							i = 0;
+							score = 0;
+							render();
+						});
+						return;
+					}
+					const item = T4_MCQ[i];
+					const optsHtml = item.opts
+						.map(
+							(o, j) =>
+								`<button type="button" class="t4o mb-2 w-full rounded-lg border border-indigo-200 bg-white px-3 py-2 text-left text-sm text-neutral-800 hover:bg-indigo-50" data-j="${j}">${o}</button>`
+						)
+						.join('');
+					root.innerHTML =
+						'<p class="text-xs font-bold text-indigo-700">' +
+						(i + 1) +
+						' / ' +
+						T4_MCQ.length +
+						'</p><p class="mt-2 text-sm font-medium text-neutral-900">' +
+						item.q +
+						'</p><div class="mt-3">' +
+						optsHtml +
+						'</div><p id="t4o-fb" class="mt-2 min-h-[1.25rem] text-xs font-semibold"></p>';
+					root.querySelectorAll('.t4o').forEach((btn) => {
+						btn.addEventListener('click', () => {
+							if (root.querySelector('.t4o[disabled]')) return;
+							const j = +btn.dataset.j;
+							const right = j === item.ok;
+							if (right) score++;
+							const fb = document.getElementById('t4o-fb');
+							fb.textContent = right ? 'Correcto.' : 'Revisa el subtema correspondiente arriba.';
+							fb.className = 'mt-2 text-xs font-semibold ' + (right ? 'text-emerald-700' : 'text-rose-600');
+							root.querySelectorAll('.t4o').forEach((b) => (b.disabled = true));
+							window.setTimeout(() => {
+								i++;
+								render();
+							}, 550);
+						});
+					});
+				}
+				render();
+			}
+
+			function initSubtemaTabs(panelId, prefix, activeCls, inactiveCls) {
+				const sec = document.getElementById(panelId);
+				if (!sec || sec.dataset.subready === '1') return;
+				sec.dataset.subready = '1';
+				const btns = sec.querySelectorAll('.' + prefix + '-sub-btn');
+				const panels = sec.querySelectorAll('.' + prefix + '-sub-panel');
+				btns.forEach((btn) => {
+					btn.addEventListener('click', () => {
+						const n = btn.getAttribute('data-sub');
+						btns.forEach((b) => {
+							const on = b.getAttribute('data-sub') === n;
+							b.setAttribute('aria-selected', on ? 'true' : 'false');
+							b.className = prefix + '-sub-btn ' + (on ? activeCls : inactiveCls);
+						});
+						panels.forEach((p) => {
+							const show = p.id === prefix + '-sub-' + n;
+							p.classList.toggle('hidden', !show);
+						});
+					});
 				});
 			}
 
-			function initSopa() {
-				document.getElementById('sopa-solucion').addEventListener('click', () => toggleSol(true));
-				document.getElementById('sopa-ocultar').addEventListener('click', () => toggleSol(false));
-				nuevaSopa();
+			function onPanelVisible() {
+				initT1();
+				initT2();
+				initT3();
+				initT4();
+				initSubtemaTabs(
+					'panel-tema-2',
+					't2',
+					'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-teal-600',
+					'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-teal-900 border-teal-100 hover:bg-teal-50'
+				);
+				initSubtemaTabs(
+					'panel-tema-3',
+					't3',
+					'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-cyan-600 to-sky-600 text-white border-cyan-600',
+					'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-cyan-900 border-cyan-100 hover:bg-cyan-50'
+				);
+				initSubtemaTabs(
+					'panel-tema-4',
+					't4',
+					'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-indigo-600 to-violet-600 text-white border-indigo-600',
+					'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-indigo-900 border-indigo-100 hover:bg-indigo-50'
+				);
 			}
-			if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initSopa);
-			else initSopa();
+
+			function boot() {
+				onPanelVisible();
+				window.addEventListener('hashchange', () => {
+					if (location.hash && /^#tema-[1-4]$/.test(location.hash)) {
+						showTema(location.hash.replace('#tema-', ''));
+					}
+				});
+			}
+			if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+			else boot();
 		})();
 	</script>
 </Page>
