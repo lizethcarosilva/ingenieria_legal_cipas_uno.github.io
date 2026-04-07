@@ -1,4 +1,6 @@
 ---
+import FlipCards, { type FlipCardItem } from './FlipCards.astro';
+
 interface Props {
 	seccion: 'licencia' | 'partes' | 'autor';
 }
@@ -8,80 +10,120 @@ const { seccion } = Astro.props;
 
 {
 	seccion === 'licencia' && (
-		<div class="mt-6 space-y-5 border-t border-indigo-100 pt-5 text-sm leading-relaxed text-neutral-800">
-			<p class="text-xs sm:text-sm">
-				El <strong>contrato de licenciamiento de software</strong> permite que el titular (licenciante) conceda una autorización de uso a un tercero (licenciatario), generalmente a cambio de un precio o canon, o en algunos casos de forma gratuita, <strong>sin transferir la titularidad</strong> del derecho de autor.
-			</p>
-			<div>
-				<h4 class="text-base font-bold text-indigo-900">Tipos de licencia de software</h4>
-				<p class="mt-2 text-xs sm:text-sm">
-					La licencia puede ser <strong>exclusiva o no exclusiva</strong>: si es exclusiva, el licenciante no podrá licenciar a otros; el licenciatario puede tener facultades de explotación única. La licencia puede ser <strong>transferible o no</strong> (posibilidad de sublicenciar).
-				</p>
-				<p class="mt-3 text-xs sm:text-sm">
-					Lo más habitual en el mercado es la licencia <strong>no exclusiva e intransferible</strong>: el licenciante puede otorgar licencias a otros usuarios y el licenciatario no puede sublicenciar.
-				</p>
+		<div class="mt-6 border-t border-indigo-100 pt-5">
+			<FlipCards
+				theme="indigo"
+				title="Licenciamiento (idea central)"
+				items={[
+					{
+						id: 't4-core',
+						badge: 'Concepto',
+						frontTitle: 'Licenciamiento de software',
+						frontSubtitle: 'Uso sin transferir titularidad',
+						backBody:
+							'El titular (licenciante) concede autorización de uso al licenciatario, usualmente a cambio de precio o canon, sin transferir la propiedad intelectual.',
+					},
+					{
+						id: 't4-types',
+						badge: 'Tipos',
+						frontTitle: 'Exclusiva / no exclusiva',
+						frontSubtitle: '¿Licencia única?',
+						backBody:
+							'Exclusiva: el licenciante no otorga licencias a otros. No exclusiva: puede licenciar a varios usuarios.',
+					},
+					{
+						id: 't4-transfer',
+						badge: 'Tipos',
+						frontTitle: 'Transferible / no',
+						frontSubtitle: '¿Puede sublicenciar?',
+						backBody:
+							'Transferible: el licenciatario puede ceder o sublicenciar (según contrato). No transferible: se restringe a quien recibe la licencia.',
+					},
+					{
+						id: 't4-common',
+						badge: 'Frecuente',
+						frontTitle: 'Más común',
+						frontSubtitle: 'No exclusiva + no transferible',
+						backBody:
+							'Lo habitual: licenciante puede licenciar a otros; licenciatario no puede sublicenciar.',
+					},
+				] satisfies FlipCardItem[]}
+			/>
+
+			<div class="mt-5">
+				<FlipCards
+					theme="violet"
+					title="Licencia vs. cesión vs. desarrollo"
+					columns={3}
+					items={[
+						{
+							id: 't4-cesion',
+							badge: 'Contrato',
+							frontTitle: 'Cesión de software',
+							frontSubtitle: 'Transfiere titularidad',
+							backBody: 'El cedente transmite la titularidad/propiedad del software al cesionario a cambio de precio.',
+						},
+						{
+							id: 't4-lic',
+							badge: 'Contrato',
+							frontTitle: 'Licencia de software',
+							frontSubtitle: 'Transfiere uso',
+							backBody: 'Se concede un derecho de uso; el licenciante conserva la titularidad.',
+						},
+						{
+							id: 't4-dev',
+							badge: 'Contrato',
+							frontTitle: 'Desarrollo de software',
+							frontSubtitle: 'Crea o adapta',
+							backBody: 'El desarrollador elabora software según instrucciones o necesidades específicas del cliente.',
+						},
+					] satisfies FlipCardItem[]}
+				/>
 			</div>
-			<div class="rounded-xl border border-violet-200 bg-violet-50/50 p-4">
-				<h4 class="font-bold text-violet-900">Contrato de cesión de software</h4>
-				<p class="mt-2 text-xs sm:text-sm">
-					Acuerdo por el cual el desarrollador o titular (cedente) transmite al cesionario la <strong>titularidad o propiedad</strong> sobre el software, a cambio de un precio.
-				</p>
-			</div>
-			<div class="rounded-xl border border-indigo-200 bg-indigo-50/40 p-4">
-				<h4 class="font-bold text-indigo-900">Contrato de licencia de software (uso)</h4>
-				<p class="mt-2 text-xs sm:text-sm">
-					No se transmite la propiedad del software: solo se otorga un <strong>derecho de uso</strong> a favor de un tercero. El licenciante conserva la titularidad.
-				</p>
-			</div>
-			<div class="grid gap-4 md:grid-cols-2">
-				<div class="rounded-xl border border-slate-200 p-3">
-					<h4 class="text-sm font-bold text-indigo-900">Contrato de desarrollo de software</h4>
-					<p class="mt-2 text-xs text-neutral-700">
-						Objeto: que un desarrollador elabore software según instrucciones o necesidades específicas del cliente.
-					</p>
-				</div>
-				<div class="rounded-xl border border-slate-200 p-3">
-					<h4 class="text-sm font-bold text-indigo-900">Contrato de licencia de software</h4>
-					<p class="mt-2 text-xs text-neutral-700">
-						Objeto: ceder el <strong>uso</strong> de un software ya existente a cambio de precio o canon; no implica crear un software a medida.
-					</p>
-				</div>
-			</div>
-			<p class="text-xs font-medium text-indigo-800">¿Cuál es la principal diferencia?</p>
-			<p class="text-xs text-neutral-700">
-				El desarrollo crea o adapta el producto; la licencia autoriza el uso de un producto ya existente sin transferir la titularidad del derecho de autor.
-			</p>
-			<div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
-				<table class="min-w-full text-left text-xs sm:text-sm">
-					<thead class="bg-slate-100">
-						<tr>
-							<th class="px-3 py-2 font-semibold">Tipo</th>
-							<th class="px-3 py-2 font-semibold">Descripción</th>
-						</tr>
-					</thead>
-					<tbody class="divide-y divide-slate-100 text-neutral-700">
-						<tr>
-							<td class="px-3 py-2 font-medium">Propietaria</td>
-							<td class="px-3 py-2">Uso limitado según contrato; sin modificar ni distribuir libremente.</td>
-						</tr>
-						<tr>
-							<td class="px-3 py-2 font-medium">Freeware</td>
-							<td class="px-3 py-2">Uso gratuito; sin acceso al código fuente.</td>
-						</tr>
-						<tr>
-							<td class="px-3 py-2 font-medium">Shareware</td>
-							<td class="px-3 py-2">Prueba gratuita por tiempo limitado; luego pago.</td>
-						</tr>
-						<tr>
-							<td class="px-3 py-2 font-medium">Software libre (open source)</td>
-							<td class="px-3 py-2">Permite ver, modificar y distribuir el código bajo condiciones de la licencia.</td>
-						</tr>
-						<tr>
-							<td class="px-3 py-2 font-medium">Licencias personalizadas</td>
-							<td class="px-3 py-2">Adaptadas a necesidades específicas del cliente.</td>
-						</tr>
-					</tbody>
-				</table>
+
+			<div class="mt-5">
+				<FlipCards
+					theme="indigo"
+					title="Tipos de licencias"
+					columns={3}
+					items={[
+						{
+							id: 't4-lic-prop',
+							badge: 'Licencia',
+							frontTitle: 'Propietaria',
+							frontSubtitle: 'Uso limitado',
+							backBody: 'Uso según contrato; no permite modificar ni distribuir libremente.',
+						},
+						{
+							id: 't4-lic-free',
+							badge: 'Licencia',
+							frontTitle: 'Freeware',
+							frontSubtitle: 'Gratis',
+							backBody: 'Uso gratuito, generalmente sin acceso al código fuente.',
+						},
+						{
+							id: 't4-lic-share',
+							badge: 'Licencia',
+							frontTitle: 'Shareware',
+							frontSubtitle: 'Prueba',
+							backBody: 'Uso gratuito por tiempo limitado; luego requiere pago.',
+						},
+						{
+							id: 't4-lic-oss',
+							badge: 'Licencia',
+							frontTitle: 'Open source',
+							frontSubtitle: 'Código disponible',
+							backBody: 'Permite ver, modificar y distribuir el código bajo condiciones de la licencia.',
+						},
+						{
+							id: 't4-lic-custom',
+							badge: 'Licencia',
+							frontTitle: 'Personalizada',
+							frontSubtitle: 'A medida',
+							backBody: 'Adaptada a necesidades específicas del cliente (usuarios, sedes, soporte, etc.).',
+						},
+					] satisfies FlipCardItem[]}
+				/>
 			</div>
 		</div>
 	)
@@ -89,20 +131,76 @@ const { seccion } = Astro.props;
 
 {
 	seccion === 'partes' && (
-		<div class="mt-6 border-t border-indigo-100 pt-5 text-sm leading-relaxed text-neutral-800">
-			<p class="text-xs sm:text-sm">
-				El <strong>contratante</strong> encarga la prestación o entrega; el <strong>contratista</strong> ejecuta. La <strong>cesión del contrato</strong> traslada la posición contractual con consentimiento de la contraparte cuando corresponda (C. Com. art. 887 y normas especiales).
-			</p>
+		<div class="mt-6 border-t border-indigo-100 pt-5">
+			<FlipCards
+				theme="indigo"
+				title="Partes y figura clave"
+				items={[
+					{
+						id: 't4-contratante',
+						badge: 'Parte',
+						frontTitle: 'Contratante',
+						frontSubtitle: 'Necesidad y pago',
+						backBody: 'Encarga la prestación o entrega y suscribe el contrato para satisfacer una necesidad.',
+					},
+					{
+						id: 't4-contratista',
+						badge: 'Parte',
+						frontTitle: 'Contratista',
+						frontSubtitle: 'Ejecución',
+						backBody: 'Se obliga a ejecutar la prestación (obra/servicio/suministro) a cambio de remuneración.',
+					},
+					{
+						id: 't4-cesion',
+						badge: 'Figura',
+						frontTitle: 'Cesión del contrato',
+						frontSubtitle: 'Traslado de posición',
+						backBody: 'Transfiere derechos y obligaciones a un tercero; suele requerir consentimiento de la contraparte.',
+					},
+				] satisfies FlipCardItem[]}
+			/>
 		</div>
 	)
 }
 
 {
 	seccion === 'autor' && (
-		<div class="mt-6 border-t border-indigo-100 pt-5 text-sm leading-relaxed text-neutral-800">
-			<p class="text-xs sm:text-sm">
-				El <strong>derecho de autor</strong> protege la obra; el <strong>licenciamiento</strong> es el instrumento habitual para autorizar explotación sin ceder la titularidad. Las figuras de <strong>interventor, supervisor y garante</strong> aportan supervisión y afianzamiento en contratos estatales según pliego y normativa aplicable.
-			</p>
+		<div class="mt-6 border-t border-indigo-100 pt-5">
+			<FlipCards
+				theme="indigo"
+				title="Autor y control"
+				columns={3}
+				items={[
+					{
+						id: 't4-da',
+						badge: 'Derecho',
+						frontTitle: 'Derecho de autor',
+						frontSubtitle: 'Protege la obra',
+						backBody: 'Reconoce derechos morales (paternidad, integridad) y patrimoniales (explotación) sobre el software.',
+					},
+					{
+						id: 't4-int',
+						badge: 'Rol',
+						frontTitle: 'Interventor',
+						frontSubtitle: 'Supervisión integral',
+						backBody: 'Verifica cumplimiento técnico, administrativo, financiero, contable y jurídico del contrato (según encargo).',
+					},
+					{
+						id: 't4-sup',
+						badge: 'Rol',
+						frontTitle: 'Supervisor',
+						frontSubtitle: 'Seguimiento',
+						backBody: 'Servidor designado para seguimiento del cumplimiento del objeto contractual.',
+					},
+					{
+						id: 't4-gar',
+						badge: 'Rol',
+						frontTitle: 'Garante',
+						frontSubtitle: 'Afianza obligaciones',
+						backBody: 'Responde por obligaciones ante incumplimiento, usualmente mediante garantías/pólizas.',
+					},
+				] satisfies FlipCardItem[]}
+			/>
 		</div>
 	)
 }

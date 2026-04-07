@@ -1,0 +1,218 @@
+---
+export type FlipCardItem = {
+	id: string;
+	frontTitle: string;
+	frontSubtitle?: string;
+	backTitle?: string;
+	backBody: string;
+	badge?: string;
+};
+
+interface Props {
+	title?: string;
+	items: FlipCardItem[];
+	columns?: 2 | 3;
+	theme?: 'teal' | 'cyan' | 'indigo' | 'violet' | 'slate';
+	helperText?: string;
+}
+
+const { title, items, columns = 2, theme = 'slate', helperText } = Astro.props;
+
+const themeVars =
+	theme === 'teal'
+		? {
+				accent: 'rgba(13, 148, 136, 1)',
+				accentSoft: 'rgba(13, 148, 136, 0.12)',
+				border: 'rgba(13, 148, 136, 0.18)',
+			}
+		: theme === 'cyan'
+			? {
+					accent: 'rgba(8, 145, 178, 1)',
+					accentSoft: 'rgba(8, 145, 178, 0.12)',
+					border: 'rgba(8, 145, 178, 0.18)',
+				}
+			: theme === 'indigo'
+				? {
+						accent: 'rgba(79, 70, 229, 1)',
+						accentSoft: 'rgba(79, 70, 229, 0.12)',
+						border: 'rgba(79, 70, 229, 0.18)',
+					}
+				: theme === 'violet'
+					? {
+							accent: 'rgba(124, 58, 237, 1)',
+							accentSoft: 'rgba(124, 58, 237, 0.12)',
+							border: 'rgba(124, 58, 237, 0.18)',
+						}
+					: {
+							accent: 'rgba(15, 23, 42, 1)',
+							accentSoft: 'rgba(15, 23, 42, 0.06)',
+							border: 'rgba(15, 23, 42, 0.14)',
+						};
+---
+
+<section class="flip-wrap" style={`--flip-accent:${themeVars.accent};--flip-soft:${themeVars.accentSoft};--flip-border:${themeVars.border};`}>
+	{title && <h4 class="flip-title">{title}</h4>}
+	{helperText && <p class="flip-help">{helperText}</p>}
+	<div class:list={['flip-grid', columns === 3 ? 'cols-3' : 'cols-2']}>
+		{
+			items.map((it) => (
+				<label class="flip-card" for={`flip-${it.id}`}>
+					<input id={`flip-${it.id}`} class="flip-toggle" type="checkbox" />
+					<div class="flip-inner" role="group" aria-label={it.frontTitle}>
+						<div class="flip-face flip-front">
+							{it.badge && <span class="flip-badge">{it.badge}</span>}
+							<p class="flip-front-title">{it.frontTitle}</p>
+							{it.frontSubtitle && <p class="flip-front-sub">{it.frontSubtitle}</p>}
+							<p class="flip-hint">Girar</p>
+						</div>
+						<div class="flip-face flip-back">
+							<p class="flip-back-title">{it.backTitle ?? it.frontTitle}</p>
+							<p class="flip-back-body">{it.backBody}</p>
+							<p class="flip-hint">Volver</p>
+						</div>
+					</div>
+				</label>
+			))
+		}
+	</div>
+</section>
+
+<style>
+	.flip-wrap {
+		--flip-radius: 18px;
+		--flip-shadow: 0 18px 35px -22px rgba(15, 23, 42, 0.35);
+	}
+	.flip-title {
+		margin: 0;
+		font-size: 0.95rem;
+		font-weight: 800;
+		letter-spacing: 0.02em;
+		color: color-mix(in srgb, var(--flip-accent) 85%, black 15%);
+	}
+	.flip-help {
+		margin: 0.35rem 0 0;
+		font-size: 0.8rem;
+		color: rgba(82, 82, 91, 1);
+	}
+	.flip-grid {
+		margin-top: 0.9rem;
+		display: grid;
+		gap: 0.85rem;
+	}
+	.flip-grid.cols-2 {
+		grid-template-columns: 1fr;
+	}
+	.flip-grid.cols-3 {
+		grid-template-columns: 1fr;
+	}
+	@media (min-width: 720px) {
+		.flip-grid.cols-2 {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+		.flip-grid.cols-3 {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+
+	.flip-card {
+		display: block;
+		cursor: pointer;
+		perspective: 1200px;
+	}
+	.flip-toggle {
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+	}
+	.flip-inner {
+		position: relative;
+		min-height: 142px;
+		transform-style: preserve-3d;
+		transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+	}
+	.flip-card:hover .flip-inner {
+		transform: rotateY(180deg);
+	}
+	.flip-toggle:checked + .flip-inner {
+		transform: rotateY(180deg);
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.flip-inner {
+			transition: none;
+		}
+		.flip-card:hover .flip-inner {
+			transform: none;
+		}
+		.flip-toggle:checked + .flip-inner {
+			transform: none;
+		}
+	}
+
+	.flip-face {
+		position: absolute;
+		inset: 0;
+		border-radius: var(--flip-radius);
+		border: 1px solid var(--flip-border);
+		box-shadow: var(--flip-shadow);
+		backface-visibility: hidden;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 0.4rem;
+		padding: 1rem 1rem 0.95rem;
+	}
+	.flip-front {
+		background: linear-gradient(135deg, var(--flip-soft), rgba(255, 255, 255, 0.92) 55%, rgba(255, 255, 255, 1));
+	}
+	.flip-back {
+		background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.9));
+		transform: rotateY(180deg);
+	}
+	.flip-badge {
+		align-self: flex-start;
+		border-radius: 999px;
+		padding: 0.18rem 0.5rem;
+		font-size: 0.65rem;
+		font-weight: 800;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: white;
+		background: var(--flip-accent);
+		box-shadow: 0 12px 20px -14px color-mix(in srgb, var(--flip-accent) 50%, black 50%);
+	}
+	.flip-front-title {
+		margin: 0;
+		font-size: 0.98rem;
+		font-weight: 900;
+		letter-spacing: -0.01em;
+		color: rgba(3, 7, 18, 0.92);
+	}
+	.flip-front-sub {
+		margin: 0;
+		font-size: 0.78rem;
+		line-height: 1.35;
+		color: rgba(63, 63, 70, 1);
+	}
+	.flip-back-title {
+		margin: 0;
+		font-size: 0.85rem;
+		font-weight: 900;
+		color: color-mix(in srgb, var(--flip-accent) 80%, black 20%);
+	}
+	.flip-back-body {
+		margin: 0;
+		font-size: 0.78rem;
+		line-height: 1.4;
+		color: rgba(39, 39, 42, 1);
+	}
+	.flip-hint {
+		margin: 0.15rem 0 0;
+		font-size: 0.65rem;
+		font-weight: 800;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: rgba(113, 113, 122, 1);
+	}
+</style>
+
