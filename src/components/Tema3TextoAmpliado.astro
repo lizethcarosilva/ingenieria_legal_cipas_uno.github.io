@@ -13,9 +13,18 @@ const { seccion } = Astro.props;
 		<div class="mt-6 border-t border-cyan-100 pt-5">
 			<FlipCards
 				theme="cyan"
-				title="Marco normativo (pública)"
+				title="Mapa · Marco normativo (pública)"
 				columns={3}
+				layout="map"
 				items={[
+					{
+						id: 't3-marco-hub',
+						badge: 'Mapa',
+						frontTitle: 'Marco normativo',
+						frontSubtitle: 'Reglas + principios',
+						backBody:
+							'Organiza normas legales y constitucionales para garantizar transparencia, eficiencia y legalidad en la contratación pública.',
+					},
 					{
 						id: 't3-80',
 						badge: 'Norma',
@@ -64,9 +73,18 @@ const { seccion } = Astro.props;
 			<div class="mt-5">
 				<FlipCards
 					theme="cyan"
-					title="Principios rectores"
+					title="Mapa · Principios rectores"
 					columns={3}
+					layout="map"
 					items={[
+						{
+							id: 't3-pr-hub',
+							badge: 'Mapa',
+							frontTitle: 'Principios rectores',
+							frontSubtitle: 'Transparencia y legalidad',
+							backBody:
+								'Guían la función administrativa y la contratación para asegurar uso correcto de recursos y selección justa.',
+						},
 						{ id: 't3-pr-mor', badge: 'Principio', frontTitle: 'Moralidad', frontSubtitle: 'Rectitud', backBody: 'Evita desviaciones hacia intereses particulares; coherencia con legalidad y lealtad.' },
 						{ id: 't3-pr-efi', badge: 'Principio', frontTitle: 'Eficacia', frontSubtitle: 'Metas', backBody: 'Capacidad de alcanzar metas y garantizar la adecuada prestación del servicio.' },
 						{ id: 't3-pr-cel', badge: 'Principio', frontTitle: 'Celeridad', frontSubtitle: 'Agilidad', backBody: 'Impulso diligente del procedimiento; evita trámites innecesarios.' },
@@ -80,7 +98,8 @@ const { seccion } = Astro.props;
 			<div class="mt-5">
 				<FlipCards
 					theme="cyan"
-					title="Fases (pública)"
+					title="Secuencia · Fases (pública)"
+					layout="sequence"
 					items={[
 						{
 							id: 't3-f-prep',
@@ -122,8 +141,9 @@ const { seccion } = Astro.props;
 		<div class="mt-6 border-t border-cyan-100 pt-5">
 			<FlipCards
 				theme="cyan"
-				title="Efectivo / eficaz / eficiente"
+				title="Línea · Triple E"
 				columns={3}
+				layout="timeline"
 				items={[
 					{
 						id: 't3-ee-efec',
@@ -157,8 +177,16 @@ const { seccion } = Astro.props;
 		<div class="mt-6 border-t border-cyan-100 pt-5">
 			<FlipCards
 				theme="cyan"
-				title="Ética y moral"
+				title="Mapa · Ética y moral"
+				layout="map"
 				items={[
+					{
+						id: 't3-em-hub',
+						badge: 'Mapa',
+						frontTitle: 'Integridad',
+						frontSubtitle: 'Más que cumplir',
+						backBody: 'Busca rectitud, transparencia y equidad en decisiones y conducta contractual.',
+					},
 					{
 						id: 't3-em-moral',
 						badge: 'Concepto',

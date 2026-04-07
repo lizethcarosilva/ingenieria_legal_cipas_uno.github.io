@@ -13,8 +13,16 @@ const { seccion } = Astro.props;
 		<div class="mt-6 border-t border-indigo-100 pt-5">
 			<FlipCards
 				theme="indigo"
-				title="Licenciamiento (idea central)"
+				title="Mapa · Licenciamiento (idea central)"
+				layout="map"
 				items={[
+					{
+						id: 't4-hub',
+						badge: 'Mapa',
+						frontTitle: 'Licencia de software',
+						frontSubtitle: 'Uso autorizado',
+						backBody: 'Nodo central: autoriza uso, define alcance (usuarios/tiempo/territorio) y condiciones.',
+					},
 					{
 						id: 't4-core',
 						badge: 'Concepto',
@@ -53,8 +61,9 @@ const { seccion } = Astro.props;
 			<div class="mt-5">
 				<FlipCards
 					theme="violet"
-					title="Licencia vs. cesión vs. desarrollo"
+					title="Secuencia · Licencia vs. cesión vs. desarrollo"
 					columns={3}
+					layout="sequence"
 					items={[
 						{
 							id: 't4-cesion',
@@ -84,8 +93,9 @@ const { seccion } = Astro.props;
 			<div class="mt-5">
 				<FlipCards
 					theme="indigo"
-					title="Tipos de licencias"
+					title="Línea · Tipos de licencias"
 					columns={3}
+					layout="timeline"
 					items={[
 						{
 							id: 't4-lic-prop',
@@ -134,7 +144,8 @@ const { seccion } = Astro.props;
 		<div class="mt-6 border-t border-indigo-100 pt-5">
 			<FlipCards
 				theme="indigo"
-				title="Partes y figura clave"
+				title="Secuencia · Partes y figura clave"
+				layout="sequence"
 				items={[
 					{
 						id: 't4-contratante',
@@ -168,9 +179,18 @@ const { seccion } = Astro.props;
 		<div class="mt-6 border-t border-indigo-100 pt-5">
 			<FlipCards
 				theme="indigo"
-				title="Autor y control"
+				title="Mapa · Autor y control"
 				columns={3}
+				layout="map"
 				items={[
+					{
+						id: 't4-ctrl-hub',
+						badge: 'Mapa',
+						frontTitle: 'Control contractual',
+						frontSubtitle: 'Seguimiento y garantías',
+						backBody:
+							'Integra protección de la obra (autor) con roles de supervisión e instrumentos de garantía frente a incumplimiento.',
+					},
 					{
 						id: 't4-da',
 						badge: 'Derecho',

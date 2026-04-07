@@ -14,9 +14,10 @@ interface Props {
 	columns?: 2 | 3;
 	theme?: 'teal' | 'cyan' | 'indigo' | 'violet' | 'slate';
 	helperText?: string;
+	layout?: 'grid' | 'sequence' | 'timeline' | 'map';
 }
 
-const { title, items, columns = 2, theme = 'slate', helperText } = Astro.props;
+const { title, items, columns = 2, theme = 'slate', helperText, layout = 'grid' } = Astro.props;
 
 const themeVars =
 	theme === 'teal'
@@ -50,12 +51,16 @@ const themeVars =
 						};
 ---
 
-<section class="flip-wrap" style={`--flip-accent:${themeVars.accent};--flip-soft:${themeVars.accentSoft};--flip-border:${themeVars.border};`}>
+<section
+	class:list={['flip-wrap', layout !== 'grid' ? `layout-${layout}` : '']}
+	style={`--flip-accent:${themeVars.accent};--flip-soft:${themeVars.accentSoft};--flip-border:${themeVars.border};`}
+>
 	{title && <h4 class="flip-title">{title}</h4>}
 	{helperText && <p class="flip-help">{helperText}</p>}
-	<div class:list={['flip-grid', columns === 3 ? 'cols-3' : 'cols-2']}>
-		{
-			items.map((it) => (
+
+	{layout === 'grid' && (
+		<div class:list={['flip-grid', columns === 3 ? 'cols-3' : 'cols-2']}>
+			{items.map((it) => (
 				<label class="flip-card" for={`flip-${it.id}`}>
 					<input id={`flip-${it.id}`} class="flip-toggle" type="checkbox" />
 					<div class="flip-inner" role="group" aria-label={it.frontTitle}>
@@ -72,9 +77,108 @@ const themeVars =
 						</div>
 					</div>
 				</label>
-			))
-		}
-	</div>
+			))}
+		</div>
+	)}
+
+	{layout === 'sequence' && (
+		<div class="flip-seq" role="list">
+			{items.map((it, idx) => (
+				<div class="flip-seq-item" role="listitem">
+					<label class="flip-card" for={`flip-${it.id}`}>
+						<input id={`flip-${it.id}`} class="flip-toggle" type="checkbox" />
+						<div class="flip-inner" role="group" aria-label={it.frontTitle}>
+							<div class="flip-face flip-front">
+								{it.badge && <span class="flip-badge">{it.badge}</span>}
+								<p class="flip-front-title">{it.frontTitle}</p>
+								{it.frontSubtitle && <p class="flip-front-sub">{it.frontSubtitle}</p>}
+								<p class="flip-hint">Girar</p>
+							</div>
+							<div class="flip-face flip-back">
+								<p class="flip-back-title">{it.backTitle ?? it.frontTitle}</p>
+								<p class="flip-back-body">{it.backBody}</p>
+								<p class="flip-hint">Volver</p>
+							</div>
+						</div>
+					</label>
+					{idx < items.length - 1 && <span class="flip-arrow" aria-hidden="true">→</span>}
+				</div>
+			))}
+		</div>
+	)}
+
+	{layout === 'timeline' && (
+		<div class="flip-tl" role="list">
+			{items.map((it) => (
+				<div class="flip-tl-row" role="listitem">
+					<span class="flip-tl-dot" aria-hidden="true" />
+					<label class="flip-card" for={`flip-${it.id}`}>
+						<input id={`flip-${it.id}`} class="flip-toggle" type="checkbox" />
+						<div class="flip-inner" role="group" aria-label={it.frontTitle}>
+							<div class="flip-face flip-front">
+								{it.badge && <span class="flip-badge">{it.badge}</span>}
+								<p class="flip-front-title">{it.frontTitle}</p>
+								{it.frontSubtitle && <p class="flip-front-sub">{it.frontSubtitle}</p>}
+								<p class="flip-hint">Girar</p>
+							</div>
+							<div class="flip-face flip-back">
+								<p class="flip-back-title">{it.backTitle ?? it.frontTitle}</p>
+								<p class="flip-back-body">{it.backBody}</p>
+								<p class="flip-hint">Volver</p>
+							</div>
+						</div>
+					</label>
+				</div>
+			))}
+		</div>
+	)}
+
+	{layout === 'map' && (
+		<div class="flip-map">
+			{items.length > 0 && (
+				<label class="flip-card map-hub" for={`flip-${items[0].id}`}>
+					<input id={`flip-${items[0].id}`} class="flip-toggle" type="checkbox" />
+					<div class="flip-inner" role="group" aria-label={items[0].frontTitle}>
+						<div class="flip-face flip-front">
+							{items[0].badge && <span class="flip-badge">{items[0].badge}</span>}
+							<p class="flip-front-title">{items[0].frontTitle}</p>
+							{items[0].frontSubtitle && <p class="flip-front-sub">{items[0].frontSubtitle}</p>}
+							<p class="flip-hint">Girar</p>
+						</div>
+						<div class="flip-face flip-back">
+							<p class="flip-back-title">{items[0].backTitle ?? items[0].frontTitle}</p>
+							<p class="flip-back-body">{items[0].backBody}</p>
+							<p class="flip-hint">Volver</p>
+						</div>
+					</div>
+				</label>
+			)}
+
+			<div class="map-leaves" role="list" aria-label="Nodos del mapa">
+				{items.slice(1).map((it) => (
+					<div class="map-leaf" role="listitem">
+						<span class="map-connector" aria-hidden="true" />
+						<label class="flip-card" for={`flip-${it.id}`}>
+							<input id={`flip-${it.id}`} class="flip-toggle" type="checkbox" />
+							<div class="flip-inner" role="group" aria-label={it.frontTitle}>
+								<div class="flip-face flip-front">
+									{it.badge && <span class="flip-badge">{it.badge}</span>}
+									<p class="flip-front-title">{it.frontTitle}</p>
+									{it.frontSubtitle && <p class="flip-front-sub">{it.frontSubtitle}</p>}
+									<p class="flip-hint">Girar</p>
+								</div>
+								<div class="flip-face flip-back">
+									<p class="flip-back-title">{it.backTitle ?? it.frontTitle}</p>
+									<p class="flip-back-body">{it.backBody}</p>
+									<p class="flip-hint">Volver</p>
+								</div>
+							</div>
+						</label>
+					</div>
+				))}
+			</div>
+		</div>
+	)}
 </section>
 
 <style>
@@ -111,6 +215,112 @@ const themeVars =
 		}
 		.flip-grid.cols-3 {
 			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+
+	/* Layout: sequence */
+	.flip-seq {
+		margin-top: 0.9rem;
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		overflow-x: auto;
+		padding-bottom: 0.35rem;
+		scroll-snap-type: x mandatory;
+	}
+	.flip-seq-item {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		scroll-snap-align: start;
+	}
+	.flip-seq .flip-card {
+		min-width: 260px;
+	}
+	.flip-arrow {
+		flex: none;
+		font-size: 1rem;
+		font-weight: 900;
+		color: color-mix(in srgb, var(--flip-accent) 70%, rgba(148, 163, 184, 1) 30%);
+	}
+
+	/* Layout: timeline */
+	.flip-tl {
+		margin-top: 0.9rem;
+		position: relative;
+		display: grid;
+		gap: 0.95rem;
+		padding-left: 1.1rem;
+	}
+	.flip-tl::before {
+		content: '';
+		position: absolute;
+		left: 0.45rem;
+		top: 0.25rem;
+		bottom: 0.25rem;
+		width: 2px;
+		background: color-mix(in srgb, var(--flip-accent) 40%, rgba(226, 232, 240, 1) 60%);
+		border-radius: 999px;
+	}
+	.flip-tl-row {
+		display: grid;
+		grid-template-columns: 16px 1fr;
+		align-items: center;
+		gap: 0.75rem;
+	}
+	.flip-tl-dot {
+		width: 10px;
+		height: 10px;
+		border-radius: 999px;
+		background: var(--flip-accent);
+		box-shadow: 0 0 0 4px color-mix(in srgb, var(--flip-accent) 20%, transparent 80%);
+	}
+
+	/* Layout: map */
+	.flip-map {
+		margin-top: 0.9rem;
+		display: grid;
+		gap: 0.95rem;
+		border-radius: 24px;
+		background: radial-gradient(circle at 30% 30%, var(--flip-soft), transparent 55%);
+		border: 1px dashed color-mix(in srgb, var(--flip-accent) 25%, rgba(226, 232, 240, 1) 75%);
+		padding: 0.95rem;
+	}
+	@media (min-width: 920px) {
+		.flip-map {
+			grid-template-columns: 1.05fr 1.95fr;
+			align-items: start;
+			padding: 1.1rem;
+		}
+	}
+	.flip-map .map-hub {
+		max-width: 520px;
+	}
+	.map-leaves {
+		display: grid;
+		gap: 0.85rem;
+	}
+	@media (min-width: 720px) {
+		.map-leaves {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+	.map-leaf {
+		display: grid;
+		grid-template-columns: 20px 1fr;
+		gap: 0.6rem;
+		align-items: center;
+	}
+	.map-connector {
+		height: 2px;
+		width: 100%;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--flip-accent) 35%, rgba(226, 232, 240, 1) 65%);
+		opacity: 0.9;
+	}
+	@media (max-width: 680px) {
+		.map-leaf {
+			grid-template-columns: 14px 1fr;
 		}
 	}
 
