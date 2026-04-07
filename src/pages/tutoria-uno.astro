@@ -1,0 +1,240 @@
+---
+import Page from '../layouts/Page.astro';
+import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
+---
+<Page title="Tutoría Uno — Guía N.° 1">
+	<div class="max-w-5xl mx-auto space-y-12">
+		<header class="text-center space-y-2">
+			<p class="text-xs uppercase tracking-widest text-emerald-600 font-semibold">Guía N.° 1 · Las normas y la contratación</p>
+			<h1 class="text-3xl font-bold text-emerald-900">Tutoría Uno</h1>
+			<p class="text-neutral-600 text-sm max-w-2xl mx-auto">
+				Contenidos alineados con la <strong>GUIA 1</strong> y la <strong>GUÍA N.° 1</strong> (IDEAD, Ingeniería Legal, 2026). El tema de jerarquía normativa no aparece como ítem del menú principal:
+				vive aquí, dentro de la Tutoría Uno, como primer bloque temático e interactivo.
+			</p>
+		</header>
+
+		<nav class="sticky top-[72px] z-10 bg-emerald-50/95 backdrop-blur border border-emerald-100 rounded-2xl p-3 shadow-sm" aria-label="Secciones Tutoría Uno">
+			<p class="text-xs text-neutral-500 mb-2 font-medium">Ir a sección</p>
+			<div class="flex flex-wrap gap-2">
+				<a href="#tema-1" class="px-3 py-1.5 rounded-lg bg-white border border-emerald-100 text-emerald-900 text-xs font-medium hover:bg-emerald-100 transition">1. Jerarquía de normas</a>
+				<a href="#tema-2" class="px-3 py-1.5 rounded-lg bg-white border border-emerald-100 text-emerald-900 text-xs font-medium hover:bg-emerald-100 transition">2. Contratación TI</a>
+				<a href="#tema-3" class="px-3 py-1.5 rounded-lg bg-white border border-emerald-100 text-emerald-900 text-xs font-medium hover:bg-emerald-100 transition">3. Elementos legales</a>
+				<a href="#tema-4" class="px-3 py-1.5 rounded-lg bg-white border border-emerald-100 text-emerald-900 text-xs font-medium hover:bg-emerald-100 transition">4. Licenciamiento</a>
+				<a href="#actividad" class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-medium hover:opacity-95 transition">Actividad lúdica</a>
+			</div>
+		</nav>
+
+		<section id="tema-1" class="scroll-mt-28 space-y-4">
+			<h2 class="text-2xl font-bold text-emerald-900 border-b border-emerald-200 pb-2">1. Jerarquía de normas que rigen los procesos contractuales</h2>
+			<p class="text-neutral-700 text-sm leading-relaxed">
+				La <strong>jerarquía normativa</strong> (pirámide kelsiana) ordena las fuentes del derecho para saber cuál prevalece. El <strong>proceso contractual</strong> tiene tres etapas:
+				precontractual, contractual y postcontractual. La etapa precontractual comprende planeación, selección del contratista, negociación y elaboración del contrato;
+				la contractual incluye formalización, ejecución y seguimiento; la postcontractual abarca cierre, liquidación y evaluación.
+			</p>
+			<p class="text-neutral-700 text-sm leading-relaxed">
+				La <strong>tipología de normas</strong> distingue constitucionales, imperativas (operativas), programáticas, teleológicas, ordinarias, reglamentarias e individualizadas.
+				La guía también enlaza la <strong>responsabilidad contractual y extracontractual</strong> con el estudio del ordenamiento aplicable.
+			</p>
+			<div class="bg-white border border-emerald-100 rounded-2xl p-4 shadow-sm">
+				<JerarquiaNormasBlock />
+			</div>
+		</section>
+
+		<section id="tema-2" class="scroll-mt-28 space-y-4">
+			<h2 class="text-2xl font-bold text-emerald-900 border-b border-emerald-200 pb-2">2. Contratación para compra y venta de hardware y software en Colombia</h2>
+			<div class="grid md:grid-cols-2 gap-4 text-sm text-neutral-700 leading-relaxed">
+				<div class="bg-white rounded-xl border border-emerald-50 p-4">
+					<h3 class="font-semibold text-emerald-800 mb-2">Contratos y bienes informáticos</h3>
+					<p class="mb-2">
+						Los <strong>contratos informáticos</strong> regulan operaciones sobre bienes, suministros y servicios informáticos. Los <strong>bienes informáticos</strong> incluyen hardware y software;
+						los <strong>suministros</strong> abastecen y mantienen el sistema; los <strong>servicios informáticos</strong> apoyan el funcionamiento y la optimización.
+					</p>
+				</div>
+				<div class="bg-white rounded-xl border border-emerald-50 p-4">
+					<h3 class="font-semibold text-emerald-800 mb-2">Servicios según TI</h3>
+					<p>
+						La guía menciona soporte a distancia, desarrollo de software, formación, instalación y mantenimiento de hardware, servicios en la nube, correo electrónico,
+						seguridad de red (cortafuegos, antivirus, VPN), monitoreo, SaaS, VoIP, consultoría, ciberseguridad e integración con IA/ML, entre otros.
+					</p>
+				</div>
+			</div>
+			<div class="bg-teal-50 border border-teal-100 rounded-xl p-4 text-sm text-neutral-700">
+				<h3 class="font-semibold text-teal-900 mb-2">Conceptos clave (actividad 2 de la guía)</h3>
+				<ul class="list-disc list-inside space-y-1">
+					<li><strong>TVEC:</strong> Tienda Virtual del Estado Colombiano (Colombia Compra Eficiente).</li>
+					<li><strong>SECOP II:</strong> plataforma transaccional de contratación pública.</li>
+					<li><strong>AMP:</strong> Acuerdo Marco de Precios para bienes y servicios de uso común.</li>
+					<li><strong>Pliego de condiciones:</strong> reglas, requisitos y criterios del proceso de selección.</li>
+				</ul>
+			</div>
+		</section>
+
+		<section id="tema-3" class="scroll-mt-28 space-y-4">
+			<h2 class="text-2xl font-bold text-emerald-900 border-b border-emerald-200 pb-2">3. Elementos legales de un proceso de contratación pública y privada</h2>
+			<p class="text-neutral-700 text-sm leading-relaxed">
+				El <strong>Código Civil</strong> (Ley 57 de 1887) regula relaciones entre particulares (contratos, obligaciones). El <strong>Código de Comercio</strong> regula actos mercantiles y contratos comerciales.
+				En contratación pública rigen principios constitucionales de eficacia y eficiencia.
+			</p>
+			<p class="text-neutral-700 text-sm leading-relaxed">
+				<strong>Efectivo</strong> se refiere a obtener el resultado real esperado; <strong>eficaz</strong>, alcanzar los objetivos (hacer lo correcto); <strong>eficiente</strong>, lograrlo optimizando recursos.
+				La guía contrasta además <strong>moral</strong> (normas y valores compartidos) y <strong>ética</strong> (reflexión racional sobre esos principios), relevante para la rectitud en contratación estatal.
+			</p>
+		</section>
+
+		<section id="tema-4" class="scroll-mt-28 space-y-4">
+			<h2 class="text-2xl font-bold text-emerald-900 border-b border-emerald-200 pb-2">4. Contratos de licenciamiento de software</h2>
+			<p class="text-neutral-700 text-sm leading-relaxed">
+				El <strong>licenciamiento</strong> autoriza el uso del software sin transferir la propiedad intelectual, con límites de tiempo, territorio y forma de uso (Ley 23 de 1982 y Decisión 351 de la CAN).
+			</p>
+			<ul class="list-disc list-inside text-sm text-neutral-700 space-y-1">
+				<li><strong>Contratante y contratista:</strong> quien encarga la prestación y quien la ejecuta a cambio de remuneración.</li>
+				<li><strong>Cesión de contrato:</strong> traslado de la posición contractual a un tercero con consentimiento de la contraparte.</li>
+				<li><strong>Interventor y supervisor:</strong> supervisión técnica, administrativa y jurídica del contrato.</li>
+				<li><strong>Garante:</strong> responde por obligaciones del deudor principal (pólizas en sector público).</li>
+			</ul>
+		</section>
+
+		<section id="actividad" class="scroll-mt-28 space-y-4 pb-8">
+			<h2 class="text-2xl font-bold text-amber-900 border-b border-amber-200 pb-2">Actividad lúdica: sopa de letras</h2>
+			<p class="text-neutral-600 text-sm">
+				Encuentra las palabras relacionadas con normas y contratación (horizontal o vertical). Pulsa <strong>Mostrar solución</strong> para resaltar las celdas correctas.
+			</p>
+			<div class="flex flex-wrap gap-2 mb-3" id="sopa-palabras"></div>
+			<div class="overflow-x-auto rounded-xl border border-amber-200 bg-amber-50/50 p-3 inline-block min-w-0">
+				<table class="border-collapse text-center text-sm font-mono" id="sopa-tabla" aria-label="Sopa de letras"></table>
+			</div>
+			<div class="flex gap-2 flex-wrap">
+				<button type="button" id="sopa-solucion" class="px-4 py-2 rounded-xl bg-amber-600 text-white text-sm font-medium hover:bg-amber-700 transition">Mostrar solución</button>
+				<button type="button" id="sopa-ocultar" class="px-4 py-2 rounded-xl border border-amber-300 text-amber-900 text-sm font-medium hover:bg-amber-100 transition">Ocultar solución</button>
+			</div>
+		</section>
+	</div>
+
+	<style>
+		.sopa-celda {
+			width: 28px;
+			height: 28px;
+			border: 1px solid #d6d3d1;
+			background: #fff;
+			user-select: none;
+		}
+		.sopa-celda.sol {
+			background: #fde68a;
+			font-weight: 700;
+			color: #92400e;
+		}
+	</style>
+
+	<script is:inline>
+		(function () {
+			const PALABRAS = ['SECOP', 'NORMA', 'LEY', 'PLIEGO', 'TVEC', 'AMP', 'CONTRATO', 'ETAPA'];
+			const FILAS = 12;
+			const COLS = 14;
+			const ABC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+			function randLetter() {
+				return ABC[Math.floor(Math.random() * ABC.length)];
+			}
+
+			function crearGrilla() {
+				const g = [];
+				for (let r = 0; r < FILAS; r++) {
+					const row = [];
+					for (let c = 0; c < COLS; c++) row.push({ ch: randLetter(), sol: false });
+					g.push(row);
+				}
+				return g;
+			}
+
+			function colocarPalabra(g, palabra) {
+				const limpia = palabra.replace(/\s/g, '').toUpperCase();
+				for (let intento = 0; intento < 80; intento++) {
+					const horiz = Math.random() < 0.5;
+					const r = Math.floor(Math.random() * FILAS);
+					const c = Math.floor(Math.random() * COLS);
+					let ok = true;
+					for (let i = 0; i < limpia.length; i++) {
+						const rr = horiz ? r : r + i;
+						const cc = horiz ? c + i : c;
+						if (rr >= FILAS || cc >= COLS) {
+							ok = false;
+							break;
+						}
+					}
+					if (!ok) continue;
+					for (let i = 0; i < limpia.length; i++) {
+						const rr = horiz ? r : r + i;
+						const cc = horiz ? c + i : c;
+						const cell = g[rr][cc];
+						if (cell.sol && cell.ch !== limpia[i]) {
+							ok = false;
+							break;
+						}
+					}
+					if (!ok) continue;
+					for (let i = 0; i < limpia.length; i++) {
+						const rr = horiz ? r : r + i;
+						const cc = horiz ? c + i : c;
+						g[rr][cc].ch = limpia[i];
+						g[rr][cc].sol = true;
+					}
+					return true;
+				}
+				return false;
+			}
+
+			function renderizar(g) {
+				const tabla = document.getElementById('sopa-tabla');
+				const palWrap = document.getElementById('sopa-palabras');
+				tabla.innerHTML = '';
+				palWrap.innerHTML = PALABRAS.map((p) => `<span class="px-2 py-1 rounded-lg bg-white border border-amber-200 text-amber-900 text-xs font-semibold">${p}</span>`).join('');
+
+				for (let r = 0; r < FILAS; r++) {
+					const tr = document.createElement('tr');
+					for (let c = 0; c < COLS; c++) {
+						const td = document.createElement('td');
+						td.className = 'sopa-celda';
+						td.textContent = g[r][c].ch;
+						if (g[r][c].sol) td.dataset.sol = '1';
+						tr.appendChild(td);
+					}
+					tabla.appendChild(tr);
+				}
+			}
+
+			function generarConPalabras() {
+				const ordenadas = [...PALABRAS].sort((a, b) => b.length - a.length);
+				for (let attempt = 0; attempt < 400; attempt++) {
+					const g = crearGrilla();
+					let ok = true;
+					for (const p of ordenadas) {
+						if (!colocarPalabra(g, p)) {
+							ok = false;
+							break;
+						}
+					}
+					if (ok) return g;
+				}
+				return crearGrilla();
+			}
+
+			function nuevaSopa() {
+				renderizar(generarConPalabras());
+			}
+
+			function toggleSol(mostrar) {
+				document.querySelectorAll('.sopa-celda').forEach((td) => {
+					if (td.dataset.sol === '1') td.classList.toggle('sol', mostrar);
+				});
+			}
+
+			function initSopa() {
+				document.getElementById('sopa-solucion').addEventListener('click', () => toggleSol(true));
+				document.getElementById('sopa-ocultar').addEventListener('click', () => toggleSol(false));
+				nuevaSopa();
+			}
+			if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initSopa);
+			else initSopa();
+		})();
+	</script>
+</Page>

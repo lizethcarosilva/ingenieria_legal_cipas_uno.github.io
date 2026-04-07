@@ -1,0 +1,611 @@
+---
+/* Bloque interactivo reutilizable (Tutoría 1 — Tema 1). */
+---
+
+<div class="jerarquia-normas-block max-w-5xl mx-auto">
+    <p class="text-neutral-600 text-center mb-6 text-sm">
+      Explora la pirámide normativa, el proceso contractual, la tipología y los interrogantes. Haz clic en cada pestaña y en los elementos interactivos.
+    </p>
+
+    <!-- TABS -->
+    <div class="flex flex-wrap gap-2 mb-6 justify-center">
+      <button onclick="showTab('piramide')" id="btn-piramide"
+        class="tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-emerald-600 to-teal-600 text-white border-emerald-600">
+        Pirámide normativa
+      </button>
+      <button onclick="showTab('etapas')" id="btn-etapas"
+        class="tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-emerald-900 border-emerald-100 hover:bg-emerald-50">
+        Proceso contractual
+      </button>
+      <button onclick="showTab('tipologia')" id="btn-tipologia"
+        class="tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-emerald-900 border-emerald-100 hover:bg-emerald-50">
+        Tipología de normas
+      </button>
+      <button onclick="showTab('interrogantes')" id="btn-interrogantes"
+        class="tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-emerald-900 border-emerald-100 hover:bg-emerald-50">
+        Interrogantes
+      </button>
+    </div>
+
+    <!-- ===================== TAB 1: PIRÁMIDE ===================== -->
+    <div id="tab-piramide" class="tab-panel">
+
+      <!-- Pirámide visual dinámica -->
+      <style>
+        .pyr-level {
+          cursor: pointer;
+          transition: filter 0.2s, transform 0.2s;
+          transform-origin: center bottom;
+          transform-box: fill-box;
+        }
+        .pyr-level:hover { filter: brightness(1.12) drop-shadow(0 4px 12px rgba(0,0,0,0.18)); transform: scaleY(1.03); }
+        .pyr-level.active-level { filter: brightness(1.18) drop-shadow(0 0 16px rgba(0,0,0,0.28)); }
+        @keyframes pyramidIn {
+          from { opacity: 0; transform: translateY(30px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .pyr-wrap { animation: pyramidIn 0.6s ease both; }
+        .pyr-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 11px;
+          font-weight: 600;
+          padding: 4px 12px;
+          border-radius: 999px;
+          margin-bottom: 4px;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+        }
+      </style>
+
+      <div class="pyr-wrap flex flex-col items-center mb-10">
+        <svg width="100%" viewBox="0 0 560 340" style="max-width:580px;">
+          <defs>
+            <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+              <path d="M2 1L8 5L2 9" fill="none" stroke="#9ca3af" stroke-width="1.5"/>
+            </marker>
+            <!-- Sombras sutiles por nivel -->
+            <filter id="sh"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/></filter>
+          </defs>
+
+          <!-- Nivel 1: FUNDAMENTAL (cima) -->
+          <g class="pyr-level" id="pyr-fundamental" onclick="selectNorm('fundamental')" filter="url(#sh)">
+            <polygon points="280,18 370,130 190,130" fill="#be3030"/>
+            <text x="280" y="78"  text-anchor="middle" font-size="15" fill="white" font-weight="700" font-family="sans-serif">Fundamental</text>
+            <text x="280" y="97"  text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.88)" font-family="sans-serif">Constitución Política</text>
+            <text x="280" y="112" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.88)" font-family="sans-serif">Pactos Internacionales</text>
+          </g>
+
+          <!-- Nivel 2: LEGAL (medio) -->
+          <g class="pyr-level" id="pyr-legal" onclick="selectNorm('legal')" filter="url(#sh)">
+            <polygon points="190,138 370,138 415,228 145,228" fill="#d97e38"/>
+            <text x="280" y="178" text-anchor="middle" font-size="15" fill="white" font-weight="700" font-family="sans-serif">Legal</text>
+            <text x="280" y="197" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.88)" font-family="sans-serif">Leyes Orgánicas · Estatutarias</text>
+            <text x="280" y="213" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.88)" font-family="sans-serif">Leyes Ordinarias · Decretos de Ley</text>
+          </g>
+
+          <!-- Nivel 3: BASE (fondo) -->
+          <g class="pyr-level" id="pyr-base" onclick="selectNorm('base')" filter="url(#sh)">
+            <polygon points="145,236 415,236 468,326 92,326" fill="#2a7a9e"/>
+            <text x="280" y="272" text-anchor="middle" font-size="15" fill="white" font-weight="700" font-family="sans-serif">Base</text>
+            <text x="280" y="291" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.88)" font-family="sans-serif">Reglamentos · Ordenanzas</text>
+            <text x="280" y="307" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.88)" font-family="sans-serif">Sentencias</text>
+          </g>
+
+          <!-- Flecha jerarquía lateral derecha -->
+          <line x1="488" y1="322" x2="488" y2="24" stroke="#9ca3af" stroke-width="1.2" marker-end="url(#arr2)"/>
+          <text x="498" y="180" font-size="10" fill="#9ca3af" font-family="sans-serif" text-anchor="middle" transform="rotate(-90 498 180)">Mayor jerarquía</text>
+
+          <!-- Etiquetas laterales izquierda -->
+          <text x="72" y="82"  font-size="10" fill="#be3030" font-weight="600" font-family="sans-serif" text-anchor="end">Nivel I</text>
+          <text x="72" y="188" font-size="10" fill="#d97e38" font-weight="600" font-family="sans-serif" text-anchor="end">Nivel II</text>
+          <text x="72" y="284" font-size="10" fill="#2a7a9e" font-weight="600" font-family="sans-serif" text-anchor="end">Nivel III</text>
+          <line x1="74" y1="80"  x2="188" y2="80"  stroke="#be3030" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.5"/>
+          <line x1="74" y1="186" x2="144" y2="186" stroke="#d97e38" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.5"/>
+          <line x1="74" y1="282" x2="92"  y2="282" stroke="#2a7a9e" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.5"/>
+        </svg>
+
+        <p class="text-neutral-400 text-xs mt-1">Haz clic en un nivel para resaltar la tarjeta</p>
+      </div>
+
+
+
+      <!-- Tarjeta Fundamental -->
+      <div id="card-fundamental" onclick="selectNorm('fundamental')"
+        class="norm-card bg-white border-2 border-red-500 rounded-2xl p-5 mb-4 cursor-pointer shadow-sm transition hover:shadow-md">
+        <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-red-100 text-red-800 mb-3 uppercase tracking-wide">Nivel I — Fundamental</span>
+        <h3 class="text-lg font-semibold text-emerald-900 mb-2">Constitución Política y Pactos Internacionales</h3>
+        <p class="text-neutral-700 leading-relaxed text-sm">
+          Norma de mayor jerarquía. Establece los derechos fundamentales, los principios del Estado
+          y los pactos internacionales ratificados. Ninguna otra norma puede contradecirla.
+          Es el punto de partida del ordenamiento jurídico colombiano.
+        </p>
+      </div>
+
+      <!-- Tarjeta Legal -->
+      <div id="card-legal" onclick="selectNorm('legal')"
+        class="norm-card bg-white border border-emerald-100 rounded-2xl p-5 mb-4 cursor-pointer shadow-sm transition hover:shadow-md hover:border-amber-400">
+        <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-amber-100 text-amber-800 mb-3 uppercase tracking-wide">Nivel II — Legal</span>
+        <h3 class="text-lg font-semibold text-emerald-900 mb-2">Leyes Orgánicas, Estatutarias, Ordinarias y Decretos de Ley</h3>
+        <p class="text-neutral-700 leading-relaxed text-sm">
+          Desarrollan y reglamentan los mandatos constitucionales. Las leyes orgánicas regulan el
+          funcionamiento del Congreso y el presupuesto. Las estatutarias protegen derechos fundamentales.
+          Las ordinarias regulan materias generales. Los decretos de ley los expide el Ejecutivo con
+          autorización del legislativo.
+        </p>
+      </div>
+
+      <!-- Tarjeta Base -->
+      <div id="card-base" onclick="selectNorm('base')"
+        class="norm-card bg-white border border-emerald-100 rounded-2xl p-5 mb-4 cursor-pointer shadow-sm transition hover:shadow-md hover:border-blue-400">
+        <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-blue-100 text-blue-800 mb-3 uppercase tracking-wide">Nivel III — Base</span>
+        <h3 class="text-lg font-semibold text-emerald-900 mb-2">Reglamentos, Ordenanzas y Sentencias</h3>
+        <p class="text-neutral-700 leading-relaxed text-sm">
+          Normas de ejecución y aplicación. Los reglamentos desarrollan las leyes en aspectos técnicos.
+          Las ordenanzas son actos de las Asambleas Departamentales. Las sentencias judiciales
+          — especialmente las de altas cortes — crean precedente vinculante.
+        </p>
+      </div>
+    </div>
+
+    <!-- ===================== TAB 2: ETAPAS — TIMELINE ===================== -->
+    <div id="tab-etapas" class="tab-panel hidden">
+      <style>
+        .tl-progress-track { background:#d1fae5; border-radius:999px; height:6px; overflow:hidden; }
+        .tl-progress-fill  { height:6px; border-radius:999px; transition:width 0.5s cubic-bezier(.4,0,.2,1); background:linear-gradient(90deg,#059669,#0d9488); }
+        .tl-node { display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer; flex:1; min-width:0; transition:transform 0.18s; }
+        .tl-node:hover { transform:translateY(-3px); }
+        .tl-dot { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; border:3px solid white; box-shadow:0 2px 8px rgba(0,0,0,0.12); transition:transform 0.2s, box-shadow 0.2s; }
+        .tl-node.tl-active .tl-dot { transform:scale(1.2); box-shadow:0 4px 16px rgba(0,0,0,0.2); }
+        .tl-label { font-size:11px; font-weight:600; text-align:center; line-height:1.3; }
+        .tl-detail { border-radius:16px; padding:20px 22px; animation:fadeSlideUp 0.3s ease both; }
+        @keyframes fadeSlideUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+        .tl-step { display:flex; align-items:flex-start; gap:12px; padding:10px 0; border-bottom:1px solid rgba(0,0,0,0.06); }
+        .tl-step:last-child { border-bottom:none; }
+        .tl-step-num { width:26px; height:26px; border-radius:50%; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+      </style>
+
+      <!-- Barra de progreso global -->
+      <div class="mb-6">
+        <div class="flex justify-between text-xs text-neutral-500 mb-1">
+          <span>Inicio del proceso</span>
+          <span id="tl-progress-label" class="font-semibold text-emerald-700">Etapa 1 de 3</span>
+          <span>Cierre</span>
+        </div>
+        <div class="tl-progress-track">
+          <div class="tl-progress-fill" id="tl-progress-fill" style="width:33%"></div>
+        </div>
+      </div>
+
+      <!-- Nodos del timeline -->
+      <div class="flex items-start gap-0 mb-8 relative">
+        <div class="absolute left-0 right-0 top-[20px] h-[3px] bg-emerald-100 z-0 mx-5"></div>
+        <div class="tl-node tl-active z-10" id="tl-node-0" onclick="selectEtapa(0)">
+          <div class="tl-dot bg-emerald-600 text-white">📋</div>
+          <span class="tl-label text-emerald-700">Pre-<br>contractual</span>
+        </div>
+        <div class="flex-1 h-[3px] z-0 mt-[20px]"></div>
+        <div class="tl-node z-10" id="tl-node-1" onclick="selectEtapa(1)">
+          <div class="tl-dot bg-emerald-100 text-emerald-400">📝</div>
+          <span class="tl-label text-neutral-400">Contractual</span>
+        </div>
+        <div class="flex-1 h-[3px] z-0 mt-[20px]"></div>
+        <div class="tl-node z-10" id="tl-node-2" onclick="selectEtapa(2)">
+          <div class="tl-dot bg-emerald-100 text-emerald-300">✅</div>
+          <span class="tl-label text-neutral-400">Post-<br>contractual</span>
+        </div>
+      </div>
+
+      <!-- Panel de detalle dinámico -->
+      <div id="tl-detail-panel"></div>
+
+    </div>
+
+    <!-- ===================== TAB 3: TIPOLOGÍA — FLIP CARDS ===================== -->
+    <div id="tab-tipologia" class="tab-panel hidden">
+      <style>
+        .flip-scene { perspective: 900px; height: 200px; cursor: pointer; }
+        .flip-card  { width:100%; height:100%; position:relative; transform-style:preserve-3d; transition:transform 0.55s cubic-bezier(.4,0,.2,1); }
+        .flip-scene:hover .flip-card, .flip-scene.flipped .flip-card { transform: rotateY(180deg); }
+        .flip-front, .flip-back {
+          position:absolute; inset:0; backface-visibility:hidden;
+          border-radius:16px; padding:18px; display:flex; flex-direction:column; justify-content:space-between;
+          border: 1px solid #d1fae5;
+        }
+        .flip-back  { transform:rotateY(180deg); }
+        .flip-hint  { font-size:10px; opacity:0.5; text-align:right; margin-top:auto; }
+      </style>
+
+      <p class="text-neutral-500 text-xs text-center mb-5">Pasa el cursor sobre cada tarjeta para ver el ejemplo</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <div class="flip-scene" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card">
+            <div class="flip-front bg-red-50">
+              <span class="inline-block text-xs font-semibold px-2 py-1 rounded-full bg-red-100 text-red-800 uppercase tracking-wide w-fit">Constitucionales</span>
+              <h4 class="font-semibold text-emerald-900 text-sm mt-3">Normas constitucionales</h4>
+              <p class="text-neutral-600 text-xs leading-relaxed mt-2">Regla o precepto fundamental establecida por el Poder Constituyente. Tienen competencia suprema.</p>
+              <span class="flip-hint">Toca para ver ejemplo →</span>
+            </div>
+            <div class="flip-back bg-red-700">
+              <span class="text-red-200 text-xs font-semibold uppercase tracking-wide">✳️ Tenga presente</span>
+              <p class="text-white text-sm leading-relaxed mt-3">El artículo 83 de la Constitución establece la presunción de buena fe, principio rector en todos los contratos con el Estado.</p>
+              <span class="flip-hint text-red-200">← Toca para volver</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-scene" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card">
+            <div class="flip-front bg-amber-50">
+              <span class="inline-block text-xs font-semibold px-2 py-1 rounded-full bg-amber-100 text-amber-800 uppercase tracking-wide w-fit">Operativas</span>
+              <h4 class="font-semibold text-emerald-900 text-sm mt-3">Normas imperativas</h4>
+              <p class="text-neutral-600 text-xs leading-relaxed mt-2">Su aplicación es inmediata y directa. Definen el orden político jurídico y protegen derechos individuales.</p>
+              <span class="flip-hint">Toca para ver ejemplo →</span>
+            </div>
+            <div class="flip-back bg-amber-700">
+              <span class="text-amber-200 text-xs font-semibold uppercase tracking-wide">✳️ Tenga presente</span>
+              <p class="text-white text-sm leading-relaxed mt-3">La Ley 80 de 1993 es imperativa: todo contrato estatal debe seguir su procedimiento sin posibilidad de omitirlo.</p>
+              <span class="flip-hint text-amber-200">← Toca para volver</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-scene" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card">
+            <div class="flip-front bg-emerald-50">
+              <span class="inline-block text-xs font-semibold px-2 py-1 rounded-full bg-emerald-100 text-emerald-800 uppercase tracking-wide w-fit">Programáticas</span>
+              <h4 class="font-semibold text-emerald-900 text-sm mt-3">Normas programáticas</h4>
+              <p class="text-neutral-600 text-xs leading-relaxed mt-2">Señalan funciones y actividades del Gobierno para cumplir sus fines. Expresan la ideología de la Constitución.</p>
+              <span class="flip-hint">Toca para ver ejemplo →</span>
+            </div>
+            <div class="flip-back bg-emerald-700">
+              <span class="text-emerald-200 text-xs font-semibold uppercase tracking-wide">✳️ Tenga presente</span>
+              <p class="text-white text-sm leading-relaxed mt-3">El Plan Nacional de Desarrollo es una norma programática: define metas del Gobierno para un cuatrienio.</p>
+              <span class="flip-hint text-emerald-200">← Toca para volver</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-scene" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card">
+            <div class="flip-front bg-teal-50">
+              <span class="inline-block text-xs font-semibold px-2 py-1 rounded-full bg-teal-100 text-teal-800 uppercase tracking-wide w-fit">Teleológicas</span>
+              <h4 class="font-semibold text-emerald-900 text-sm mt-3">Normas teleológicas</h4>
+              <p class="text-neutral-600 text-xs leading-relaxed mt-2">Definen el deber ser del Estado y el modelo social adoptado. Fundamentan la fórmula política.</p>
+              <span class="flip-hint">Toca para ver ejemplo →</span>
+            </div>
+            <div class="flip-back bg-teal-700">
+              <span class="text-teal-200 text-xs font-semibold uppercase tracking-wide">✳️ Tenga presente</span>
+              <p class="text-white text-sm leading-relaxed mt-3">El preámbulo de la Constitución es teleológico: define los fines del Estado colombiano (justicia, libertad, paz).</p>
+              <span class="flip-hint text-teal-200">← Toca para volver</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-scene" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card">
+            <div class="flip-front bg-blue-50">
+              <span class="inline-block text-xs font-semibold px-2 py-1 rounded-full bg-blue-100 text-blue-800 uppercase tracking-wide w-fit">Ordinarias</span>
+              <h4 class="font-semibold text-emerald-900 text-sm mt-3">Normas ordinarias</h4>
+              <p class="text-neutral-600 text-xs leading-relaxed mt-2">Regulan aspectos de la vida cotidiana dentro de un ordenamiento más amplio. Aprobadas por el legislativo.</p>
+              <span class="flip-hint">Toca para ver ejemplo →</span>
+            </div>
+            <div class="flip-back bg-blue-700">
+              <span class="text-blue-200 text-xs font-semibold uppercase tracking-wide">✳️ Tenga presente</span>
+              <p class="text-white text-sm leading-relaxed mt-3">Ley Ordinaria 1474 de 2011 — Estatuto Anticorrupción: establece medidas para combatir la corrupción en contratos públicos.</p>
+              <span class="flip-hint text-blue-200">← Toca para volver</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-scene" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card">
+            <div class="flip-front bg-purple-50">
+              <span class="inline-block text-xs font-semibold px-2 py-1 rounded-full bg-purple-100 text-purple-800 uppercase tracking-wide w-fit">Reglamentarias</span>
+              <h4 class="font-semibold text-emerald-900 text-sm mt-3">Normas reglamentarias</h4>
+              <p class="text-neutral-600 text-xs leading-relaxed mt-2">Garantizan seguridad y eficiencia. Establecidas por gobiernos, empresas u organizaciones.</p>
+              <span class="flip-hint">Toca para ver ejemplo →</span>
+            </div>
+            <div class="flip-back bg-purple-700">
+              <span class="text-purple-200 text-xs font-semibold uppercase tracking-wide">✳️ Tenga presente</span>
+              <p class="text-white text-sm leading-relaxed mt-3">Norma de tráfico en carretera o de seguridad en el lugar de trabajo. Son más complejas que las leyes ordinarias.</p>
+              <span class="flip-hint text-purple-200">← Toca para volver</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-scene sm:col-span-2 lg:col-span-3" onclick="this.classList.toggle('flipped')" style="height:160px">
+          <div class="flip-card">
+            <div class="flip-front bg-orange-50">
+              <div class="flex items-start gap-4">
+                <div>
+                  <span class="inline-block text-xs font-semibold px-2 py-1 rounded-full bg-orange-100 text-orange-800 uppercase tracking-wide w-fit">Individualizadas</span>
+                  <h4 class="font-semibold text-emerald-900 text-sm mt-2">Normas individualizadas</h4>
+                  <p class="text-neutral-600 text-xs leading-relaxed mt-2">Establecen derechos y obligaciones a cargo de personas concretas en casos específicos. Se crean a través de sentencias judiciales o actos administrativos.</p>
+                </div>
+              </div>
+              <span class="flip-hint">Toca para ver ejemplo →</span>
+            </div>
+            <div class="flip-back bg-orange-700">
+              <span class="text-orange-200 text-xs font-semibold uppercase tracking-wide">✳️ Tenga presente</span>
+              <p class="text-white text-sm leading-relaxed mt-3">Una sentencia judicial establece la obligación concreta a cargo de alguien de pagar a otra una suma precisa de dinero. Eso es una norma individualizada: afecta solo a esa persona en ese caso.</p>
+              <span class="flip-hint text-orange-200">← Toca para volver</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===================== TAB 4: INTERROGANTES — ACORDEÓN ANIMADO ===================== -->
+    <div id="tab-interrogantes" class="tab-panel hidden">
+      <style>
+        .acc-item { border-radius:14px; overflow:hidden; margin-bottom:8px; border:1px solid #d1fae5; transition:box-shadow 0.2s; }
+        .acc-item:hover { box-shadow:0 2px 12px rgba(5,150,105,0.1); }
+        .acc-item.acc-open { border-color:#6ee7b7; box-shadow:0 2px 16px rgba(5,150,105,0.12); }
+        .acc-btn { width:100%; display:flex; align-items:center; gap:12px; padding:14px 16px; background:white; cursor:pointer; border:none; text-align:left; transition:background 0.15s; }
+        .acc-btn:hover { background:#f0fdf4; }
+        .acc-open .acc-btn { background:#f0fdf4; }
+        .acc-num { width:28px; height:28px; border-radius:50%; background:#d1fae5; color:#065f46; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+        .acc-open .acc-num { background:#059669; color:white; }
+        .acc-q { font-size:13px; font-weight:600; color:#064e3b; flex:1; }
+        .acc-icon { font-size:18px; color:#6ee7b7; transition:transform 0.3s; flex-shrink:0; font-weight:300; }
+        .acc-open .acc-icon { transform:rotate(45deg); color:#059669; }
+        .acc-body { max-height:0; overflow:hidden; transition:max-height 0.4s cubic-bezier(.4,0,.2,1); }
+        .acc-open .acc-body { max-height:300px; }
+        .acc-answer { padding:0 16px 14px 56px; font-size:13px; color:#374151; line-height:1.7; border-top:1px solid #d1fae5; padding-top:12px; }
+
+        /* Barra de progreso de interrogantes */
+        .q-progress-track { background:#d1fae5; border-radius:999px; height:5px; overflow:hidden; }
+        .q-progress-fill  { height:5px; border-radius:999px; background:linear-gradient(90deg,#059669,#0d9488); transition:width 0.4s ease; }
+      </style>
+
+      <!-- Contador y barra -->
+      <div class="bg-emerald-50 rounded-2xl p-4 mb-6 flex items-center gap-4">
+        <div class="flex-1">
+          <div class="flex justify-between text-xs text-neutral-500 mb-1">
+            <span>Preguntas respondidas</span>
+            <span id="q-count" class="font-semibold text-emerald-700">0 de 16</span>
+          </div>
+          <div class="q-progress-track">
+            <div class="q-progress-fill" id="q-progress-fill" style="width:0%"></div>
+          </div>
+        </div>
+        <button onclick="closeAllAcc()" class="text-xs text-emerald-600 hover:text-emerald-800 font-medium whitespace-nowrap border border-emerald-200 rounded-lg px-3 py-1 hover:bg-white transition">
+          Cerrar todas
+        </button>
+      </div>
+
+      <div id="acc-container">
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">1</span><span class="acc-q">¿Qué es la Constitución Política de Colombia?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">Es la norma de mayor jerarquía del ordenamiento jurídico colombiano, promulgada en 1991. Establece los derechos fundamentales, la estructura del Estado y los mecanismos de participación ciudadana. Toda ley, decreto u ordenanza debe ajustarse a ella.</div></div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">2</span><span class="acc-q">¿Qué son los pactos internacionales?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">Son acuerdos entre dos o más Estados que crean derechos y obligaciones recíprocas. En Colombia, los tratados de derechos humanos ratificados hacen parte del bloque de constitucionalidad, teniendo la misma jerarquía que la Constitución.</div></div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">3</span><span class="acc-q">¿Qué son las leyes orgánicas especiales?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">Regulan el funcionamiento del Congreso, la actividad legislativa y la preparación del presupuesto. Su aprobación requiere mayoría absoluta de los miembros de cada cámara.</div></div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">4</span><span class="acc-q">¿Qué son leyes ordinarias?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">Son las leyes de carácter general que expide el Congreso para regular materias diversas de la vida nacional. Se aprueban con mayoría simple y no pueden contradecir la Constitución ni las leyes orgánicas o estatutarias.</div></div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">5</span><span class="acc-q">¿Qué son leyes estatutarias?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">Regulan materias de especial importancia: derechos fundamentales, administración de justicia, partidos políticos, participación ciudadana y estados de excepción. Requieren mayoría absoluta del Congreso y control previo de la Corte Constitucional.</div></div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">6</span><span class="acc-q">¿Qué son leyes orgánicas?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">Organizan el Congreso y regulan el presupuesto general de la Nación. Tienen rango superior a las leyes ordinarias e incluyen el Estatuto Orgánico del Presupuesto y la Ley Orgánica del Plan de Desarrollo.</div></div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">7</span><span class="acc-q">¿Qué son los decretos de ley?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">Son actos del Ejecutivo con fuerza de ley, expedidos con base en una habilitación legislativa del Congreso o en el ejercicio de facultades extraordinarias. Su contenido debe circunscribirse a la autorización otorgada.</div></div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">8</span><span class="acc-q">¿Qué son reglamentos?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">Son normas expedidas por el Poder Ejecutivo para desarrollar y hacer operativas las leyes. No pueden modificar ni contradecir la ley que desarrollan; solo la complementan en aspectos técnicos y de procedimiento.</div></div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">9</span><span class="acc-q">¿Qué son ordenanzas?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">Son actos administrativos de carácter general expedidos por las Asambleas Departamentales. Regulan materias de competencia departamental como presupuesto, planes de desarrollo y tributos departamentales.</div></div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">10</span><span class="acc-q">¿Qué diferencia hay entre una ley y una norma?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">Una norma es el concepto genérico: todo precepto que regula conductas. Una ley es una especie de norma aprobada formalmente por el Congreso. Toda ley es una norma, pero no toda norma es una ley (un reglamento o sentencia también son normas).</div></div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">11</span><span class="acc-q">¿Qué se entiende por norma interna?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">Es una disposición que regula el comportamiento dentro de una organización o entidad específica. No tiene carácter de ley pero es obligatoria para quienes forman parte de esa organización. Ejemplo: reglamento interno de trabajo.</div></div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">12</span><span class="acc-q">¿Qué es una resolución?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">Es un acto administrativo expedido por una entidad pública para regular aspectos específicos de su competencia. Tiene fuerza obligatoria dentro del ámbito de la entidad que la expide y debe sujetarse a la ley y los reglamentos.</div></div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">13</span><span class="acc-q">¿Qué es una ordenanza departamental?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">Es el acto legislativo de las Asambleas Departamentales con efectos en el territorio del departamento. Es jerárquicamente inferior a las leyes nacionales y superior a los acuerdos municipales.</div></div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">14</span><span class="acc-q">¿Qué es una circular?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">Es un documento administrativo que imparte instrucciones o información general a funcionarios de una entidad. No crea derechos ni obligaciones para los ciudadanos; regula el funcionamiento interno.</div></div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">15</span><span class="acc-q">¿Qué es acuerdo municipal?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">Es el acto legislativo expedido por el Concejo Municipal para regular materias de competencia del municipio: presupuesto local, plan de desarrollo, tributos municipales. Tiene efecto solo en el territorio municipal.</div></div>
+        </div>
+
+        <div class="acc-item" onclick="toggleAcc(this)">
+          <div class="acc-btn"><span class="acc-num">16</span><span class="acc-q">¿Qué es una instancia?</span><span class="acc-icon">+</span></div>
+          <div class="acc-body"><div class="acc-answer">En derecho, es cada uno de los grados jurisdiccionales ante los cuales puede tramitarse un proceso. En Colombia existen principalmente dos instancias: la primera (juez de conocimiento) y la segunda (tribunal superior). Algunos asuntos son de única instancia.</div></div>
+        </div>
+
+      </div>
+    </div>
+
+</div>
+
+<script is:inline>
+  /* ── TABS ── */
+  function showTab(id) {
+    ['piramide','etapas','tipologia','interrogantes'].forEach(t => {
+      document.getElementById('tab-'+t).classList.toggle('hidden', t !== id);
+      const btn = document.getElementById('btn-'+t);
+      if (t === id) {
+        btn.classList.remove('bg-white/70','text-emerald-900','border-emerald-100');
+        btn.classList.add('bg-gradient-to-r','from-emerald-600','to-teal-600','text-white','border-emerald-600');
+      } else {
+        btn.classList.add('bg-white/70','text-emerald-900','border-emerald-100');
+        btn.classList.remove('bg-gradient-to-r','from-emerald-600','to-teal-600','text-white','border-emerald-600');
+      }
+    });
+    if (id === 'etapas') selectEtapa(0);
+  }
+
+  /* ── PIRÁMIDE ── */
+  function selectNorm(level) {
+    ['fundamental','legal','base'].forEach(l => {
+      const card = document.getElementById('card-'+l);
+      if (l === level) {
+        card.classList.add('border-2','border-red-500','shadow-lg');
+        card.classList.remove('border','border-emerald-100');
+        card.scrollIntoView({ behavior:'smooth', block:'nearest' });
+      } else {
+        card.classList.remove('border-2','border-red-500','shadow-lg');
+        card.classList.add('border','border-emerald-100');
+      }
+      const pyr = document.getElementById('pyr-'+l);
+      if (pyr) pyr.classList.toggle('active-level', l === level);
+    });
+  }
+
+  /* ── TIMELINE DE ETAPAS ── */
+  const etapas = [
+    {
+      emoji:'📋', label:'Etapa Precontractual', color:'#059669', bg:'#ecfdf5', border:'#6ee7b7',
+      steps:[
+        { num:'1', title:'Planeación', desc:'Se define el objeto del contrato, se identifican necesidades, se establecen condiciones generales y se determina el tipo de contrato adecuado.' },
+        { num:'2', title:'Selección del contratista', desc:'Se realiza el proceso de selección que puede incluir convocatorias, evaluación de ofertas y adjudicación.' },
+        { num:'3', title:'Negociación', desc:'Se discuten y acuerdan los términos específicos del contrato: precios, plazos y responsabilidades.' },
+        { num:'4', title:'Elaboración del contrato', desc:'Se redacta el documento final con todos los detalles acordados.' },
+      ]
+    },
+    {
+      emoji:'📝', label:'Etapa Contractual', color:'#0d9488', bg:'#f0fdfa', border:'#5eead4',
+      steps:[
+        { num:'1', title:'Formalización', desc:'Se firma el contrato por ambas partes, oficializando el acuerdo.' },
+        { num:'2', title:'Ejecución', desc:'Se lleva a cabo la prestación del servicio o entrega del bien según lo acordado.' },
+        { num:'3', title:'Seguimiento y control', desc:'Se monitorea el cumplimiento, se gestionan los cambios y se resuelven las posibles incidencias.' },
+      ]
+    },
+    {
+      emoji:'✅', label:'Etapa Postcontractual', color:'#047857', bg:'#ecfdf5', border:'#34d399',
+      steps:[
+        { num:'1', title:'Cierre', desc:'Se verifica el cumplimiento de todas las obligaciones contractuales.' },
+        { num:'2', title:'Liquidación', desc:'Se realiza el pago final, la entrega de documentación y la evaluación del proyecto.' },
+        { num:'3', title:'Evaluación', desc:'Se evalúa el desempeño del contrato para mejorar futuros procesos contractuales.' },
+      ]
+    }
+  ];
+
+  function selectEtapa(idx) {
+    // Actualizar nodos
+    [0,1,2].forEach(i => {
+      const node = document.getElementById('tl-node-'+i);
+      const dot  = node.querySelector('.tl-dot');
+      const lbl  = node.querySelector('.tl-label');
+      if (i === idx) {
+        node.classList.add('tl-active');
+        dot.style.background  = etapas[i].color;
+        dot.style.color       = 'white';
+        lbl.style.color       = etapas[i].color;
+        lbl.style.fontWeight  = '700';
+      } else if (i < idx) {
+        node.classList.remove('tl-active');
+        dot.style.background = '#6ee7b7';
+        dot.style.color      = '#064e3b';
+        lbl.style.color      = '#6b7280';
+        lbl.style.fontWeight = '600';
+      } else {
+        node.classList.remove('tl-active');
+        dot.style.background = '#d1fae5';
+        dot.style.color      = '#6ee7b7';
+        lbl.style.color      = '#9ca3af';
+        lbl.style.fontWeight = '400';
+      }
+    });
+
+    // Barra de progreso
+    const pct = Math.round(((idx+1)/3)*100);
+    document.getElementById('tl-progress-fill').style.width = pct+'%';
+    document.getElementById('tl-progress-label').textContent = 'Etapa '+(idx+1)+' de 3';
+
+    // Renderizar panel de detalle
+    const e = etapas[idx];
+    const stepsHTML = e.steps.map((s,si) => `
+      <div class="tl-step" style="animation-delay:${si*0.07}s">
+        <div class="tl-step-num" style="background:${e.bg};color:${e.color};border:1.5px solid ${e.border}">${s.num}</div>
+        <div>
+          <strong style="font-size:13px;color:#064e3b;display:block;margin-bottom:3px">${s.title}</strong>
+          <p style="font-size:12px;color:#4b5563;line-height:1.6;margin:0">${s.desc}</p>
+        </div>
+      </div>`).join('');
+
+    document.getElementById('tl-detail-panel').innerHTML = `
+      <div class="tl-detail" style="background:${e.bg};border:1.5px solid ${e.border}">
+        <h3 style="font-size:16px;font-weight:700;color:${e.color};margin-bottom:16px;display:flex;align-items:center;gap:8px">
+          <span>${e.emoji}</span> ${e.label}
+        </h3>
+        ${stepsHTML}
+      </div>`;
+  }
+
+  /* ── ACORDEÓN INTERROGANTES ── */
+  let openCount = 0;
+  function toggleAcc(item) {
+    const wasOpen = item.classList.contains('acc-open');
+    item.classList.toggle('acc-open');
+    openCount += wasOpen ? -1 : 1;
+    updateQProgress();
+  }
+  function closeAllAcc() {
+    document.querySelectorAll('.acc-item.acc-open').forEach(i => i.classList.remove('acc-open'));
+    openCount = 0;
+    updateQProgress();
+  }
+  function updateQProgress() {
+    const total = document.querySelectorAll('.acc-item').length;
+    document.getElementById('q-count').textContent = openCount+' de '+total;
+    document.getElementById('q-progress-fill').style.width = Math.round((openCount/total)*100)+'%';
+  }
+
+  window.showTab    = showTab;
+  window.selectNorm = selectNorm;
+  window.selectEtapa= selectEtapa;
+  window.toggleAcc  = toggleAcc;
+  window.closeAllAcc= closeAllAcc;
+
+  // Inicializar timeline al cargar
+  document.addEventListener('DOMContentLoaded', () => selectEtapa(0));
+</script>

@@ -1,0 +1,69 @@
+---
+const { title = 'Ingeniería Legal — CIPA Uno' } = Astro.props;
+const site = new URL(Astro.site);
+const basePath = site.pathname.endsWith('/') ? site.pathname : site.pathname + '/';
+import '../styles/tailwind.css';
+
+function withBase(path = '') {
+	const normalized = path.startsWith('/') ? path.slice(1) : path;
+	return basePath + normalized;
+}
+
+const navItems = [
+	{ label: 'Inicio', path: '', exact: true },
+	{ label: 'Justificación', path: 'justificacion' },
+	{ label: 'Tutoría Uno', path: 'tutoria-uno' },
+	{ label: 'Tutoría Dos', path: 'tutoria-dos' },
+	{ label: 'Tutoría Tres', path: 'tutoria-tres' },
+	{ label: 'Tutoría Cuatro', path: 'tutoria-cuatro' },
+	{ label: 'Tutoría Cinco', path: 'tutoria-cinco' },
+	{ label: 'Convocatoria', path: 'convocatoria' }
+];
+
+const currentPath = Astro.url.pathname.replace(basePath, '/');
+
+function hrefFor(path = '') {
+	return withBase(path);
+}
+
+function activeClass(path = '', exact = false) {
+	const target = path ? `/${path}` : '/';
+	const isActive = exact ? currentPath === target : currentPath.startsWith(target);
+	return isActive ? 'active' : '';
+}
+
+const favicon = withBase('favicon.svg');
+---
+<html lang="es" class="h-full">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href={favicon} />
+		<meta name="viewport" content="width=device-width" />
+		<title>{title}</title>
+	</head>
+	<body class="min-h-full bg-gradient-to-b from-emerald-50 to-white text-neutral-900">
+		<header class="sticky top-0 z-20 border-b border-emerald-100 bg-gradient-to-r from-emerald-50 via-emerald-100 to-teal-50/80 backdrop-blur">
+			<div class="max-w-[1200px] mx-auto px-3 py-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+				<strong class="text-emerald-900 tracking-tight text-sm sm:text-base shrink-0">INGENIERÍA LEGAL · CIPA UNO</strong>
+				<nav class="flex flex-wrap items-center gap-1.5 justify-start sm:justify-end">
+					{navItems.map((item) => (
+						<a
+							href={hrefFor(item.path)}
+							class={`px-2.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition shadow-sm hover:-translate-y-0.5 hover:shadow ${activeClass(item.path, item.exact) ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white' : 'bg-white/80 text-emerald-900 hover:bg-emerald-50 border border-emerald-100'}`}
+						>
+							{item.label}
+						</a>
+					))}
+				</nav>
+			</div>
+		</header>
+		<main class="max-w-[1200px] mx-auto px-3 py-6">
+			<slot />
+		</main>
+		<footer class="border-t border-emerald-100 bg-white/90 mt-8">
+			<div class="max-w-[1200px] mx-auto px-3 py-4 text-sm text-neutral-600 text-center">
+				© 2026 Universidad del Tolima · IDEAD · Ingeniería de Sistemas
+			</div>
+		</footer>
+	</body>
+</html>

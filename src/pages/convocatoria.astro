@@ -1,0 +1,27 @@
+---
+import Page from '../layouts/Page.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Page title="Convocatoria — CIPA Uno">
+	<article class="max-w-3xl mx-auto space-y-6">
+		<h1 class="text-3xl font-bold text-emerald-900">Convocatoria del producto CIPA</h1>
+		<p class="text-neutral-700 leading-relaxed">
+			Esta página reúne el trabajo del <strong>CIPA Uno</strong> del curso <em>Ingeniería Legal</em> como evidencia de aprendizaje en formato web: justificación del curso,
+			desarrollo de la <strong>Guía N.° 1</strong> en la <a href={`${base}tutoria-uno`} class="text-emerald-700 underline font-medium">Tutoría Uno</a> (jerarquía normativa interactiva,
+			síntesis de contratación de TI, elementos legales, licenciamiento y actividad lúdica), y enlaces a las tutorías posteriores cuando estén disponibles.
+		</p>
+		<div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-5">
+			<h2 class="font-semibold text-emerald-900 mb-2">Entrega y publicación</h2>
+			<p class="text-sm text-neutral-700 leading-relaxed">
+				El sitio está preparado para alojarse en <strong>GitHub Pages</strong> en el repositorio
+				<a href="https://github.com/lizethcarosilva/ingenieria_legal_cipas_uno.github.io" class="text-emerald-700 underline break-all" target="_blank" rel="noopener noreferrer">lizethcarosilva/ingenieria_legal_cipas_uno.github.io</a>.
+				La URL pública tendrá la forma
+				<code class="text-xs bg-white px-1 rounded border border-emerald-200">https://lizethcarosilva.github.io/ingenieria_legal_cipas_uno.github.io/</code>
+				(ajusta en la configuración del repositorio si usas rama o carpeta distinta).
+			</p>
+		</div>
+		<p class="text-sm text-neutral-500">
+			Integrantes: Lizeth Andrea Caro Silva, Juan Camilo Giraldo Perdomo, Carlos Stiven Villada Quiceno · Tutor: Salatiel Moreno Toro.
+		</p>
+	</article>
+</Page>

@@ -1,0 +1,14 @@
+---
+import Page from '../layouts/Page.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Page title="Tutoría Cuatro — En construcción">
+	<section class="max-w-xl mx-auto text-center py-16 px-4">
+		<div class="text-5xl mb-4" aria-hidden="true">🛠️</div>
+		<h1 class="text-2xl font-bold text-emerald-900 mb-3">Tutoría Cuatro</h1>
+		<p class="text-neutral-600 leading-relaxed">
+			Esta sección está <strong>en construcción</strong>. Pronto encontrarás aquí los temas, recursos y la actividad lúdica correspondientes a esta tutoría.
+		</p>
+		<a href={`${base}tutoria-uno`} class="inline-block mt-8 px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-sm font-medium hover:bg-emerald-700 transition">Volver a Tutoría Uno</a>
+	</section>
+</Page>
