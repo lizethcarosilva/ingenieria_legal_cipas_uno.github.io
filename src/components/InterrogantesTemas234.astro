@@ -1,0 +1,194 @@
+---
+export interface QA {
+	q: string;
+	a: string;
+}
+
+interface Props {
+	tema: 2 | 3 | 4;
+}
+
+const { tema } = Astro.props;
+
+const TEMA2: QA[] = [
+	{
+		q: '¿Qué es TVEC?',
+		a: 'La Tienda Virtual del Estado Colombiano (TVEC) es la plataforma digital administrada por Colombia Compra Eficiente que permite a las entidades estatales realizar compras de bienes y servicios de uso común a través de Acuerdos Marco de Precios, de forma ágil y estandarizada. (Colombia Compra Eficiente, 2023a)',
+	},
+	{
+		q: '¿Qué es una persona natural?',
+		a: 'Es todo ser humano, desde su nacimiento hasta su muerte, con capacidad de adquirir derechos y contraer obligaciones jurídicas. En contratación, puede actuar como proponente o contratista si cumple los requisitos habilitantes. (Colombia, 1887, art. 74)',
+	},
+	{
+		q: '¿Qué es SECOP?',
+		a: 'El Sistema Electrónico para la Contratación Pública (SECOP) es la plataforma del Estado colombiano para publicar información sobre los procesos de contratación de las entidades estatales, garantizando transparencia y publicidad. (Colombia, 2007)',
+	},
+	{
+		q: '¿Qué es una persona jurídica?',
+		a: 'Es una entidad ficticia reconocida por el derecho como sujeto de derechos y obligaciones: sociedades, fundaciones, entidades públicas. Puede ser contratante o contratista en procesos de adquisición de bienes y servicios informáticos. (Colombia, 1887, art. 633)',
+	},
+	{
+		q: '¿Qué es SECOP I?',
+		a: 'SECOP I fue la primera versión de la plataforma de contratación pública en Colombia, de funcionalidad más limitada. Fue reemplazada por el SECOP II, que ofrece funcionalidades transaccionales en línea para todo el ciclo contractual. (Colombia Compra Eficiente, 2023a)',
+	},
+	{
+		q: '¿Qué es un pliego de condiciones?',
+		a: 'Es el documento que fija las reglas, requisitos, criterios de selección y condiciones técnicas, económicas y jurídicas de un proceso de contratación pública. Tiene fuerza vinculante para la entidad contratante y los proponentes. (Colombia, 1993)',
+	},
+	{
+		q: '¿Qué es SECOP II?',
+		a: 'Es la segunda versión y actual plataforma transaccional de contratación pública en Colombia. Permite a entidades y proveedores gestionar todo el ciclo contractual en línea: publicación, presentación de ofertas, adjudicación y ejecución. (Colombia, 2015)',
+	},
+	{
+		q: '¿Qué es un acta?',
+		a: 'Es un documento escrito que registra lo tratado y acordado en una reunión, diligencia o acto administrativo. En contratación, existen actas de inicio, supervisión, entrega y liquidación del contrato. (Colombia, 1993)',
+	},
+	{
+		q: '¿Qué es AMP?',
+		a: 'Un Acuerdo Marco de Precios (AMP) es el instrumento de agregación de demanda mediante el cual Colombia Compra Eficiente selecciona proveedores de bienes y servicios de uso común, estableciendo condiciones fijas de precio y calidad para que las entidades realicen sus compras de forma simplificada. (Colombia, 2015, art. 2.2.1.2.1.4.4)',
+	},
+	{
+		q: '¿Qué es un informe?',
+		a: 'Es un documento técnico o administrativo que presenta de manera ordenada información sobre el estado, avance o resultados de una actividad o contrato. El supervisor e interventor deben elaborar informes periódicos de cumplimiento contractual. (Colombia, 2011a, arts. 83-85)',
+	},
+	{
+		q: '¿Qué es cotización?',
+		a: 'Es el documento mediante el cual un proveedor informa a un potencial comprador el precio, condiciones y especificaciones de los bienes o servicios ofrecidos. En el proceso contractual, sirve para el estudio de mercado previo. (Colombia Compra Eficiente, 2022)',
+	},
+	{
+		q: '¿Qué es un proponente?',
+		a: 'Es la persona natural o jurídica que presenta una propuesta u oferta en un proceso de selección de contratistas. Debe cumplir los requisitos habilitantes establecidos en el pliego de condiciones. (Colombia, 1993, art. 5)',
+	},
+	{
+		q: '¿Qué es oferta?',
+		a: 'Es la propuesta formal presentada por un proponente en respuesta a una convocatoria, comprometiéndose a suministrar bienes, servicios u obras en las condiciones técnicas y económicas indicadas. (Colombia, 1971, art. 845)',
+	},
+	{
+		q: '¿Qué es un contratista?',
+		a: 'Es la persona natural o jurídica que, una vez seleccionada mediante el proceso de contratación, suscribe el contrato con la entidad y se obliga a ejecutar el objeto contractual a cambio de una remuneración. (Colombia, 1993, art. 32)',
+	},
+	{
+		q: '¿Qué es demanda?',
+		a: 'En términos económicos, es la cantidad de bienes o servicios que los consumidores están dispuestos a adquirir a un precio determinado. En términos jurídicos, es el acto procesal mediante el cual se inicia un proceso judicial. (Colombia, 2012)',
+	},
+	{
+		q: '¿Qué es emitir una cotización?',
+		a: 'Es el acto mediante el cual un vendedor informa formalmente a un comprador el precio de un bien o servicio. Difiere de la oferta en que no siempre genera obligación contractual inmediata; es un paso previo a la negociación formal. (Colombia Compra Eficiente, 2022)',
+	},
+	{
+		q: '¿Qué es una orden de compra?',
+		a: 'Es el documento formal mediante el cual una entidad compradora autoriza la adquisición de bienes o servicios a un proveedor, especificando cantidades, precios, plazos y condiciones de entrega. En contratación pública, formaliza la adquisición en los AMP de la TVEC. (Colombia, 2015, art. 2.2.1.2.1.4.4)',
+	},
+];
+
+const TEMA3: QA[] = [
+	{
+		q: '¿Qué es código civil?',
+		a: 'Es el conjunto sistemático de normas que regula las relaciones jurídicas entre particulares en materias como la familia, los bienes, los contratos y las obligaciones. Adoptado en Colombia mediante la Ley 57 de 1887. Es la base normativa de la contratación privada. (Colombia, 1887)',
+	},
+	{
+		q: '¿Qué es código de comercio?',
+		a: 'Es el conjunto de normas que regula los actos mercantiles y las relaciones entre comerciantes en Colombia. Regula contratos comerciales, sociedades y títulos valores. En la contratación privada de TI es el marco normativo fundamental. (Colombia, 1971)',
+	},
+	{
+		q: '¿Diferencie entre efectivo, eficiente y eficaz?',
+		a: 'EFECTIVO: Logra el resultado esperado en términos reales y concretos. EFICAZ: Alcanza los objetivos propuestos independientemente de los recursos utilizados (hace lo correcto). EFICIENTE: Logra los objetivos con el mínimo de recursos posibles, optimizando tiempo, costo y esfuerzo (hace las cosas correctamente). En contratación pública, la eficiencia y eficacia son principios constitucionales. (RAE, 2014) La diferencia entre estos tres términos tiene que ver cómo se logran las cosas. Ser eficaz es cuando una persona cumple lo que se propone, sin importar mucho cómo lo hizo o qué gastó en el proceso. Ser eficiente, en cambio, es lograr ese mismo objetivo pero usando bien los recursos, es decir, sin gastar de más tiempo, dinero o esfuerzo. Por otro lado, ser efectivo significa que al final sí se obtiene el resultado que se esperaba en la vida real. En pocas palabras, lo ideal es no solo cumplir las metas, sino hacerlo bien y que realmente funcione.',
+	},
+	{
+		q: '¿Diferencia entre ética y moral?',
+		a: 'MORAL: Conjunto de normas, valores y costumbres que una persona o comunidad asume como propios para distinguir el bien del mal. Es subjetiva y cultural. ÉTICA: Disciplina filosófica que estudia y fundamenta racionalmente los principios morales. Es la reflexión crítica sobre la moral. En contratación pública, la ética implica actuar con rectitud más allá de lo que la norma exige. (Cortina, 2013) La moral es lo que una persona aprende desde su familia o la sociedad sobre lo que está bien y lo que está mal, por eso puede cambiar dependiendo de la cultura o del lugar. En cambio, la ética es cuando una persona se pone a pensar y analizar esas ideas, cuestionando por qué algo es bueno o malo. Es como reflexionar sobre lo que uno hace y decidir actuar correctamente no solo porque así lo enseñaron, sino porque realmente entiende que es lo mejor.',
+	},
+];
+
+const TEMA4: QA[] = [
+	{
+		q: '¿Qué es el licenciamiento de software?',
+		a: 'Es el mecanismo jurídico mediante el cual el titular de los derechos de un software otorga a un tercero la autorización para utilizarlo bajo condiciones específicas de tiempo, territorio y forma de uso, sin transferir la propiedad intelectual. (Colombia, 1982)',
+	},
+	{
+		q: '¿Qué es contratante?',
+		a: 'Es la persona natural o jurídica que encarga la prestación de un servicio o la entrega de un bien y suscribe el contrato para ello. En contratación pública, el contratante es la entidad estatal. (Colombia, 1993, art. 32)',
+	},
+	{
+		q: '¿Qué es ceder un contrato?',
+		a: 'Es el acto jurídico mediante el cual una de las partes contratantes (cedente) transfiere a un tercero (cesionario) su posición contractual completa, con todos los derechos y obligaciones que de ella se derivan. Requiere el consentimiento de la contraparte. (Colombia, 1971, art. 887)',
+	},
+	{
+		q: '¿Qué es contratista?',
+		a: 'Es la persona natural o jurídica que, mediante un contrato, se obliga a ejecutar obras, prestar servicios o suministrar bienes a favor de la entidad contratante, a cambio de una remuneración pactada. (Colombia, 1993, art. 32)',
+	},
+	{
+		q: '¿Qué es derecho de autor?',
+		a: 'Es el conjunto de normas jurídicas que protegen las obras del intelecto humano —incluido el software—, reconociendo al autor derechos morales (reconocimiento de autoría) y patrimoniales (explotación económica). En Colombia, la Ley 23 de 1982 y la Decisión 351 de la CAN son las normas rectoras. (CAN, 1993)',
+	},
+	{
+		q: '¿Qué es un interventor?',
+		a: 'Es la persona natural o jurídica que ejerce la supervisión e interventoría de un contrato por encargo de la entidad contratante, verificando el cumplimiento técnico, administrativo, financiero, contable y jurídico del mismo. Su figura es obligatoria en contratos de obra pública. (Colombia, 2011a, arts. 83-85)',
+	},
+	{
+		q: '¿Qué es un contrato bilateral?',
+		a: 'Es aquel en el que ambas partes se obligan recíprocamente: una se obliga a dar, hacer o no hacer algo, y la otra adquiere la obligación correlativa. La compraventa de hardware es un ejemplo clásico: el vendedor entrega el bien y el comprador paga el precio. (Colombia, 1887, art. 1496)',
+	},
+	{
+		q: '¿Qué es un supervisor?',
+		a: 'Es el servidor público designado por la entidad contratante para ejercer el seguimiento técnico, administrativo, financiero, contable y jurídico sobre el cumplimiento del objeto del contrato. A diferencia del interventor, el supervisor pertenece a la planta de personal de la entidad. (Colombia, 2011a, arts. 83-85)',
+	},
+	{
+		q: '¿Qué es un garante?',
+		a: 'Es la persona natural o jurídica que se compromete a responder por las obligaciones de otra (el deudor principal) en caso de incumplimiento. En contratación pública, las garantías son requisito esencial: pólizas de cumplimiento y seguros. (Colombia, 1993, art. 7)',
+	},
+	{
+		q: '¿Qué es representante legal?',
+		a: 'Es la persona autorizada para actuar en nombre y representación de una persona jurídica en todos los actos jurídicos y contratos. Su designación consta en los estatutos y en el certificado de existencia y representación legal de la Cámara de Comercio. (Colombia, 1971, art. 196)',
+	},
+];
+
+const DATA: Record<2 | 3 | 4, QA[]> = {
+	2: TEMA2,
+	3: TEMA3,
+	4: TEMA4,
+};
+
+const items = DATA[tema];
+
+const wrap =
+	tema === 2
+		? 'border-teal-200/90 bg-gradient-to-br from-teal-50/80 via-white to-cyan-50/50'
+		: tema === 3
+			? 'border-cyan-200/90 bg-gradient-to-br from-cyan-50/80 via-white to-sky-50/50'
+			: 'border-indigo-200/90 bg-gradient-to-br from-indigo-50/80 via-white to-violet-50/50';
+
+const title =
+	tema === 2
+		? 'text-teal-900'
+		: tema === 3
+			? 'text-cyan-900'
+			: 'text-indigo-900';
+
+const detailsBorder =
+	tema === 2
+		? 'border-teal-100 open:border-teal-200'
+		: tema === 3
+			? 'border-cyan-100 open:border-cyan-200'
+			: 'border-indigo-100 open:border-indigo-200';
+---
+
+<div class:list={['rounded-2xl border p-4 shadow-inner sm:p-5', wrap]} aria-labelledby={`interrogantes-t${tema}-titulo`}>
+	<h3 id={`interrogantes-t${tema}-titulo`} class:list={['text-base font-bold sm:text-lg', title]}>
+		Interrogantes y respuestas
+	</h3>
+	<p class="mt-1 text-xs text-neutral-600">Actividad 2 · Despliega cada pregunta para leer la respuesta.</p>
+	<div class="mt-4 max-h-[min(70vh,520px)] space-y-2 overflow-y-auto pr-1">
+		{
+			items.map(({ q, a }) => (
+				<details class:list={['rounded-xl border bg-white/95 p-3 shadow-sm transition open:bg-white', detailsBorder]}>
+					<summary class="cursor-pointer list-none text-sm font-semibold text-neutral-900 marker:hidden [&::-webkit-details-marker]:hidden">
+						<span class="text-neutral-500">› </span>
+						{q}
+					</summary>
+					<p class="mt-2 border-t border-neutral-100 pt-2 text-sm leading-relaxed text-neutral-700">{a}</p>
+				</details>
+			))
+		}
+	</div>
+</div>

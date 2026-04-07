@@ -1,14 +1,15 @@
 ---
 import Page from '../layouts/Page.astro';
 import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
+import InterrogantesTemas234 from '../components/InterrogantesTemas234.astro';
 ---
-<Page title="Tutoría Uno — Guía N.° 1">
+<Page title="Tutoría Uno — Las normas y la contratación">
 	<div class="max-w-5xl mx-auto space-y-8">
 		<!-- Hero -->
 		<div class="relative overflow-hidden rounded-3xl border border-white/60 bg-white/50 p-8 shadow-[0_20px_60px_-15px_rgba(82,39,255,0.25)] backdrop-blur-xl">
 			<div class="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#5227FF]/20 blur-3xl"></div>
 			<div class="pointer-events-none absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-[#FF9FFC]/25 blur-3xl"></div>
-			<p class="text-xs uppercase tracking-[0.2em] text-violet-700 font-semibold">Guía N.° 1 · Las normas y la contratación (Salatiel Moreno Toro, 2026)</p>
+			<p class="text-xs uppercase tracking-[0.2em] text-violet-700 font-semibold">Las normas y la contratación (Salatiel Moreno Toro, 2026)</p>
 			<h1 class="mt-2 text-4xl font-extrabold tracking-tight text-emerald-950 sm:text-5xl">Tutoría Uno</h1>
 	
 		</div>
@@ -39,7 +40,7 @@ import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
 				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
 					La <strong>jerarquía normativa</strong> (pirámide kelsiana) ordena las fuentes para determinar cuál prevalece. El <strong>proceso contractual</strong> tiene etapas
 					<strong>precontractual</strong> (planeación, selección del contratista, negociación, elaboración del contrato), <strong>contractual</strong> (formalización, ejecución, seguimiento)
-					y <strong>postcontractual</strong> (cierre, liquidación, evaluación). La guía distingue tipologías: constitucionales, imperativas, programáticas, teleológicas, ordinarias, reglamentarias e individualizadas.
+					y <strong>postcontractual</strong> (cierre, liquidación, evaluación). Se distinguen tipologías normativas: constitucionales, imperativas, programáticas, teleológicas, ordinarias, reglamentarias e individualizadas.
 				</p>
 			</div>
 			<div class="rounded-2xl border border-emerald-100/90 bg-white/70 p-4 shadow-inner backdrop-blur-sm">
@@ -74,15 +75,15 @@ import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
 			<div class="rounded-2xl border border-teal-200/80 bg-white/70 p-6 shadow-sm">
 				<h2 class="text-xl font-bold text-teal-950">2. Contratación para la compra y venta de hardware y software en Colombia</h2>
 				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
-					<strong>Contratos informáticos</strong> son acuerdos entre dos o más partes para regular operaciones comerciales sobre bienes, suministros y/o servicios informáticos (GUIA 1). En la práctica incluyen desde la compra de equipos y licencias hasta el mantenimiento de sistemas y la nube.
+					<strong>Contratos informáticos</strong> son acuerdos entre dos o más partes para regular operaciones comerciales sobre bienes, suministros y/o servicios informáticos. En la práctica incluyen desde la compra de equipos y licencias hasta el mantenimiento de sistemas y la nube.
 				</p>
 				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
 					La contratación puede orientarse a <strong>adquisición</strong> (comprar o arrendar bienes TI), <strong>prestación de servicios</strong> (soporte, desarrollo, consultoría) o <strong>obra</strong> cuando implique un resultado concreto. Conocer si el proceso es <strong>público o privado</strong> define qué normas, plataformas y controles aplican.
 				</p>
 			</div>
+			<InterrogantesTemas234 tema={2} />
 			<div class="rounded-2xl border border-teal-100/90 bg-white/70 p-4 shadow-inner backdrop-blur-sm">
 				<div class="tema-subte-block max-w-5xl mx-auto">
-					
 					<div class="flex flex-wrap gap-2 mb-6 justify-center" role="tablist" aria-label="Subtemas tema 2">
 						<button type="button" class="t2-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-teal-600" data-sub="1" aria-selected="true">Naturaleza TI</button>
 						<button type="button" class="t2-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-teal-900 border-teal-100 hover:bg-teal-50" data-sub="2" aria-selected="false">Pública y privada</button>
@@ -108,10 +109,10 @@ import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
 										<p class="mt-1 text-[11px] leading-snug text-cyan-100">Prestaciones de apoyo: soporte, nube, desarrollo, seguridad</p>
 									</div>
 								</div>
-								<p class="mt-3 text-center text-[11px] text-neutral-600">Según GUÍA 1: los <strong>contratos informáticos</strong> regulan operaciones sobre bienes, suministros y/o servicios informáticos entre dos o más partes.</p>
+								<p class="mt-3 text-center text-[11px] text-neutral-600">Los <strong>contratos informáticos</strong> regulan operaciones sobre bienes, suministros y/o servicios informáticos entre dos o más partes.</p>
 							</div>
 							<p class="text-sm text-neutral-700 leading-relaxed mb-3">
-								La guía distingue tres familias de objeto contractual: lo <strong>material</strong> (hardware y software como producto), lo necesario para <strong>operar y abastecer</strong> el sistema (consumibles, licencias de usuario, medios) y lo <strong>intangible vinculado a actividad humana</strong> (asesoría, mesa de ayuda, desarrollo a medida, ciberseguridad). Los <strong>bienes informáticos</strong> abarcan elementos materiales del sistema y programas; los <strong>suministros</strong> permiten registrar información y mantener componentes; los <strong>servicios</strong> optimizan sistemas mediante actividades de apoyo especializado.
+								Se distinguen tres familias de objeto contractual: lo <strong>material</strong> (hardware y software como producto), lo necesario para <strong>operar y abastecer</strong> el sistema (consumibles, licencias de usuario, medios) y lo <strong>intangible vinculado a actividad humana</strong> (asesoría, mesa de ayuda, desarrollo a medida, ciberseguridad). Los <strong>bienes informáticos</strong> abarcan elementos materiales del sistema y programas; los <strong>suministros</strong> permiten registrar información y mantener componentes; los <strong>servicios</strong> optimizan sistemas mediante actividades de apoyo especializado.
 							</p>
 							<div class="grid gap-3 md:grid-cols-3 mt-3">
 								<div class="rounded-xl border border-teal-100 bg-teal-50/50 p-3">
@@ -128,7 +129,7 @@ import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
 								</div>
 							</div>
 							<div class="mt-5 rounded-xl border border-dashed border-teal-200 bg-white/80 p-4">
-								<h4 class="text-sm font-bold text-teal-900">Tipos de servicios según la GUÍA 1 (extracto)</h4>
+								<h4 class="text-sm font-bold text-teal-900">Tipos de servicios (extracto)</h4>
 								<p class="mt-2 text-xs text-neutral-700 leading-relaxed">
 									Apoyo a distancia, desarrollo de software, formación tecnológica, instalación y mantenimiento de hardware, servicios en la nube, correo electrónico, seguridad de red (cortafuegos, antivirus, VPN), seguimiento, solución de problemas, copias de seguridad, software como servicio (SaaS), presentación de información, VoIP, ciberseguridad, inteligencia artificial y machine learning, análisis de datos y big data, entre otros.
 								</p>
@@ -171,7 +172,7 @@ import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
 					<div id="t2-sub-3" class="t2-sub-panel tab-panel hidden space-y-3">
 						<div class="bg-white border border-teal-100 rounded-2xl p-5 shadow-sm">
 							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-teal-100 text-teal-800 mb-3 uppercase tracking-wide">Subtema 3</span>
-							<h3 class="text-lg font-semibold text-teal-900 mb-2">Conceptos e instrumentos (GUÍA N.° 1)</h3>
+							<h3 class="text-lg font-semibold text-teal-900 mb-2">Conceptos e instrumentos</h3>
 							<div class="subte-viz subte-viz--t2 mb-4 overflow-x-auto rounded-xl border border-violet-200 bg-violet-50/50 p-4">
 								<p class="text-center text-xs font-bold uppercase tracking-wide text-violet-900 mb-3">Visualización · flujo de instrumentos estatales</p>
 								<div class="flex min-w-[280px] flex-wrap items-center justify-center gap-2 sm:gap-3">
@@ -193,7 +194,7 @@ import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
 								<p class="mt-3 text-center text-[11px] text-violet-900">El <strong>pliego</strong> y la <strong>oferta</strong> conectan al <strong>proponente</strong> con la entidad hasta el <strong>contratista</strong> seleccionado.</p>
 							</div>
 							<p class="text-sm text-neutral-700 leading-relaxed mb-3">
-								Estas herramientas conectan la teoría con la práctica de compras del Estado y de quienes participan en procesos de selección. La GUÍA 1 presenta interrogantes sobre cada concepto (qué es TVEC, SECOP, AMP, pliego, proponente, contratista, oferta, etc.) para asegurar dominio operativo.
+								Estas herramientas conectan la teoría con la práctica de compras del Estado y de quienes participan en procesos de selección. Los interrogantes del tema repasan conceptos como TVEC, SECOP, AMP, pliego, proponente, contratista y oferta para asegurar dominio operativo.
 							</p>
 							<ul class="list-inside list-disc space-y-2 text-sm text-neutral-800 leading-relaxed">
 								<li><strong>TVEC:</strong> Tienda Virtual del Estado; canal para compras ágiles asociadas a <strong>AMP</strong> (Colombia Compra Eficiente).</li>
@@ -211,7 +212,7 @@ import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
 					<span class="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-600 text-sm text-white">A</span>
 					Actividad del tema 2 · Relaciona conceptos
 				</h3>
-				<p class="mt-2 text-sm text-neutral-600">Elige una tarjeta de la columna A y otra de la B que correspondan (según la guía).</p>
+				<p class="mt-2 text-sm text-neutral-600">Elige una tarjeta de la columna A y otra de la B que correspondan según el contenido del tema.</p>
 				<div class="mt-4 grid gap-3 sm:grid-cols-2" id="t2-match-root"></div>
 				<p class="mt-3 text-sm font-semibold text-violet-800" id="t2-match-status">Pares encontrados: 0 / 4</p>
 			</div>
@@ -228,9 +229,9 @@ import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
 					En contratación estatal, la Constitución y la jurisprudencia han insistido en que los recursos públicos se administren con <strong>eficacia y eficiencia</strong>, sin confundir ahorro con precariedad: se busca el mejor resultado posible con uso racional del presupuesto.
 				</p>
 			</div>
+			<InterrogantesTemas234 tema={3} />
 			<div class="rounded-2xl border border-cyan-100/90 bg-white/70 p-4 shadow-inner backdrop-blur-sm">
 				<div class="tema-subte-block max-w-5xl mx-auto">
-				
 					<div class="flex flex-wrap gap-2 mb-6 justify-center" role="tablist" aria-label="Subtemas tema 3">
 						<button type="button" class="t3-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-cyan-600 to-sky-600 text-white border-cyan-600" data-sub="1" aria-selected="true">Códigos</button>
 						<button type="button" class="t3-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-cyan-900 border-cyan-100 hover:bg-cyan-50" data-sub="2" aria-selected="false">Efectivo · eficaz · eficiente</button>
@@ -265,7 +266,7 @@ import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
 								<strong>Código de Comercio</strong> (Decreto 410 de 1971): contratos de tracto sucesivo, compraventa mercantil, prestación de servicios empresariales, títulos valores y sociedades. La contratación TI “entre comerciantes” o con habitualidad suele encuadrarse aquí.
 							</p>
 							<p class="mt-3 text-xs text-neutral-700 leading-relaxed border-t border-cyan-100 pt-3">
-								<strong>Contratación pública (GUÍA 1):</strong> destacan la <strong>Ley 80 de 1993</strong> (Estatuto General de Contratación), la <strong>Ley 1150 de 2007</strong> (modernización de modalidades de selección) y artículos de la <strong>Constitución</strong> (p. ej. 83, 209, 90) sobre buena fe, función administrativa y responsabilidad estatal.
+								<strong>Contratación pública:</strong> destacan la <strong>Ley 80 de 1993</strong> (Estatuto General de Contratación), la <strong>Ley 1150 de 2007</strong> (modernización de modalidades de selección) y artículos de la <strong>Constitución</strong> (p. ej. 83, 209, 90) sobre buena fe, función administrativa y responsabilidad estatal.
 							</p>
 						</div>
 					</div>
@@ -350,9 +351,9 @@ import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
 					En la contratación estatal, el licenciamiento debe compatibilizarse con pliegos, garantías y términos de uso; en la privada, prima la negociación de alcance (usuarios, sedes, actualizaciones, soporte).
 				</p>
 			</div>
+			<InterrogantesTemas234 tema={4} />
 			<div class="rounded-2xl border border-indigo-100/90 bg-white/70 p-4 shadow-inner backdrop-blur-sm">
 				<div class="tema-subte-block max-w-5xl mx-auto">
-					
 					<div class="flex flex-wrap gap-2 mb-6 justify-center" role="tablist" aria-label="Subtemas tema 4">
 						<button type="button" class="t4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-indigo-600 to-violet-600 text-white border-indigo-600" data-sub="1" aria-selected="true">Licenciamiento</button>
 						<button type="button" class="t4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-indigo-900 border-indigo-100 hover:bg-indigo-50" data-sub="2" aria-selected="false">Partes y figuras</button>
@@ -373,7 +374,7 @@ import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
 									<div class="subte-card rounded-xl bg-violet-600 px-4 py-4 text-center text-white shadow-md sm:min-w-[140px]">
 										<p class="text-xs font-bold uppercase tracking-wide opacity-90">Contrato</p>
 										<p class="mt-1 text-sm font-bold">Licencia de uso</p>
-										<p class="mt-1 text-[10px] text-violet-100">Sin ceder la titularidad (GUÍA 1)</p>
+										<p class="mt-1 text-[10px] text-violet-100">Sin ceder la titularidad del derecho de autor</p>
 									</div>
 									<div class="hidden text-slate-400 sm:block">→</div>
 									<div class="subte-card rounded-xl bg-purple-500 px-4 py-4 text-center text-white shadow-md sm:min-w-[120px]">
@@ -386,7 +387,7 @@ import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
 										<strong>Licencia exclusiva / no exclusiva:</strong> si solo el licenciatario puede explotar o el titular puede licenciar a más usuarios.
 									</div>
 									<div class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-[11px] text-neutral-800">
-										<strong>Transferible / sublicenciable:</strong> según el contrato, el usuario puede o no ceder o sublicenciar el uso (GUÍA 1).
+										<strong>Transferible / sublicenciable:</strong> según el contrato, el usuario puede o no ceder o sublicenciar el uso.
 									</div>
 								</div>
 							</div>
@@ -397,7 +398,7 @@ import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
 								Debe distinguirse de la <strong>cesión total</strong> de derechos patrimoniales (menos frecuente en software de masas) y del mero arrendamiento de equipos con software preinstalado.
 							</p>
 							<p class="mt-3 text-xs text-neutral-700 leading-relaxed border-t border-indigo-100 pt-3">
-								<strong>Tipos de licencia (GUÍA 1):</strong> la licencia puede ser <strong>exclusiva o no exclusiva</strong> (si solo el licenciatario explota o el titular puede licenciar a otros); y <strong>transferible o no</strong> (si puede sublicenciar o ceder el uso a terceros). Lo más habitual en el mercado es la licencia <strong>no exclusiva e intransferible</strong>.
+								<strong>Tipos de licencia:</strong> la licencia puede ser <strong>exclusiva o no exclusiva</strong> (si solo el licenciatario explota o el titular puede licenciar a otros); y <strong>transferible o no</strong> (si puede sublicenciar o ceder el uso a terceros). Lo más habitual en el mercado es la licencia <strong>no exclusiva e intransferible</strong>.
 							</p>
 						</div>
 					</div>
@@ -723,7 +724,7 @@ import JerarquiaNormasBlock from '../components/JerarquiaNormasBlock.astro';
 			}
 
 			/* ── Sopa de letras Tema 1 (horizontal y vertical; rejilla estable) ── */
-			/* Palabras del tema 1 — Jerarquía de normas y proceso contractual (GUÍA 1) */
+			/* Palabras del tema 1 — Jerarquía de normas y proceso contractual */
 			const T1_WORDS = ['PIRAMIDE', 'NORMA', 'ETAPA', 'LEY', 'NIVEL', 'PACTO'];
 			const SOPA_ROWS = 10;
 			const SOPA_COLS = 14;
