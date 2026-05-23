@@ -1,14 +1,988 @@
 ---
 import Page from '../layouts/Page.astro';
-const base = import.meta.env.BASE_URL;
 ---
-<Page title="Tutoría Tres — En construcción">
-	<section class="max-w-xl mx-auto text-center py-16 px-4">
-		<div class="text-5xl mb-4" aria-hidden="true">🛠️</div>
-		<h1 class="text-2xl font-bold text-emerald-900 mb-3">Tutoría Tres</h1>
-		<p class="text-neutral-600 leading-relaxed">
-			Esta sección está <strong>en construcción</strong>. Pronto encontrarás aquí los temas, recursos y la actividad lúdica correspondientes a esta tutoría.
-		</p>
-		<a href={`${base}tutoria-uno`} class="inline-block mt-8 px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-sm font-medium hover:bg-emerald-700 transition">Volver a Tutoría Uno</a>
-	</section>
+<Page title="Guía 3 — La ingeniería legal, la información y los aspectos legales">
+	<div class="max-w-5xl mx-auto space-y-8">
+
+		<!-- Hero -->
+		<div class="relative overflow-hidden rounded-3xl border border-white/60 bg-white/50 p-8 shadow-[0_20px_60px_-15px_rgba(82,39,255,0.25)] backdrop-blur-xl">
+			<div class="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#5227FF]/20 blur-3xl"></div>
+			<div class="pointer-events-none absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-[#FF9FFC]/25 blur-3xl"></div>
+			<p class="text-xs uppercase tracking-[0.2em] text-violet-700 font-semibold">La computación y los aspectos legales (Salatiel Moreno Toro, 2026)</p>
+			<h1 class="mt-2 text-4xl font-extrabold tracking-tight text-emerald-950 sm:text-5xl">Tutoría 3</h1>
+			<p class="mt-3 text-sm text-neutral-600 max-w-2xl">La ingeniería legal · La información · Aspectos legales en Colombia</p>
+		</div>
+
+		<!-- Pestañas temas -->
+		<div class="sticky top-[76px] z-20 rounded-2xl border border-white/80 bg-white/80 p-3 shadow-lg backdrop-blur-md" role="navigation" aria-label="Temas de la guía">
+			<p class="mb-2 px-1 text-xs font-semibold uppercase tracking-wide text-neutral-500">Elegir tema</p>
+			<div class="flex flex-wrap gap-2" role="tablist">
+				<button type="button" role="tab" aria-selected="true" id="tab-tema-1" data-tema="1"
+					class="tema-tab rounded-xl border-2 border-emerald-500 bg-emerald-50 px-3 py-2 text-left text-xs font-bold text-emerald-900 shadow-sm sm:text-sm">
+					1 · Aspectos legales TI
+				</button>
+				<button type="button" role="tab" aria-selected="false" id="tab-tema-2" data-tema="2"
+					class="tema-tab rounded-xl border border-neutral-200 bg-white px-3 py-2 text-left text-xs font-medium text-neutral-700 hover:border-teal-300 sm:text-sm">
+					2 · Tipología de la información
+				</button>
+			</div>
+		</div>
+
+		<!-- ========== PANEL TEMA 1 ========== -->
+		<section id="panel-tema-1" class="tema-panel space-y-6" data-panel="1" role="tabpanel" aria-labelledby="tab-tema-1">
+			<div class="rounded-2xl border border-emerald-200/80 bg-white/70 p-6 shadow-sm">
+				<h2 class="text-xl font-bold text-emerald-950">1. La computación y los aspectos legales en Colombia</h2>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
+					Colombia cuenta con un marco normativo robusto que regula el tratamiento de datos personales, la seguridad de la información y el uso de tecnologías. Las leyes <strong>1266 de 2008</strong> y <strong>1581 de 2012</strong>, el Decreto <strong>1377 de 2013</strong> y el Decreto <strong>1078 de 2015</strong> forman la columna vertebral legal del sector TI. Las normas internacionales <strong>ISO/IEC</strong> e <strong>IEEE</strong> complementan este marco con estándares técnicos de calidad, seguridad y ciclo de vida del software.
+				</p>
+			</div>
+
+			<!-- Sub-tabs tema 1 -->
+			<div class="rounded-2xl border border-emerald-100/90 bg-white/70 p-4 shadow-inner backdrop-blur-sm">
+				<div class="tema-subte-block max-w-5xl mx-auto">
+					<p class="text-neutral-600 text-center mb-4 text-sm">
+						Usa las pestañas: <strong>Leyes colombianas</strong>, <strong>Normas ISO/IEEE</strong>, <strong>Cloud & SIC</strong> e <strong>Interrogantes</strong>.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-6 justify-center" role="tablist" aria-label="Subtemas tema 1">
+						<button type="button" class="t1g3-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-emerald-600 to-teal-600 text-white border-emerald-600" data-sub="1" aria-selected="true">Leyes colombianas</button>
+						<button type="button" class="t1g3-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-emerald-900 border-emerald-100 hover:bg-emerald-50" data-sub="2" aria-selected="false">Normas ISO/IEEE</button>
+						<button type="button" class="t1g3-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-emerald-900 border-emerald-100 hover:bg-emerald-50" data-sub="3" aria-selected="false">Cloud & SIC</button>
+						<button type="button" class="t1g3-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-emerald-900 border-emerald-100 hover:bg-emerald-50" data-sub="4" aria-selected="false">Interrogantes</button>
+					</div>
+
+					<!-- SUB 1: Leyes colombianas -->
+					<div id="t1g3-sub-1" class="t1g3-sub-panel tab-panel space-y-3">
+						<div class="bg-white border border-emerald-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 mb-3 uppercase tracking-wide">Subtema 1</span>
+							<h3 class="text-lg font-semibold text-emerald-900 mb-3">Leyes y decretos colombianos en TI</h3>
+
+							<!-- Barra de progreso T1-Sub1 -->
+							<div class="flex items-center gap-3 mb-4">
+								<span class="text-xs text-neutral-500 whitespace-nowrap">Revisadas</span>
+								<div class="flex-1 h-1.5 bg-emerald-100 rounded-full overflow-hidden">
+									<div id="rb-t1s1-fill" class="h-full bg-emerald-500 rounded-full transition-all duration-400" style="width:0%"></div>
+								</div>
+								<span id="rb-t1s1-lbl" class="text-xs font-semibold text-emerald-700 whitespace-nowrap">0 / 6</span>
+							</div>
+
+							<div class="subte-viz subte-viz--t1g3 mb-5 rounded-xl border border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-4 shadow-inner">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-emerald-800 mb-4">Línea de tiempo normativa</p>
+								<div class="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-2">
+									<div class="subte-card flex-1 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-600 px-3 py-4 text-center shadow-md">
+										<p class="text-xs font-bold text-emerald-100 uppercase">2008</p>
+										<p class="text-sm font-bold text-white mt-1">Ley 1266</p>
+										<p class="text-[10px] text-emerald-100 mt-1 leading-snug">Hábeas Data financiero y comercial</p>
+									</div>
+									<div class="subte-card flex-1 rounded-xl bg-emerald-700 px-3 py-4 text-center shadow-md">
+										<p class="text-xs font-bold text-emerald-200 uppercase">2012</p>
+										<p class="text-sm font-bold text-white mt-1">Ley 1581</p>
+										<p class="text-[10px] text-emerald-100 mt-1 leading-snug">Protección de datos personales</p>
+									</div>
+									<div class="subte-card flex-1 rounded-xl bg-teal-700 px-3 py-4 text-center shadow-md">
+										<p class="text-xs font-bold text-teal-200 uppercase">2013</p>
+										<p class="text-sm font-bold text-white mt-1">Decreto 1377</p>
+										<p class="text-[10px] text-teal-100 mt-1 leading-snug">Reglamenta parcialmente la Ley 1581</p>
+									</div>
+									<div class="subte-card flex-1 rounded-xl bg-cyan-800 px-3 py-4 text-center shadow-md">
+										<p class="text-xs font-bold text-cyan-200 uppercase">2015</p>
+										<p class="text-sm font-bold text-white mt-1">Decreto 1078</p>
+										<p class="text-[10px] text-cyan-100 mt-1 leading-snug">Decreto único sector TIC</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Tarjetas dinámicas leyes -->
+							<div class="grid grid-cols-1 gap-3 sm:grid-cols-2" id="t1s1-cards">
+
+								<div class="g3-card rounded-xl border border-emerald-100 bg-emerald-50 p-4" data-seen="0" data-rb="t1s1">
+									<p class="text-xs font-bold text-emerald-800 uppercase tracking-wide mb-1">Ley 1266 de 2008 — Hábeas Data</p>
+									<p class="text-sm text-neutral-700 leading-relaxed">Conocida como la "Ley de Hábeas Data". Regula el manejo de información en bases de datos personales, especialmente la financiera, crediticia y comercial. Garantiza el derecho a conocer, actualizar y rectificar datos conforme al artículo 15 de la Constitución.</p>
+									<p class="mt-2 text-[11px] text-emerald-800 font-semibold">Fuente: Secretaría del Senado · secretariasenado.gov.co</p>
+									<div class="g3-tip">Dicta las disposiciones generales del hábeas data. La información proveniente de terceros países también está regulada por esta ley.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-teal-100 bg-teal-50 p-4" data-seen="0" data-rb="t1s1">
+									<p class="text-xs font-bold text-teal-800 uppercase tracking-wide mb-1">Ley Estatutaria 1581 de 2012 — Protección de datos</p>
+									<p class="text-sm text-neutral-700 leading-relaxed">Marco general de protección de datos personales en Colombia. Aplica a todas las organizaciones públicas y privadas que realicen tratamiento de datos. Fija principios de legalidad, finalidad, libertad, veracidad y seguridad.</p>
+									<p class="mt-2 text-[11px] text-teal-800 font-semibold">Fuente: Función Pública · funcionpublica.gov.co</p>
+									<div class="g3-tip">Desarrolla el derecho constitucional a conocer, actualizar y rectificar la información recogida sobre cada persona en bases de datos o archivos.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-cyan-100 bg-cyan-50 p-4" data-seen="0" data-rb="t1s1">
+									<p class="text-xs font-bold text-cyan-800 uppercase tracking-wide mb-1">Decreto Reglamentario 1377 de 2013</p>
+									<p class="text-sm text-neutral-700 leading-relaxed">Reglamenta parcialmente la Ley 1581 de 2012. Define los procedimientos para la autorización del titular, el aviso de privacidad, derechos de los titulares y transferencias internacionales de datos.</p>
+									<p class="mt-2 text-[11px] text-cyan-800 font-semibold">Fuente: SUIN-Juriscol · suin-juriscol.gov.co</p>
+									<div class="g3-tip">La SIC puede imponer multas de hasta 2.000 salarios mínimos legales mensuales vigentes por incumplimiento de esta norma.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-indigo-100 bg-indigo-50 p-4" data-seen="0" data-rb="t1s1">
+									<p class="text-xs font-bold text-indigo-800 uppercase tracking-wide mb-1">Decreto 1078 de 2015 — Sector TIC</p>
+									<p class="text-sm text-neutral-700 leading-relaxed">Decreto Único Reglamentario del Sector de Tecnologías de la Información y las Comunicaciones. Compila toda la normativa reglamentaria TIC expedida por el Ministerio de las TIC.</p>
+									<p class="mt-2 text-[11px] text-indigo-800 font-semibold">Fuente: MinTIC · normograma.mintic.gov.co</p>
+									<div class="g3-tip">Establece los lineamientos de Gobierno Digital, servicios ciudadanos digitales y el Registro Único de TIC.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-violet-100 bg-violet-50 p-4" data-seen="0" data-rb="t1s1">
+									<p class="text-xs font-bold text-violet-800 uppercase tracking-wide mb-1">Política de Tratamiento de Datos Personales</p>
+									<p class="text-sm text-neutral-700 leading-relaxed">Documento obligatorio que toda organización debe publicar, informando a los titulares cómo recolecta, almacena, usa y protege sus datos. Debe incluir identidad del responsable, finalidades y derechos del titular.</p>
+									<p class="mt-2 text-[11px] text-violet-800 font-semibold">Fuente: SIC · sic.gov.co</p>
+									<div class="g3-tip">Regulada por la Ley 1581/2012 y el Decreto 1377/2013. Debe indicar la vigencia de la política y los canales de atención al titular.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-orange-100 bg-orange-50 p-4" data-seen="0" data-rb="t1s1">
+									<p class="text-xs font-bold text-orange-800 uppercase tracking-wide mb-1">Cartilla de Protección de Datos — SIC</p>
+									<p class="text-sm text-neutral-700 leading-relaxed">Elaborada por la Superintendencia de Industria y Comercio. Orienta a ciudadanos y empresas sobre los derechos de los titulares, las obligaciones de quienes recolectan datos y los procedimientos de Hábeas Data.</p>
+									<p class="mt-2 text-[11px] text-orange-800 font-semibold">Fuente: SIC · sic.gov.co</p>
+									<div class="g3-tip">Es la guía práctica oficial del marco normativo colombiano de datos personales, publicada directamente por la autoridad de control.</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<!-- SUB 2: Normas ISO/IEEE -->
+					<div id="t1g3-sub-2" class="t1g3-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-emerald-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-blue-100 text-blue-800 mb-3 uppercase tracking-wide">Subtema 2</span>
+							<h3 class="text-lg font-semibold text-emerald-900 mb-3">Normas ISO/IEC e IEEE aplicadas a TI</h3>
+
+							<!-- Barra de progreso T1-Sub2 -->
+							<div class="flex items-center gap-3 mb-4">
+								<span class="text-xs text-neutral-500 whitespace-nowrap">Revisadas</span>
+								<div class="flex-1 h-1.5 bg-blue-100 rounded-full overflow-hidden">
+									<div id="rb-t1s2-fill" class="h-full bg-blue-500 rounded-full transition-all duration-400" style="width:0%"></div>
+								</div>
+								<span id="rb-t1s2-lbl" class="text-xs font-semibold text-blue-700 whitespace-nowrap">0 / 8</span>
+							</div>
+
+							<div class="subte-viz subte-viz--t1g3 mb-5 rounded-xl border border-blue-200 bg-gradient-to-br from-blue-50 via-white to-indigo-50 p-4 shadow-inner">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-blue-800 mb-4">Familias de estándares</p>
+								<div class="grid grid-cols-1 gap-2 sm:grid-cols-3">
+									<div class="subte-card rounded-xl bg-blue-700 px-3 py-4 text-center shadow-md">
+										<p class="text-xs font-bold text-blue-200 uppercase">Calidad</p>
+										<p class="text-sm font-bold text-white mt-1">ISO 9001</p>
+										<p class="text-[10px] text-blue-100 mt-1">ISO/IEC 25000 · ISO/IEC 9126</p>
+									</div>
+									<div class="subte-card rounded-xl bg-indigo-700 px-3 py-4 text-center shadow-md">
+										<p class="text-xs font-bold text-indigo-200 uppercase">Seguridad</p>
+										<p class="text-sm font-bold text-white mt-1">ISO/IEC 27001</p>
+										<p class="text-[10px] text-indigo-100 mt-1">ISO/IEC 27017 · Cloud</p>
+									</div>
+									<div class="subte-card rounded-xl bg-violet-700 px-3 py-4 text-center shadow-md">
+										<p class="text-xs font-bold text-violet-200 uppercase">Ciclo de vida</p>
+										<p class="text-sm font-bold text-white mt-1">ISO/IEC 12207</p>
+										<p class="text-[10px] text-violet-100 mt-1">15288 · 29148 · IEEE 829</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+
+								<div class="g3-card rounded-xl border border-blue-100 bg-blue-50 p-3" data-seen="0" data-rb="t1s2">
+									<p class="text-xs font-bold text-blue-800 uppercase mb-1">ISO/IEC 25000 (SQuaRE)</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Estándares para la calidad de productos de software. Define características: funcionalidad, fiabilidad, usabilidad, eficiencia, mantenibilidad y portabilidad. Provee modelos de calidad, métricas y procesos de evaluación.</p>
+									<div class="g3-tip">SQuaRE reemplaza y extiende la ISO/IEC 9126. Es el estándar más completo para medir y evaluar la calidad del software.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-indigo-100 bg-indigo-50 p-3" data-seen="0" data-rb="t1s2">
+									<p class="text-xs font-bold text-indigo-800 uppercase mb-1">ISO/IEC 27001</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Referente mundial para implementar un Sistema de Gestión de la Seguridad de la Información (SGSI). Garantiza confidencialidad, integridad y disponibilidad con controles de riesgo.</p>
+									<div class="g3-tip">La certificación ISO 27001 es reconocida globalmente y demuestra que una organización gestiona la seguridad de la información de forma sistemática.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-teal-100 bg-teal-50 p-3" data-seen="0" data-rb="t1s2">
+									<p class="text-xs font-bold text-teal-800 uppercase mb-1">ISO 9001</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Sistema de Gestión de Calidad. Aplica a cualquier organización. Establece requisitos para demostrar capacidad de suministrar productos y servicios que satisfagan al cliente.</p>
+									<div class="g3-tip">Base para certificaciones de calidad reconocidas mundialmente. Es el estándar de gestión de calidad más adoptado en el mundo.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-cyan-100 bg-cyan-50 p-3" data-seen="0" data-rb="t1s2">
+									<p class="text-xs font-bold text-cyan-800 uppercase mb-1">ISO/IEC 12207 / 12207:2017</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Establece los procesos del ciclo de vida del software: adquisición, suministro, desarrollo, operación y mantenimiento. La versión 2017 se alinea con el enfoque de sistemas (ISO/IEC 15288).</p>
+									<div class="g3-tip">Define un lenguaje común para los procesos de software, facilitando la comunicación entre compradores, proveedores y desarrolladores.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-violet-100 bg-violet-50 p-3" data-seen="0" data-rb="t1s2">
+									<p class="text-xs font-bold text-violet-800 uppercase mb-1">ISO/IEC 9126</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Modelo de calidad para productos software con seis características: funcionalidad, confiabilidad, usabilidad, eficiencia, mantenibilidad y portabilidad. Base del modelo SQuaRE (ISO 25000).</p>
+									<div class="g3-tip">Aunque fue reemplazado por ISO 25000, su modelo conceptual sigue siendo la referencia teórica más citada en ingeniería de software.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-emerald-100 bg-emerald-50 p-3" data-seen="0" data-rb="t1s2">
+									<p class="text-xs font-bold text-emerald-800 uppercase mb-1">ISO/IEC/IEEE 15288:2015</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Procesos del ciclo de vida de sistemas. Aplica a sistemas que incluyen hardware, software, datos, personas y servicios. Marco unificado para ingeniería de sistemas.</p>
+									<div class="g3-tip">Es el estándar base para la ingeniería de sistemas completos. Se usa junto con ISO 12207 para cubrir tanto el sistema como el software.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-orange-100 bg-orange-50 p-3" data-seen="0" data-rb="t1s2">
+									<p class="text-xs font-bold text-orange-800 uppercase mb-1">ISO/IEC/IEEE 29148:2018</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Define los procesos y productos de trabajo de la ingeniería de requisitos: elicitación, análisis, especificación y verificación a lo largo del ciclo de vida.</p>
+									<div class="g3-tip">Unifica las prácticas de ingeniería de requisitos tanto para software como para sistemas. Reemplaza a IEEE 830 y otros estándares previos de requisitos.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-red-100 bg-red-50 p-3" data-seen="0" data-rb="t1s2">
+									<p class="text-xs font-bold text-red-800 uppercase mb-1">IEEE 802 / IEEE 829</p>
+									<p class="text-xs text-neutral-700 leading-relaxed"><strong>IEEE 802:</strong> familia de estándares para redes LAN/MAN (Wi-Fi 802.11, Ethernet 802.3). <strong>IEEE 829:</strong> estándar para documentación de pruebas de software: planes, especificaciones y reportes.</p>
+									<div class="g3-tip">IEEE 802.11 (Wi-Fi) e IEEE 802.3 (Ethernet) son los estándares de red más usados en el mundo. IEEE 829 define el estándar para planes y reportes de prueba.</div>
+								</div>
+
+							</div>
+
+							<div class="mt-4 g3-card rounded-xl border border-slate-200 bg-slate-50 p-3" data-seen="0" data-rb="t1s2">
+								<p class="text-xs font-bold text-slate-700 uppercase mb-2">NTC-ISO/IEC 27017 — Seguridad en la nube</p>
+								<p class="text-xs text-neutral-700 leading-relaxed">Proporciona directrices para los controles de seguridad aplicables a la provisión y uso de servicios en la nube. Amplía los requisitos de ISO/IEC 27001 para contextos Cloud (IaaS, PaaS, SaaS). ICONTEC la adopta como norma técnica colombiana.</p>
+								<div class="g3-tip">Fuente: tienda.icontec.org. Aplica tanto a proveedores cloud como a los clientes que usan sus servicios, con controles específicos para cada rol.</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- SUB 3: Cloud & SIC -->
+					<div id="t1g3-sub-3" class="t1g3-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-emerald-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-sky-100 text-sky-800 mb-3 uppercase tracking-wide">Subtema 3</span>
+							<h3 class="text-lg font-semibold text-emerald-900 mb-3">Cloud Computing según la SIC</h3>
+
+							<!-- Barra de progreso T1-Sub3 -->
+							<div class="flex items-center gap-3 mb-4">
+								<span class="text-xs text-neutral-500 whitespace-nowrap">Revisadas</span>
+								<div class="flex-1 h-1.5 bg-sky-100 rounded-full overflow-hidden">
+									<div id="rb-t1s3-fill" class="h-full bg-sky-500 rounded-full transition-all duration-400" style="width:0%"></div>
+								</div>
+								<span id="rb-t1s3-lbl" class="text-xs font-semibold text-sky-700 whitespace-nowrap">0 / 5</span>
+							</div>
+
+							<div class="subte-viz subte-viz--t1g3 mb-5 rounded-xl border border-sky-200 bg-gradient-to-b from-sky-50 to-slate-50 p-4">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-sky-800 mb-4">Tres modelos de servicio en la nube</p>
+								<div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
+									<div class="subte-card rounded-xl border-2 border-sky-500 bg-white px-4 py-4 text-center shadow-sm">
+										<p class="text-2xl mb-2">🖥️</p>
+										<p class="text-sm font-bold text-sky-900">IaaS</p>
+										<p class="text-[10px] text-neutral-600 mt-1">Infraestructura como Servicio<br/>Servidores, almacenamiento, redes</p>
+									</div>
+									<div class="subte-card rounded-xl border-2 border-indigo-500 bg-white px-4 py-4 text-center shadow-sm">
+										<p class="text-2xl mb-2">⚙️</p>
+										<p class="text-sm font-bold text-indigo-900">PaaS</p>
+										<p class="text-[10px] text-neutral-600 mt-1">Plataforma como Servicio<br/>Entornos de desarrollo y despliegue</p>
+									</div>
+									<div class="subte-card rounded-xl border-2 border-violet-500 bg-white px-4 py-4 text-center shadow-sm">
+										<p class="text-2xl mb-2">📱</p>
+										<p class="text-sm font-bold text-violet-900">SaaS</p>
+										<p class="text-[10px] text-neutral-600 mt-1">Software como Servicio<br/>Aplicaciones listas para el usuario</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="space-y-3">
+
+								<div class="g3-card rounded-xl border border-sky-100 bg-sky-50 p-4" data-seen="0" data-rb="t1s3">
+									<p class="text-xs font-bold text-sky-800 uppercase mb-2">¿Cómo define la SIC la Cloud Computing?</p>
+									<p class="text-sm text-neutral-700 leading-relaxed">La Superintendencia de Industria y Comercio entiende la computación en la nube como un modelo que permite el acceso bajo demanda, a través de internet, a un conjunto compartido de recursos configurables que pueden aprovisionarse con mínima intervención del proveedor.</p>
+									<p class="mt-2 text-[11px] text-sky-800 font-semibold">Fuente: SIC · sic.gov.co/content/servicios-tic</p>
+									<div class="g3-tip">Los recursos compartidos incluyen redes, servidores, almacenamiento, aplicaciones y servicios. Los modelos son IaaS, PaaS y SaaS.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-sky-100 bg-sky-50 p-4" data-seen="0" data-rb="t1s3">
+									<p class="text-xs font-bold text-sky-800 uppercase mb-2">IaaS — Infraestructura como Servicio</p>
+									<p class="text-sm text-neutral-700 leading-relaxed">El proveedor ofrece recursos de cómputo virtualizados: servidores, almacenamiento y redes. El cliente gestiona el sistema operativo, middleware y aplicaciones. Ejemplo: AWS EC2, Google Compute Engine.</p>
+									<div class="g3-tip">Mayor control para el cliente, mayor responsabilidad de configuración y seguridad del sistema operativo y capas superiores.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-indigo-100 bg-indigo-50 p-4" data-seen="0" data-rb="t1s3">
+									<p class="text-xs font-bold text-indigo-800 uppercase mb-2">PaaS — Plataforma como Servicio</p>
+									<p class="text-sm text-neutral-700 leading-relaxed">El proveedor suministra un entorno completo de desarrollo y despliegue. El cliente se enfoca en el código de la aplicación. Ejemplo: Google App Engine, Heroku, Azure App Service.</p>
+									<div class="g3-tip">Ideal para equipos de desarrollo que quieren centrarse en el código sin administrar infraestructura subyacente.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-violet-100 bg-violet-50 p-4" data-seen="0" data-rb="t1s3">
+									<p class="text-xs font-bold text-violet-800 uppercase mb-2">SaaS — Software como Servicio</p>
+									<p class="text-sm text-neutral-700 leading-relaxed">Aplicaciones listas para usar entregadas por internet. El proveedor gestiona toda la infraestructura. Ejemplo: Google Workspace, Microsoft 365, Salesforce.</p>
+									<div class="g3-tip">El cliente no administra nada del stack tecnológico. Solo usa la aplicación a través del navegador o cliente ligero.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-violet-100 bg-violet-50 p-4" data-seen="0" data-rb="t1s3">
+									<p class="text-xs font-bold text-violet-800 uppercase mb-2">NTC-ISO/IEC 27017 y la nube</p>
+									<p class="text-sm text-neutral-700 leading-relaxed">Esta norma técnica colombiana es la guía de seguridad específica para ambientes cloud. Proporciona controles adicionales tanto para proveedores como para clientes de servicios en la nube, complementando la ISO/IEC 27001. ICONTEC la adopta y publica.</p>
+									<p class="mt-2 text-[11px] text-violet-800 font-semibold">Fuente: ICONTEC · tienda.icontec.org</p>
+									<div class="g3-tip">Introduce controles específicos para la nube que no existen en ISO 27001, como la gestión de activos virtuales y la segregación en entornos compartidos.</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<!-- SUB 4: Interrogantes tema 1 -->
+					<div id="t1g3-sub-4" class="t1g3-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-emerald-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 mb-3 uppercase tracking-wide">Interrogantes · Tema 1</span>
+
+							<div class="bg-emerald-50 rounded-2xl p-4 mb-5 flex items-center gap-4">
+								<div class="flex-1">
+									<div class="flex justify-between text-xs text-neutral-500 mb-1">
+										<span>Preguntas revisadas</span>
+										<span id="q1g3-count" class="font-semibold text-emerald-700">0 de 8</span>
+									</div>
+									<div class="h-2 bg-emerald-100 rounded-full overflow-hidden">
+										<div class="h-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full transition-all duration-500" id="q1g3-bar" style="width:0%"></div>
+									</div>
+								</div>
+								<button onclick="closeAllG3T1()" class="text-xs text-emerald-600 border border-emerald-200 rounded-lg px-3 py-1 hover:bg-white transition font-medium whitespace-nowrap">Cerrar todas</button>
+							</div>
+
+							<div id="g3t1-acc-container" class="space-y-2">
+								{[
+									{ q: "¿Qué es la Ley 1266 de 2008?", a: "Conocida como la Ley de Hábeas Data. Dicta las disposiciones generales del hábeas data y regula el manejo de información en bases de datos personales, especialmente la financiera, crediticia y comercial. Garantiza a toda persona el derecho a conocer, actualizar y rectificar sus datos conforme al artículo 15 de la Constitución Política de Colombia." },
+									{ q: "¿Qué es la Ley de Garantías?", a: "Hace referencia a la Ley 1266 de 2008. Se denomina de garantías porque garantiza el pleno ejercicio del derecho al Hábeas Data: el titular puede conocer la información que se tenga sobre él en bancos de datos, solicitar su actualización o corrección, y exigir que no circule información incorrecta o desactualizada." },
+									{ q: "¿Qué es la Ley Estatutaria 1581 de 2012?", a: "Es la Ley de Protección de Datos Personales de Colombia. Desarrolla el derecho constitucional a conocer, actualizar y rectificar información en bases de datos. Es el marco general de protección de datos en Colombia y aplica a todas las organizaciones públicas y privadas que realicen tratamiento de datos personales." },
+									{ q: "¿Qué es el Decreto Reglamentario 1377 de 2013?", a: "Reglamenta parcialmente la Ley 1581 de 2012. Define procedimientos para obtener la autorización del titular de datos, establece el aviso de privacidad, regula el tratamiento en ámbito doméstico, los derechos de los titulares y las transferencias internacionales. La SIC puede imponer multas de hasta 2.000 SMMLV por incumplimiento." },
+									{ q: "¿Qué es la NTC-ISO/IEC 27017?", a: "Norma Técnica Colombiana adoptada por ICONTEC. Proporciona directrices para controles de seguridad de la información aplicables a la provisión y uso de servicios en la nube. Amplía los controles de la ISO 27001 para contextos Cloud (IaaS, PaaS, SaaS). Está dirigida tanto a proveedores como a clientes de servicios en la nube." },
+									{ q: "¿Qué es la Política de Tratamiento de Datos Personales?", a: "Es el documento obligatorio que toda organización debe publicar, mediante el cual informa a los titulares cómo recolecta, almacena, usa y protege sus datos. Debe indicar la identidad del responsable, las finalidades del tratamiento, los derechos del titular, los canales de atención y la vigencia de la política. Es exigida por la Ley 1581/2012 y el Decreto 1377/2013." },
+									{ q: "¿Qué es el Decreto 1078 de 2015?", a: "Es el Decreto Único Reglamentario del Sector de Tecnologías de la Información y las Comunicaciones. Compila toda la normativa reglamentaria del sector TIC del Ministerio de las TIC. Establece lineamientos de Gobierno Digital, servicios ciudadanos digitales y el Registro Único de TIC." },
+									{ q: "Según la SIC, ¿cómo define la Cloud Computing?", a: "La Superintendencia de Industria y Comercio entiende la computación en la nube como un modelo que permite el acceso bajo demanda a través de internet a un conjunto compartido de recursos de computación configurables (redes, servidores, almacenamiento, aplicaciones y servicios), que pueden aprovisionarse y liberarse con mínima intervención del proveedor. Los modelos son IaaS, PaaS y SaaS." },
+								].map((item, idx) => (
+									<div class="g3t1-acc-item rounded-2xl overflow-hidden border border-emerald-100 shadow-sm transition hover:shadow-md" onclick="toggleG3T1(this)">
+										<div class="flex items-center gap-3 px-4 py-3 bg-white hover:bg-emerald-50 cursor-pointer transition">
+											<span class="flex w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold items-center justify-center flex-shrink-0">{idx + 1}</span>
+											<span class="text-sm font-semibold text-emerald-900 flex-1">{item.q}</span>
+											<span class="g3t1-icon text-emerald-400 font-light text-xl flex-shrink-0">+</span>
+										</div>
+										<div class="g3t1-body max-h-0 overflow-hidden transition-all duration-400 ease-in-out">
+											<div class="px-4 pb-4 pt-3 text-sm text-neutral-700 leading-relaxed border-t border-emerald-100">{item.a}</div>
+										</div>
+									</div>
+								))}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Actividad tema 1 -->
+			<div class="rounded-2xl border border-amber-200/90 bg-gradient-to-br from-amber-50/90 via-white to-orange-50/80 p-5 shadow-lg shadow-amber-500/10">
+				<h3 class="flex items-center gap-2 text-lg font-bold text-amber-900">
+					<span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500 text-sm text-white">A</span>
+					Actividad del tema 1 · Relaciona la norma
+				</h3>
+				<p class="mt-2 text-sm text-neutral-600">Elige una tarjeta de la columna A y otra de la B que correspondan según el contenido del tema.</p>
+				<div class="mt-4 grid gap-3 sm:grid-cols-2" id="g3t1-match-root"></div>
+				<p class="mt-3 text-sm font-semibold text-amber-800" id="g3t1-match-status">Pares encontrados: 0 / 5</p>
+			</div>
+		</section>
+
+		<!-- ========== PANEL TEMA 2 ========== -->
+		<section id="panel-tema-2" class="tema-panel hidden space-y-6" data-panel="2" role="tabpanel" aria-labelledby="tab-tema-2" hidden>
+			<div class="rounded-2xl border border-teal-200/80 bg-white/70 p-6 shadow-sm">
+				<h2 class="text-xl font-bold text-teal-950">2. La información computarizada y su tipología</h2>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
+					La información computarizada se clasifica según su estructura, origen, formato y función dentro de los sistemas de información. Conocer su tipología es fundamental para el diseño de sistemas, la protección de datos y el cumplimiento legal.
+				</p>
+			</div>
+
+			<!-- Sub-tabs tema 2 -->
+			<div class="rounded-2xl border border-teal-100/90 bg-white/70 p-4 shadow-inner backdrop-blur-sm">
+				<div class="tema-subte-block max-w-5xl mx-auto">
+					<p class="text-neutral-600 text-center mb-4 text-sm">
+						Pestañas: <strong>Por estructura</strong>, <strong>Por formato</strong>, <strong>Por función</strong> e <strong>Interrogantes</strong>.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-6 justify-center" role="tablist">
+						<button type="button" class="t2g3-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-teal-600" data-sub="1" aria-selected="true">Por estructura</button>
+						<button type="button" class="t2g3-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-teal-900 border-teal-100 hover:bg-teal-50" data-sub="2" aria-selected="false">Por formato</button>
+						<button type="button" class="t2g3-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-teal-900 border-teal-100 hover:bg-teal-50" data-sub="3" aria-selected="false">Por función</button>
+						<button type="button" class="t2g3-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-teal-900 border-teal-100 hover:bg-teal-50" data-sub="4" aria-selected="false">Interrogantes</button>
+					</div>
+
+					<!-- SUB 1: Por estructura -->
+					<div id="t2g3-sub-1" class="t2g3-sub-panel tab-panel space-y-3">
+						<div class="bg-white border border-teal-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-teal-100 text-teal-800 mb-3 uppercase tracking-wide">Estructura y organización</span>
+
+							<!-- Barra de progreso T2-Sub1 -->
+							<div class="flex items-center gap-3 mb-4">
+								<span class="text-xs text-neutral-500 whitespace-nowrap">Revisadas</span>
+								<div class="flex-1 h-1.5 bg-teal-100 rounded-full overflow-hidden">
+									<div id="rb-t2s1-fill" class="h-full bg-teal-500 rounded-full transition-all duration-400" style="width:0%"></div>
+								</div>
+								<span id="rb-t2s1-lbl" class="text-xs font-semibold text-teal-700 whitespace-nowrap">0 / 4</span>
+							</div>
+
+							<div class="subte-viz subte-viz--t2g3 mb-4 rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 via-white to-cyan-50 p-4 shadow-inner">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-teal-800 mb-3">Tres grandes categorías estructurales</p>
+								<div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
+									<div class="subte-card rounded-xl bg-gradient-to-br from-teal-600 to-cyan-600 px-3 py-4 text-center shadow-md">
+										<p class="text-sm font-bold text-white">Estructurada</p>
+										<p class="mt-1 text-[10px] leading-snug text-teal-50">Organizada en filas y columnas · Bases de datos relacionales</p>
+									</div>
+									<div class="subte-card rounded-xl bg-teal-700 px-3 py-4 text-center shadow-md">
+										<p class="text-sm font-bold text-white">Sensible</p>
+										<p class="mt-1 text-[10px] leading-snug text-teal-100">Requiere protección especial · Ley 1581/2012</p>
+									</div>
+									<div class="subte-card rounded-xl bg-cyan-800 px-3 py-4 text-center shadow-md">
+										<p class="text-sm font-bold text-white">No estructurada</p>
+										<p class="mt-1 text-[10px] leading-snug text-cyan-100">Sin formato predefinido · Correos, documentos libres</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="space-y-2">
+								<div class="g3-card rounded-lg border border-teal-100 bg-teal-50 p-3" data-seen="0" data-rb="t2s1">
+									<p class="text-xs font-bold text-teal-800 mb-1">Información estructurada</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Organizada en filas y columnas dentro de bases de datos relacionales (tablas SQL). Fácilmente consultable con lenguajes de consulta. Ejemplo: tabla de clientes en MySQL.</p>
+									<div class="g3-tip">Tiene un esquema fijo y predefinido. El SGBD garantiza integridad referencial y permite consultas complejas con JOIN, WHERE, GROUP BY, etc.</div>
+								</div>
+								<div class="g3-card rounded-lg border border-red-100 bg-red-50 p-3" data-seen="0" data-rb="t2s1">
+									<p class="text-xs font-bold text-red-800 mb-1">Información sensible</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Datos que requieren protección especial por la Ley 1581 de 2012: salud, religión, biometría, orientación sexual, origen étnico, datos políticos. Su tratamiento está prohibido salvo excepciones expresas.</p>
+									<div class="g3-tip">Las excepciones son: consentimiento explícito del titular, actividades legítimas de fundaciones u ONG, datos necesarios para salvaguardar intereses vitales, y datos manifiestamente públicos.</div>
+								</div>
+								<div class="g3-card rounded-lg border border-cyan-100 bg-cyan-50 p-3" data-seen="0" data-rb="t2s1">
+									<p class="text-xs font-bold text-cyan-800 mb-1">Información no estructurada</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Sin formato predefinido. Incluye correos electrónicos, documentos de texto libre, publicaciones en redes sociales, videos. Representa el 80% de la información empresarial.</p>
+									<div class="g3-tip">Para analizar información no estructurada se usan técnicas de NLP (procesamiento de lenguaje natural), minería de texto y modelos de IA como los LLM.</div>
+								</div>
+								<div class="g3-card rounded-lg border border-indigo-100 bg-indigo-50 p-3" data-seen="0" data-rb="t2s1">
+									<p class="text-xs font-bold text-indigo-800 mb-1">Información del usuario / del sistema / en red</p>
+									<p class="text-xs text-neutral-700 leading-relaxed"><strong>Usuario:</strong> datos generados o asociados al comportamiento del usuario. <strong>Sistema:</strong> datos internos del SO: procesos, logs, configuraciones. <strong>En red:</strong> datos que fluyen en infraestructuras de red: paquetes, protocolos, tráfico.</p>
+									<div class="g3-tip">Esta clasificación según el origen es clave en seguridad informática para definir quién puede acceder y cómo se protege cada capa de información.</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- SUB 2: Por formato -->
+					<div id="t2g3-sub-2" class="t2g3-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-teal-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 mb-3 uppercase tracking-wide">Formato y representación</span>
+
+							<!-- Barra de progreso T2-Sub2 -->
+							<div class="flex items-center gap-3 mb-4">
+								<span class="text-xs text-neutral-500 whitespace-nowrap">Revisadas</span>
+								<div class="flex-1 h-1.5 bg-cyan-100 rounded-full overflow-hidden">
+									<div id="rb-t2s2-fill" class="h-full bg-cyan-500 rounded-full transition-all duration-400" style="width:0%"></div>
+								</div>
+								<span id="rb-t2s2-lbl" class="text-xs font-semibold text-cyan-700 whitespace-nowrap">0 / 9</span>
+							</div>
+
+							<div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+
+								<div class="g3-card subte-card rounded-xl border border-purple-100 bg-purple-50 p-3 shadow-sm" data-seen="0" data-rb="t2s2">
+									<p class="text-xl mb-2">🖼️</p>
+									<p class="text-xs font-bold text-purple-800 uppercase mb-1">Gráfica</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Representada mediante imágenes, diagramas, mapas o ilustraciones. Ejemplo: capturas de pantalla, infografías.</p>
+									<div class="g3-tip">Incluye formatos como PNG, JPEG, SVG, GIF. Se usa en sistemas de diseño, documentación técnica y visualización de datos.</div>
+								</div>
+
+								<div class="g3-card subte-card rounded-xl border border-blue-100 bg-blue-50 p-3 shadow-sm" data-seen="0" data-rb="t2s2">
+									<p class="text-xl mb-2">⏱️</p>
+									<p class="text-xs font-bold text-blue-800 uppercase mb-1">Temporal</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Asociada a fechas, horas o secuencias cronológicas (logs, registros de eventos con timestamp).</p>
+									<div class="g3-tip">Fundamental para auditorías de seguridad, análisis de rendimiento de sistemas y cualquier proceso que requiera trazabilidad cronológica.</div>
+								</div>
+
+								<div class="g3-card subte-card rounded-xl border border-green-100 bg-green-50 p-3 shadow-sm" data-seen="0" data-rb="t2s2">
+									<p class="text-xl mb-2">🗺️</p>
+									<p class="text-xs font-bold text-green-800 uppercase mb-1">Geográfica</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Datos con referencia espacial o de ubicación (coordenadas GPS, mapas SIG, capas georreferenciadas).</p>
+									<div class="g3-tip">Se usa en urbanismo, logística, cartografía digital y sistemas de navegación. Formatos comunes: GeoJSON, KML, Shapefile.</div>
+								</div>
+
+								<div class="g3-card subte-card rounded-xl border border-slate-200 bg-slate-50 p-3 shadow-sm" data-seen="0" data-rb="t2s2">
+									<p class="text-xl mb-2">0️⃣1️⃣</p>
+									<p class="text-xs font-bold text-slate-700 uppercase mb-1">Binaria</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Representada en formato 0 y 1. Base de toda la computación digital. Archivos ejecutables, imágenes en disco.</p>
+									<div class="g3-tip">Todo lo que el computador procesa se reduce finalmente a información binaria. El byte (8 bits) es la unidad básica de almacenamiento.</div>
+								</div>
+
+								<div class="g3-card subte-card rounded-xl border border-indigo-100 bg-indigo-50 p-3 shadow-sm" data-seen="0" data-rb="t2s2">
+									<p class="text-xl mb-2">🔢</p>
+									<p class="text-xs font-bold text-indigo-800 uppercase mb-1">Numérica</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Valores cuantitativos usados en cálculos: estadísticas, métricas, precios, indicadores financieros.</p>
+									<div class="g3-tip">Puede ser entera (int), decimal (float/double) o de precisión arbitraria (BigDecimal). Crítica en sistemas financieros y científicos.</div>
+								</div>
+
+								<div class="g3-card subte-card rounded-xl border border-rose-100 bg-rose-50 p-3 shadow-sm" data-seen="0" data-rb="t2s2">
+									<p class="text-xl mb-2">🔊</p>
+									<p class="text-xs font-bold text-rose-800 uppercase mb-1">Sonora</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Datos en formato de audio: grabaciones de voz, señales acústicas digitalizadas, podcasts, música.</p>
+									<div class="g3-tip">Formatos comunes: MP3, WAV, FLAC, OGG. Se usa en accesibilidad, reconocimiento de voz, telecomunicaciones y entretenimiento digital.</div>
+								</div>
+
+								<div class="g3-card subte-card rounded-xl border border-amber-100 bg-amber-50 p-3 shadow-sm" data-seen="0" data-rb="t2s2">
+									<p class="text-xl mb-2">🔤</p>
+									<p class="text-xs font-bold text-amber-800 uppercase mb-1">Alfanumérica</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Combinación de letras y números: códigos, matrículas, identificadores únicos de sistemas.</p>
+									<div class="g3-tip">Ejemplo: número de cédula, código de producto (SKU), matrícula vehicular. Muy usado en sistemas de registro y control de acceso.</div>
+								</div>
+
+								<div class="g3-card subte-card rounded-xl border border-teal-100 bg-teal-50 p-3 shadow-sm" data-seen="0" data-rb="t2s2">
+									<p class="text-xl mb-2">🎬</p>
+									<p class="text-xs font-bold text-teal-800 uppercase mb-1">Multimedia</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Integra texto, audio, video e imagen en un solo medio digital. Presentaciones, videollamadas, e-learning.</p>
+									<div class="g3-tip">Requiere mayor ancho de banda y capacidad de almacenamiento. Formatos: MP4, WebM, MKV. Esencial en educación virtual y entretenimiento.</div>
+								</div>
+
+								<div class="g3-card subte-card rounded-xl border border-neutral-200 bg-neutral-50 p-3 shadow-sm" data-seen="0" data-rb="t2s2">
+									<p class="text-xl mb-2">📝</p>
+									<p class="text-xs font-bold text-neutral-700 uppercase mb-1">Textual</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Contenido en lenguaje natural sin estructura de base de datos: artículos, reportes, libros digitales, documentos.</p>
+									<div class="g3-tip">Formatos: TXT, PDF, DOCX, Markdown. Es el tipo más común de información no estructurada y la base del análisis de NLP.</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<!-- SUB 3: Por función -->
+					<div id="t2g3-sub-3" class="t2g3-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-teal-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 mb-3 uppercase tracking-wide">Función en el sistema</span>
+
+							<!-- Barra de progreso T2-Sub3 -->
+							<div class="flex items-center gap-3 mb-4">
+								<span class="text-xs text-neutral-500 whitespace-nowrap">Revisadas</span>
+								<div class="flex-1 h-1.5 bg-indigo-100 rounded-full overflow-hidden">
+									<div id="rb-t2s3-fill" class="h-full bg-indigo-500 rounded-full transition-all duration-400" style="width:0%"></div>
+								</div>
+								<span id="rb-t2s3-lbl" class="text-xs font-semibold text-indigo-700 whitespace-nowrap">0 / 9</span>
+							</div>
+
+							<div class="subte-viz subte-viz--t2g3 mb-4 rounded-xl border border-indigo-200 bg-indigo-50/40 p-4">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-indigo-800 mb-3">Flujo de información en un sistema de información (IS)</p>
+								<div class="flex flex-col sm:flex-row items-center justify-center gap-2">
+									<div class="subte-card rounded-xl bg-indigo-600 px-4 py-3 text-center text-white shadow-md">
+										<p class="text-xs font-bold">Entrada</p>
+										<p class="text-[10px] opacity-80 mt-1">Inputs al sistema</p>
+									</div>
+									<span class="text-slate-400 font-bold text-xl">→</span>
+									<div class="subte-card rounded-xl bg-violet-600 px-4 py-3 text-center text-white shadow-md">
+										<p class="text-xs font-bold">Procesamiento</p>
+										<p class="text-[10px] opacity-80 mt-1">Control · Red · BD · Nube</p>
+									</div>
+									<span class="text-slate-400 font-bold text-xl">→</span>
+									<div class="subte-card rounded-xl bg-purple-700 px-4 py-3 text-center text-white shadow-md">
+										<p class="text-xs font-bold">Salida</p>
+										<p class="text-[10px] opacity-80 mt-1">Resultados del sistema</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+
+								<div class="g3-card rounded-xl border border-indigo-100 bg-indigo-50 p-3" data-seen="0" data-rb="t2s3">
+									<p class="text-xs font-bold text-indigo-800 mb-1">De entrada (Input)</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Datos que ingresan al sistema para ser procesados. Formularios, archivos cargados, sensores, teclado.</p>
+									<div class="g3-tip">Los dispositivos de entrada incluyen teclado, mouse, escáneres, cámaras, micrófonos y sensores IoT. Sin entrada, el sistema no puede operar.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-indigo-100 bg-indigo-50 p-3" data-seen="0" data-rb="t2s3">
+									<p class="text-xs font-bold text-indigo-800 mb-1">De salida (Output)</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Resultados generados por el sistema tras procesar la información de entrada. Reportes, pantallas, archivos exportados.</p>
+									<div class="g3-tip">Dispositivos de salida: monitores, impresoras, altavoces. La calidad de la salida depende directamente de la calidad de los datos de entrada.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-indigo-100 bg-indigo-50 p-3" data-seen="0" data-rb="t2s3">
+									<p class="text-xs font-bold text-indigo-800 mb-1">De control</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Datos que regulan el funcionamiento de un sistema: señales de control, flags, estados, interrupciones.</p>
+									<div class="g3-tip">Incluye señales de reloj, interrupciones del procesador y registros de control. Esenciales en sistemas embebidos y tiempo real.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-indigo-100 bg-indigo-50 p-3" data-seen="0" data-rb="t2s3">
+									<p class="text-xs font-bold text-indigo-800 mb-1">En bases de datos</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Datos almacenados y gestionados mediante SGBD (MySQL, Oracle, PostgreSQL, MongoDB).</p>
+									<div class="g3-tip">Los SGBD relacionales usan SQL; los NoSQL (MongoDB, Redis, Cassandra) usan otros paradigmas. Cada tipo se optimiza para diferentes cargas de trabajo.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-indigo-100 bg-indigo-50 p-3" data-seen="0" data-rb="t2s3">
+									<p class="text-xs font-bold text-indigo-800 mb-1">En la nube</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Datos alojados en servidores remotos accesibles vía internet bajo modelos IaaS, PaaS o SaaS.</p>
+									<div class="g3-tip">La nube ofrece alta disponibilidad, escalabilidad automática y recuperación ante desastres. Regulada por la NTC-ISO/IEC 27017 en Colombia.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-indigo-100 bg-indigo-50 p-3" data-seen="0" data-rb="t2s3">
+									<p class="text-xs font-bold text-indigo-800 mb-1">En redes / de redes</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Topologías, direcciones IP, protocolos y configuraciones de infraestructura de red. Fluye en la red.</p>
+									<div class="g3-tip">Protocolos clave: TCP/IP, HTTP/HTTPS, DNS, DHCP. Los estándares IEEE 802.3 (Ethernet) y 802.11 (Wi-Fi) definen cómo fluyen estos datos.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-indigo-100 bg-indigo-50 p-3" data-seen="0" data-rb="t2s3">
+									<p class="text-xs font-bold text-indigo-800 mb-1">De eventos</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Registros de sucesos en el sistema: errores, accesos, transacciones (event logs, auditorías).</p>
+									<div class="g3-tip">Herramientas como SIEM (Security Information and Event Management) analizan logs de eventos para detectar amenazas y brechas de seguridad.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-indigo-100 bg-indigo-50 p-3" data-seen="0" data-rb="t2s3">
+									<p class="text-xs font-bold text-indigo-800 mb-1">En tiempo legal</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Datos con validez jurídica asociada a un timestamp certificado (firmas digitales, notificaciones electrónicas).</p>
+									<div class="g3-tip">En Colombia, la Ley 527 de 1999 (Comercio Electrónico) y el Decreto 333 de 2014 regulan la firma digital y la validez jurídica de documentos electrónicos.</div>
+								</div>
+
+								<div class="g3-card rounded-xl border border-indigo-100 bg-indigo-50 p-3" data-seen="0" data-rb="t2s3">
+									<p class="text-xs font-bold text-indigo-800 mb-1">En redes de sistemas</p>
+									<p class="text-xs text-neutral-700 leading-relaxed">Datos que interconectan múltiples sistemas entre sí (IoT, sistemas distribuidos, microservicios).</p>
+									<div class="g3-tip">Arquitecturas como microservicios, APIs REST y sistemas IoT dependen de esta categoría para intercambiar datos entre sistemas heterogéneos.</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<!-- SUB 4: Interrogantes tema 2 -->
+					<div id="t2g3-sub-4" class="t2g3-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-teal-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-teal-100 text-teal-800 mb-3 uppercase tracking-wide">Interrogantes · Tema 2</span>
+
+							<div class="bg-teal-50 rounded-2xl p-4 mb-5 flex items-center gap-4">
+								<div class="flex-1">
+									<div class="flex justify-between text-xs text-neutral-500 mb-1">
+										<span>Preguntas revisadas</span>
+										<span id="q2g3-count" class="font-semibold text-teal-700">0 de 9</span>
+									</div>
+									<div class="h-2 bg-teal-100 rounded-full overflow-hidden">
+										<div class="h-2 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full transition-all duration-500" id="q2g3-bar" style="width:0%"></div>
+									</div>
+								</div>
+								<button onclick="closeAllG3T2()" class="text-xs text-teal-600 border border-teal-200 rounded-lg px-3 py-1 hover:bg-white transition font-medium whitespace-nowrap">Cerrar todas</button>
+							</div>
+
+							<div id="g3t2-acc-container" class="space-y-2">
+								{[
+									{ q: "¿Qué es la información estructurada?", a: "Es la información organizada en filas y columnas dentro de bases de datos relacionales, como tablas SQL. Es fácilmente consultable mediante lenguajes de consulta. Tiene un formato predefinido y puede ser almacenada, gestionada y recuperada de manera eficiente por un SGBD." },
+									{ q: "¿Qué es la información sensible?", a: "Son los datos que requieren protección especial según la Ley 1581 de 2012: datos de salud, religión, biometría, orientación sexual, origen étnico y datos políticos. Su tratamiento está prohibido salvo excepciones expresas, como consentimiento explícito del titular o mandato legal." },
+									{ q: "¿Qué es la información no estructurada?", a: "Es la información sin formato predefinido que no se organiza en tablas ni esquemas fijos. Incluye correos electrónicos, documentos de texto libre, publicaciones en redes sociales y archivos multimedia. Representa aproximadamente el 80% de la información empresarial actual." },
+									{ q: "¿Qué es la información en tiempo legal?", a: "Son los datos que tienen validez jurídica asociada a un timestamp certificado. Se usan en firmas digitales, notificaciones electrónicas con fecha cierta, actos administrativos digitales y cualquier registro que requiera valor probatorio legal en Colombia." },
+									{ q: "¿Qué es la información en la nube?", a: "Son los datos alojados en servidores remotos accesibles a través de internet bajo modelos IaaS (Infraestructura como Servicio), PaaS (Plataforma como Servicio) o SaaS (Software como Servicio). Permite escalabilidad, acceso desde cualquier lugar y reducción de costos de infraestructura." },
+									{ q: "¿Qué es la información de control?", a: "Son los datos que regulan el funcionamiento interno de un sistema: señales de control, flags de estado, interrupciones del procesador, comandos de operación. Permiten que el sistema opere de forma coordinada y responda a eventos internos y externos." },
+									{ q: "¿Qué es la información de entrada vs. salida?", a: "Información de entrada (input): datos que ingresan al sistema para ser procesados, como formularios, archivos cargados o datos de sensores. Información de salida (output): resultados generados por el sistema tras el procesamiento, como reportes, pantallas de usuario o archivos exportados." },
+									{ q: "¿Qué es la información geográfica?", a: "Son los datos que tienen referencia espacial o de ubicación. Incluye coordenadas GPS, mapas digitales, capas georreferenciadas y sistemas de información geográfica (SIG). Se usa en urbanismo, logística, cartografía digital y sistemas de navegación." },
+									{ q: "¿Qué es la información multimedia?", a: "Es la información que integra texto, audio, video e imagen en un mismo medio digital. Ejemplos: presentaciones multimedia, videollamadas, plataformas de e-learning, videojuegos. Requiere mayor capacidad de almacenamiento y procesamiento que los formatos simples." },
+								].map((item, idx) => (
+									<div class="g3t2-acc-item rounded-2xl overflow-hidden border border-teal-100 shadow-sm transition hover:shadow-md" onclick="toggleG3T2(this)">
+										<div class="flex items-center gap-3 px-4 py-3 bg-white hover:bg-teal-50 cursor-pointer transition">
+											<span class="flex w-7 h-7 rounded-full bg-teal-100 text-teal-800 text-xs font-bold items-center justify-center flex-shrink-0">{idx + 1}</span>
+											<span class="text-sm font-semibold text-teal-900 flex-1">{item.q}</span>
+											<span class="g3t2-icon text-teal-400 font-light text-xl flex-shrink-0">+</span>
+										</div>
+										<div class="g3t2-body max-h-0 overflow-hidden transition-all duration-400 ease-in-out">
+											<div class="px-4 pb-4 pt-3 text-sm text-neutral-700 leading-relaxed border-t border-teal-100">{item.a}</div>
+										</div>
+									</div>
+								))}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Actividad tema 2 -->
+			<div class="rounded-2xl border border-teal-200/90 bg-gradient-to-br from-teal-50/90 via-white to-cyan-50/70 p-5 shadow-lg shadow-teal-500/10">
+				<h3 class="flex items-center gap-2 text-lg font-bold text-teal-900">
+					<span class="flex h-8 w-8 items-center justify-center rounded-lg bg-teal-600 text-sm text-white">A</span>
+					Actividad del tema 2 · Mini test (4 preguntas)
+				</h3>
+				<p class="mt-1 text-xs text-neutral-600">Elige la opción correcta; al terminar verás cuántas acertaste.</p>
+				<div class="mt-4 rounded-xl border border-teal-100 bg-white/90 p-4 shadow-inner" id="g3t2-mcq-root"></div>
+			</div>
+		</section>
+
+	</div>
+
+	<style is:global>
+		/* ── Acordeones ── */
+		.g3t1-acc-item.open .g3t1-body,
+		.g3t2-acc-item.open .g3t2-body { max-height: 300px; }
+		.g3t1-acc-item.open .g3t1-icon,
+		.g3t2-acc-item.open .g3t2-icon { transform: rotate(45deg); color: #059669; }
+		.g3t1-icon, .g3t2-icon { transition: transform 0.3s; }
+
+		/* ── Tarjetas dinámicas ── */
+		.g3-card {
+			position: relative;
+			overflow: visible;
+			transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+			cursor: default;
+		}
+		.g3-card:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 6px 20px -6px rgba(0,0,0,0.12);
+		}
+
+		/* ── Tooltip ── */
+		.g3-tip {
+			position: absolute;
+			bottom: calc(100% + 10px);
+			left: 50%;
+			transform: translateX(-50%) scale(0.95);
+			transform-origin: bottom center;
+			background: #1e293b;
+			color: #e2e8f0;
+			font-size: 11.5px;
+			line-height: 1.55;
+			padding: 9px 13px;
+			border-radius: 10px;
+			width: 230px;
+			z-index: 50;
+			pointer-events: none;
+			opacity: 0;
+			transition: opacity 0.18s ease, transform 0.18s ease;
+			white-space: normal;
+		}
+		.g3-tip::after {
+			content: '';
+			position: absolute;
+			bottom: -5px;
+			left: 50%;
+			transform: translateX(-50%) rotate(45deg);
+			width: 8px;
+			height: 8px;
+			background: #1e293b;
+		}
+		.g3-card:hover .g3-tip {
+			opacity: 1;
+			transform: translateX(-50%) scale(1);
+		}
+
+		/* Evitar que el tooltip se corte en los extremos del grid */
+		.g3-card:first-child .g3-tip,
+		.g3-card:nth-child(3n+1) .g3-tip { left: 20%; }
+		.g3-card:nth-child(3n) .g3-tip   { left: 80%; }
+
+		/* ── Barra de progreso de lectura ── */
+		.g3-read-bar-fill { transition: width 0.35s ease; }
+
+		/* ── Match activity ── */
+		.match-card {
+			border-radius: 12px;
+			border: 1.5px solid transparent;
+			padding: 8px 12px;
+			font-size: 12px;
+			font-weight: 500;
+			text-align: left;
+			cursor: pointer;
+			transition: border-color 0.15s, transform 0.12s, opacity 0.15s;
+		}
+		.match-card:hover { transform: scale(1.02); }
+		.match-card.selected { border-color: #f59e0b; box-shadow: 0 0 0 2px #fde68a; }
+	</style>
+
+	<script is:inline>
+	(function () {
+
+		/* ── Pestañas principales ── */
+		const panels = document.querySelectorAll('.tema-panel');
+		const tabs   = document.querySelectorAll('.tema-tab');
+		const tabStyles = {
+			active:   'tema-tab rounded-xl border-2 border-emerald-500 bg-emerald-50 px-3 py-2 text-left text-xs font-bold text-emerald-900 shadow-sm sm:text-sm',
+			inactive: 'tema-tab rounded-xl border border-neutral-200 bg-white px-3 py-2 text-left text-xs font-medium text-neutral-700 hover:border-teal-300 sm:text-sm'
+		};
+		function showTema(n) {
+			const num = String(n);
+			panels.forEach(p => {
+				const on = p.getAttribute('data-panel') === num;
+				p.classList.toggle('hidden', !on);
+				p.toggleAttribute('hidden', !on);
+			});
+			tabs.forEach(t => {
+				const on = t.getAttribute('data-tema') === num;
+				t.setAttribute('aria-selected', on ? 'true' : 'false');
+				t.className = on ? tabStyles.active : tabStyles.inactive;
+			});
+		}
+		tabs.forEach(t => t.addEventListener('click', () => showTema(t.getAttribute('data-tema'))));
+		showTema('1');
+
+		/* ── Subtabs genérico ── */
+		function initSubtemaTabs(prefix, activeCls, inactiveCls) {
+			const btns   = document.querySelectorAll('.' + prefix + '-sub-btn');
+			const pnls   = document.querySelectorAll('.' + prefix + '-sub-panel');
+			if (!btns.length || btns[0].dataset.bound === '1') return;
+			btns[0].dataset.bound = '1';
+			btns.forEach(btn => {
+				btn.addEventListener('click', () => {
+					const n = btn.getAttribute('data-sub');
+					btns.forEach(b => {
+						const on = b.getAttribute('data-sub') === n;
+						b.setAttribute('aria-selected', on ? 'true' : 'false');
+						b.className = prefix + '-sub-btn ' + (on ? activeCls : inactiveCls);
+					});
+					pnls.forEach(p => p.classList.toggle('hidden', p.id !== prefix + '-sub-' + n));
+				});
+			});
+		}
+		initSubtemaTabs('t1g3',
+			'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-emerald-600 to-teal-600 text-white border-emerald-600',
+			'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-emerald-900 border-emerald-100 hover:bg-emerald-50'
+		);
+		initSubtemaTabs('t2g3',
+			'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-teal-600',
+			'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-teal-900 border-teal-100 hover:bg-teal-50'
+		);
+
+		/* ── Barras de progreso por subtema ── */
+		function initReadBar(rbId, total) {
+			const fillEl = document.getElementById('rb-' + rbId + '-fill');
+			const lblEl  = document.getElementById('rb-' + rbId + '-lbl');
+			if (!fillEl || !lblEl) return;
+			let seen = 0;
+			const cards = document.querySelectorAll('[data-rb="' + rbId + '"]');
+			cards.forEach(card => {
+				card.addEventListener('mouseenter', function () {
+					if (this.dataset.seen === '1') return;
+					this.dataset.seen = '1';
+					seen++;
+					const pct = Math.round((seen / total) * 100);
+					fillEl.style.width = pct + '%';
+					lblEl.textContent = seen + ' / ' + total;
+				});
+			});
+		}
+		initReadBar('t1s1', 6);
+		initReadBar('t1s2', 8);  /* 8 cards ISO/IEEE */
+		initReadBar('t1s3', 5);
+		initReadBar('t2s1', 4);
+		initReadBar('t2s2', 9);
+		initReadBar('t2s3', 9);
+
+		/* ── Acordeón Tema 1 ── */
+		let g3t1Open = 0;
+		function toggleG3T1(item) {
+			const wasOpen = item.classList.contains('open');
+			item.classList.toggle('open');
+			g3t1Open += wasOpen ? -1 : 1;
+			updateG3T1Bar();
+		}
+		function closeAllG3T1() {
+			document.querySelectorAll('.g3t1-acc-item.open').forEach(i => i.classList.remove('open'));
+			g3t1Open = 0;
+			updateG3T1Bar();
+		}
+		function updateG3T1Bar() {
+			const total = document.querySelectorAll('.g3t1-acc-item').length;
+			document.getElementById('q1g3-count').textContent = g3t1Open + ' de ' + total;
+			document.getElementById('q1g3-bar').style.width = Math.round((g3t1Open / total) * 100) + '%';
+		}
+		window.toggleG3T1   = toggleG3T1;
+		window.closeAllG3T1 = closeAllG3T1;
+
+		/* ── Acordeón Tema 2 ── */
+		let g3t2Open = 0;
+		function toggleG3T2(item) {
+			const wasOpen = item.classList.contains('open');
+			item.classList.toggle('open');
+			g3t2Open += wasOpen ? -1 : 1;
+			updateG3T2Bar();
+		}
+		function closeAllG3T2() {
+			document.querySelectorAll('.g3t2-acc-item.open').forEach(i => i.classList.remove('open'));
+			g3t2Open = 0;
+			updateG3T2Bar();
+		}
+		function updateG3T2Bar() {
+			const total = document.querySelectorAll('.g3t2-acc-item').length;
+			document.getElementById('q2g3-count').textContent = g3t2Open + ' de ' + total;
+			document.getElementById('q2g3-bar').style.width = Math.round((g3t2Open / total) * 100) + '%';
+		}
+		window.toggleG3T2   = toggleG3T2;
+		window.closeAllG3T2 = closeAllG3T2;
+
+		/* ── Relaciona Tema 1 (actividad) ── */
+		const G3T1_PAIRS = [
+			['Ley 1266 de 2008',   'Hábeas Data financiero y comercial'],
+			['Ley 1581 de 2012',   'Protección de datos personales'],
+			['Decreto 1377/2013',  'Reglamenta parcialmente la Ley 1581'],
+			['Decreto 1078/2015',  'Decreto único sector TIC'],
+			['ISO/IEC 27001',      'Sistema de Gestión de Seguridad de la Información'],
+		];
+		function initG3T1Match() {
+			const root   = document.getElementById('g3t1-match-root');
+			const status = document.getElementById('g3t1-match-status');
+			if (!root || root.dataset.ready === '1') return;
+			root.dataset.ready = '1';
+			const left  = G3T1_PAIRS.map((p, i) => ({ id: i, label: p[0], done: false }));
+			const right = G3T1_PAIRS.map((p, i) => ({ id: i, label: p[1], done: false })).sort(() => Math.random() - 0.5);
+			let selected = null, found = 0;
+			function render() {
+				root.innerHTML = '';
+				const colA = document.createElement('div'); colA.className = 'space-y-2';
+				const colB = document.createElement('div'); colB.className = 'space-y-2';
+				const h = t => { const p = document.createElement('p'); p.className = 'text-xs font-bold uppercase text-amber-700'; p.textContent = t; return p; };
+				colA.appendChild(h('Norma')); colB.appendChild(h('Descripción'));
+				left.forEach(item => {
+					if (item.done) return;
+					const b = document.createElement('button'); b.type = 'button';
+					b.className = 'match-card w-full bg-amber-100 text-amber-900';
+					b.textContent = item.label; b.dataset.side = 'L'; b.dataset.id = String(item.id);
+					b.addEventListener('click', onPick); colA.appendChild(b);
+				});
+				right.forEach(item => {
+					if (item.done) return;
+					const b = document.createElement('button'); b.type = 'button';
+					b.className = 'match-card w-full bg-orange-100 text-orange-900';
+					b.textContent = item.label; b.dataset.side = 'R'; b.dataset.id = String(item.id);
+					b.addEventListener('click', onPick); colB.appendChild(b);
+				});
+				root.appendChild(colA); root.appendChild(colB);
+			}
+			function onPick(ev) {
+				const btn = ev.currentTarget;
+				if (!selected) { selected = btn; btn.classList.add('selected'); return; }
+				if (selected === btn) { selected.classList.remove('selected'); selected = null; return; }
+				if (selected.dataset.side === btn.dataset.side) { selected.classList.remove('selected'); selected = btn; btn.classList.add('selected'); return; }
+				const idA = selected.dataset.side === 'L' ? +selected.dataset.id : +btn.dataset.id;
+				const idB = selected.dataset.side === 'R' ? +selected.dataset.id : +btn.dataset.id;
+				selected.classList.remove('selected'); selected = null;
+				if (idA === idB) {
+					left.find(x => x.id === idA).done  = true;
+					right.find(x => x.id === idB).done = true;
+					found++;
+					status.textContent = 'Pares encontrados: ' + found + ' / 5';
+					render();
+				}
+			}
+			render();
+		}
+
+		/* ── Mini test Tema 2 ── */
+		const G3T2_MCQ = [
+			{ q: 'La información que requiere protección especial según Ley 1581/2012 se llama:', opts: ['Estructurada', 'Sensible', 'Multimedia'], ok: 1 },
+			{ q: 'Un archivo GPS con coordenadas de ubicación es un ejemplo de información:', opts: ['Binaria', 'Geográfica', 'Temporal'], ok: 1 },
+			{ q: 'Los logs del sistema operativo corresponden a información:', opts: ['Del sistema', 'De entrada', 'Textual'], ok: 0 },
+			{ q: 'Una firma digital con timestamp certificado es información:', opts: ['Sonora', 'En tiempo legal', 'Alfanumérica'], ok: 1 },
+		];
+		function initG3T2MCQ() {
+			const root = document.getElementById('g3t2-mcq-root');
+			if (!root || root.dataset.ready === '1') return;
+			root.dataset.ready = '1';
+			let i = 0, score = 0;
+			function render() {
+				if (i >= G3T2_MCQ.length) {
+					root.innerHTML = '<p class="text-sm font-semibold text-teal-900">Puntuación: ' + score + ' / ' + G3T2_MCQ.length + '</p><button type="button" id="g3t2-retry" class="mt-3 rounded-xl bg-teal-600 px-4 py-2 text-sm font-bold text-white">Repetir</button>';
+					document.getElementById('g3t2-retry').addEventListener('click', () => { i = 0; score = 0; render(); });
+					return;
+				}
+				const item = G3T2_MCQ[i];
+				const optsHtml = item.opts.map((o, j) => `<button type="button" class="g3t2o mb-2 w-full rounded-lg border border-teal-200 bg-white px-3 py-2 text-left text-sm text-neutral-800 hover:bg-teal-50" data-j="${j}">${o}</button>`).join('');
+				root.innerHTML = '<p class="text-xs font-bold text-teal-700">' + (i+1) + ' / ' + G3T2_MCQ.length + '</p><p class="mt-2 text-sm font-medium text-neutral-900">' + item.q + '</p><div class="mt-3">' + optsHtml + '</div><p id="g3t2o-fb" class="mt-2 min-h-[1.25rem] text-xs font-semibold"></p>';
+				root.querySelectorAll('.g3t2o').forEach(btn => {
+					btn.addEventListener('click', () => {
+						if (root.querySelector('.g3t2o[disabled]')) return;
+						const j = +btn.dataset.j, right = j === item.ok;
+						if (right) score++;
+						const fb = document.getElementById('g3t2o-fb');
+						fb.textContent = right ? 'Correcto.' : 'Revisa el subtema correspondiente arriba.';
+						fb.className = 'mt-2 text-xs font-semibold ' + (right ? 'text-emerald-700' : 'text-rose-600');
+						root.querySelectorAll('.g3t2o').forEach(b => b.disabled = true);
+						setTimeout(() => { i++; render(); }, 550);
+					});
+				});
+			}
+			render();
+		}
+
+		function boot() {
+			initG3T1Match();
+			initG3T2MCQ();
+		}
+		if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+		else boot();
+
+	})();
+	</script>
 </Page>
