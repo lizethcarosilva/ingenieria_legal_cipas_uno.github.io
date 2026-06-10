@@ -2,13 +2,909 @@
 import Page from '../layouts/Page.astro';
 const base = import.meta.env.BASE_URL;
 ---
-<Page title="Tutoría Cuatro — En construcción">
-	<section class="max-w-xl mx-auto text-center py-16 px-4">
-		<div class="text-5xl mb-4" aria-hidden="true">🛠️</div>
-		<h1 class="text-2xl font-bold text-emerald-900 mb-3">Tutoría Cuatro</h1>
-		<p class="text-neutral-600 leading-relaxed">
-			Esta sección está <strong>en construcción</strong>. Pronto encontrarás aquí los temas, recursos y la actividad lúdica correspondientes a esta tutoría.
-		</p>
-		<a href={`${base}tutoria-uno`} class="inline-block mt-8 px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-sm font-medium hover:bg-emerald-700 transition">Volver a Tutoría Uno</a>
-	</section>
+<Page title="Guía 4 — Calidad de software, normas ISO e ingeniería legal">
+	<div class="max-w-5xl mx-auto space-y-8">
+
+		<!-- Hero -->
+		<div class="relative overflow-hidden rounded-3xl border border-white/60 bg-white/50 p-8 shadow-[0_20px_60px_-15px_rgba(82,39,255,0.25)] backdrop-blur-xl">
+			<div class="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#5227FF]/20 blur-3xl"></div>
+			<div class="pointer-events-none absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-[#FF9FFC]/25 blur-3xl"></div>
+			<p class="text-xs uppercase tracking-[0.2em] text-violet-700 font-semibold">Calidad de software, normas ISO e ingeniería legal (Guía 4)</p>
+			<h1 class="mt-2 text-4xl font-extrabold tracking-tight text-emerald-950 sm:text-5xl">Tutoría Cuatro</h1>
+			<p class="mt-3 text-sm text-neutral-600 max-w-2xl">Calidad del software · Métricas y modelos · Normas ISO · CMS, tecnología e IA</p>
+		</div>
+
+		<!-- Pestañas temas -->
+		<div class="sticky top-[76px] z-20 rounded-2xl border border-white/80 bg-white/80 p-3 shadow-lg backdrop-blur-md" role="navigation" aria-label="Temas de la tutoría 4">
+			<p class="mb-2 px-1 text-xs font-semibold uppercase tracking-wide text-neutral-500">Elegir tema</p>
+			<div class="flex flex-wrap gap-2" role="tablist">
+				<button type="button" role="tab" aria-selected="true" id="tab-tema-1" data-tema="1"
+					class="tema-tab rounded-xl border-2 border-emerald-500 bg-emerald-50 px-3 py-2 text-left text-xs font-bold text-emerald-900 shadow-sm sm:text-sm">
+					1 · Calidad de software
+				</button>
+				<button type="button" role="tab" aria-selected="false" id="tab-tema-2" data-tema="2"
+					class="tema-tab rounded-xl border border-neutral-200 bg-white px-3 py-2 text-left text-xs font-medium text-neutral-700 hover:border-teal-300 sm:text-sm">
+					2 · Métricas y modelos
+				</button>
+				<button type="button" role="tab" aria-selected="false" id="tab-tema-3" data-tema="3"
+					class="tema-tab rounded-xl border border-neutral-200 bg-white px-3 py-2 text-left text-xs font-medium text-neutral-700 hover:border-cyan-300 sm:text-sm">
+					3 · Normas ISO
+				</button>
+				<button type="button" role="tab" aria-selected="false" id="tab-tema-4" data-tema="4"
+					class="tema-tab rounded-xl border border-neutral-200 bg-white px-3 py-2 text-left text-xs font-medium text-neutral-700 hover:border-indigo-300 sm:text-sm">
+					4 · Legal, CMS e IA
+				</button>
+			</div>
+		</div>
+
+		<!-- ========== PANEL TEMA 1 ========== -->
+		<section id="panel-tema-1" class="tema-panel space-y-6" data-panel="1" role="tabpanel" aria-labelledby="tab-tema-1">
+			<div class="rounded-2xl border border-emerald-200/80 bg-white/70 p-6 shadow-sm">
+				<h2 class="text-xl font-bold text-emerald-950">1. Calidad de software</h2>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
+					Según <strong>Pressman</strong>, la calidad del software es el proceso que se aplica de manera que crea un producto útil que proporciona <strong>valor medible</strong> a quienes lo producen y a quienes lo utilizan. Va más allá de la ausencia de errores: incluye confiabilidad, eficiencia, seguridad, mantenibilidad, usabilidad y portabilidad.
+				</p>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
+					La calidad se utiliza mediante <strong>modelos, normas y estándares</strong> (ISO/IEC 25010, CMMI, IEEE 730). Se evalúa en distintas etapas del <strong>ciclo de vida</strong> del software.
+				</p>
+			</div>
+
+			<div class="rounded-2xl border border-emerald-100/90 bg-white/70 p-4 shadow-inner backdrop-blur-sm">
+				<div class="tema-subte-block max-w-5xl mx-auto">
+					<p class="text-neutral-600 text-center mb-4 text-sm">
+						Pestañas: <strong>Fundamentos</strong>, <strong>SDLC y usabilidad</strong>, <strong>Factores clave</strong> e <strong>Interrogantes</strong>.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-6 justify-center" role="tablist" aria-label="Subtemas tema 1">
+						<button type="button" class="t1g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-emerald-600 to-teal-600 text-white border-emerald-600" data-sub="1" aria-selected="true">Fundamentos</button>
+						<button type="button" class="t1g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-emerald-900 border-emerald-100 hover:bg-emerald-50" data-sub="2" aria-selected="false">SDLC y usabilidad</button>
+						<button type="button" class="t1g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-emerald-900 border-emerald-100 hover:bg-emerald-50" data-sub="3" aria-selected="false">Factores clave</button>
+						<button type="button" class="t1g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-emerald-900 border-emerald-100 hover:bg-emerald-50" data-sub="4" aria-selected="false">Interrogantes</button>
+					</div>
+
+					<div id="t1g4-sub-1" class="t1g4-sub-panel tab-panel space-y-3">
+						<div class="bg-white border border-emerald-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 mb-3 uppercase tracking-wide">Subtema 1</span>
+							<h3 class="text-lg font-semibold text-emerald-900 mb-3">¿Qué es calidad del software?</h3>
+							<div class="subte-viz subte-viz--g4 mb-4 rounded-xl border border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-4 shadow-inner">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-emerald-800 mb-3">Valor para ambas partes</p>
+								<div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+									<div class="subte-card rounded-xl bg-gradient-to-br from-emerald-600 to-teal-600 px-4 py-4 text-center shadow-md">
+										<p class="text-sm font-bold text-white">Equipo de desarrollo</p>
+										<p class="mt-1 text-[11px] leading-snug text-emerald-50">Eficiencia, mantenibilidad, procesos predecibles</p>
+									</div>
+									<div class="subte-card rounded-xl bg-emerald-700 px-4 py-4 text-center shadow-md">
+										<p class="text-sm font-bold text-white">Usuarios finales</p>
+										<p class="mt-1 text-[11px] leading-snug text-emerald-100">Utilidad, confiabilidad, satisfacción de uso</p>
+									</div>
+								</div>
+							</div>
+							<p class="text-sm leading-relaxed text-neutral-700">
+								La calidad del software se apoya en <strong>modelos</strong> (marcos de referencia), <strong>normas</strong> (requisitos obligatorios o recomendados) y <strong>estándares</strong> (criterios técnicos acordados). No es solo «cero bugs»: es entregar valor medible a desarrolladores y usuarios.
+							</p>
+						</div>
+					</div>
+
+					<div id="t1g4-sub-2" class="t1g4-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-emerald-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-teal-100 text-teal-800 mb-3 uppercase tracking-wide">Subtema 2</span>
+							<h3 class="text-lg font-semibold text-emerald-900 mb-3">SDLC y usabilidad</h3>
+							<div class="subte-viz subte-viz--g4 mb-4 rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 via-white to-cyan-50 p-4 shadow-inner">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-teal-800 mb-3">Ciclo de vida del software (SDLC) — 6 etapas</p>
+								<div class="flex flex-wrap items-center justify-center gap-2">
+									<div class="subte-card rounded-lg bg-teal-600 px-2 py-2 text-center text-white shadow text-[10px] font-bold">Planificación</div>
+									<span class="text-slate-400">→</span>
+									<div class="subte-card rounded-lg bg-teal-700 px-2 py-2 text-center text-white shadow text-[10px] font-bold">Requisitos</div>
+									<span class="text-slate-400">→</span>
+									<div class="subte-card rounded-lg bg-cyan-700 px-2 py-2 text-center text-white shadow text-[10px] font-bold">Diseño</div>
+									<span class="text-slate-400">→</span>
+									<div class="subte-card rounded-lg bg-cyan-800 px-2 py-2 text-center text-white shadow text-[10px] font-bold">Desarrollo</div>
+									<span class="text-slate-400">→</span>
+									<div class="subte-card rounded-lg bg-emerald-700 px-2 py-2 text-center text-white shadow text-[10px] font-bold">Pruebas / QA</div>
+									<span class="text-slate-400">→</span>
+									<div class="subte-card rounded-lg bg-emerald-800 px-2 py-2 text-center text-white shadow text-[10px] font-bold">Despliegue</div>
+								</div>
+							</div>
+							<p class="text-sm leading-relaxed text-neutral-700 mb-3">
+								<strong>Usabilidad</strong>: grado en que un producto puede usarse por usuarios específicos para alcanzar objetivos con <strong>eficacia</strong>, <strong>eficiencia</strong> y <strong>satisfacción</strong> en un contexto de uso determinado (ISO 9241).
+							</p>
+						</div>
+					</div>
+
+					<div id="t1g4-sub-3" class="t1g4-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-emerald-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-amber-100 text-amber-800 mb-3 uppercase tracking-wide">Subtema 3</span>
+							<h3 class="text-lg font-semibold text-emerald-900 mb-3">Factores que afectan la calidad</h3>
+							<ul class="list-disc pl-5 text-sm text-neutral-700 space-y-2">
+								<li><strong>Requisitos mal definidos</strong> o cambiantes sin control.</li>
+								<li><strong>Mala arquitectura</strong> y deuda técnica acumulada.</li>
+								<li><strong>Falta de pruebas</strong> sistemáticas (unitarias, integración, regresión).</li>
+							</ul>
+							<p class="mt-3 text-sm leading-relaxed text-neutral-700">
+								Una buena gestión de calidad <strong>reduce fallos en producción</strong> y <strong>costos de mantenimiento</strong>, mejorando la confianza del cliente y la sostenibilidad del producto.
+							</p>
+						</div>
+					</div>
+
+					<div id="t1g4-sub-4" class="t1g4-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-emerald-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 mb-3 uppercase tracking-wide">Interrogantes · Tema 1</span>
+							<div class="space-y-2">
+								<details class="rounded-xl border border-emerald-100 bg-emerald-50/50 px-4 py-3">
+									<summary class="cursor-pointer text-sm font-semibold text-emerald-900">¿Por qué importa la calidad más allá de corregir errores?</summary>
+									<p class="mt-2 text-sm text-neutral-700">Porque aporta valor al equipo (procesos, mantenibilidad) y al usuario (utilidad, confianza). Pressman la define como proceso que crea un producto útil con valor medible.</p>
+								</details>
+								<details class="rounded-xl border border-emerald-100 bg-emerald-50/50 px-4 py-3">
+									<summary class="cursor-pointer text-sm font-semibold text-emerald-900">¿En qué etapas del SDLC se evalúa la calidad?</summary>
+									<p class="mt-2 text-sm text-neutral-700">En todas: desde requisitos y diseño hasta desarrollo, pruebas/QA y despliegue. Detectar defectos temprano reduce costo de corrección.</p>
+								</details>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="rounded-2xl border border-amber-200/90 bg-gradient-to-br from-amber-50/90 via-white to-orange-50/80 p-5 shadow-lg shadow-amber-500/10">
+				<h3 class="flex items-center gap-2 text-lg font-bold text-amber-900">
+					<span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500 text-sm text-white">A</span>
+					Actividad del tema 1 · Sopa de letras
+				</h3>
+				<p class="mt-2 text-sm text-neutral-600">
+					Vocabulario del tema 1. <strong>Marca las letras</strong> de cada palabra (horizontal o vertical). Al completarla: <strong>¡Completado!</strong>
+				</p>
+				<div class="mt-3 flex flex-wrap gap-2" id="t1g4-sopa-palabras"></div>
+				<div id="t1g4-sopa-complete" class="mt-3 hidden rounded-xl border-2 border-emerald-400 bg-emerald-50 px-4 py-3 text-center shadow-sm" role="status">
+					<p class="text-sm font-bold text-emerald-800">¡Completado! Encontraste todas las palabras del tema 1.</p>
+				</div>
+				<div class="mt-3 overflow-x-auto rounded-xl border border-amber-200/80 bg-white/80 p-3">
+					<table class="border-collapse text-center font-mono text-sm" id="t1g4-sopa-tabla" aria-label="Sopa de letras tema 1"></table>
+				</div>
+				<div class="mt-3 flex flex-wrap gap-2">
+					<button type="button" id="t1g4-sopa-sol" class="rounded-xl bg-amber-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-amber-700">Mostrar solución</button>
+					<button type="button" id="t1g4-sopa-hide" class="rounded-xl border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-900 hover:bg-amber-50">Ocultar solución</button>
+					<button type="button" id="t1g4-sopa-clear-pick" class="rounded-xl border border-emerald-400 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-100">Quitar marcas</button>
+					<button type="button" id="t1g4-sopa-new" class="rounded-xl border border-amber-500 bg-amber-50 px-4 py-2 text-sm font-semibold text-amber-900 hover:bg-amber-100">Nueva sopa</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- ========== PANEL TEMA 2 ========== -->
+		<section id="panel-tema-2" class="tema-panel ambient-tema ambient-tema-2 hidden space-y-6" data-panel="2" role="tabpanel" aria-labelledby="tab-tema-2" hidden>
+			<div class="rounded-2xl border border-teal-200/80 bg-white/70 p-6 shadow-sm">
+				<h2 class="text-xl font-bold text-teal-950">2. Métricas y modelos de calidad</h2>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
+					Las <strong>métricas</strong> cuantifican atributos del software y del proceso para tomar decisiones basadas en datos. Se combinan con <strong>modelos</strong> y <strong>estándares</strong> para evaluar y mejorar la calidad de forma sistemática.
+				</p>
+			</div>
+			<div class="rounded-2xl border border-teal-100/90 bg-white/70 p-4 shadow-inner backdrop-blur-sm">
+				<div class="tema-subte-block max-w-5xl mx-auto">
+					<p class="text-neutral-600 text-center mb-4 text-sm">
+						Pestañas: <strong>Métricas</strong>, <strong>Modelos y estándares</strong>, <strong>Mejora y PDCA</strong> e <strong>Interrogantes</strong>.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-6 justify-center" role="tablist" aria-label="Subtemas tema 2">
+						<button type="button" class="t2g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-teal-600" data-sub="1" aria-selected="true">Métricas</button>
+						<button type="button" class="t2g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-teal-900 border-teal-100 hover:bg-teal-50" data-sub="2" aria-selected="false">Modelos y estándares</button>
+						<button type="button" class="t2g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-teal-900 border-teal-100 hover:bg-teal-50" data-sub="3" aria-selected="false">Mejora y PDCA</button>
+						<button type="button" class="t2g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-teal-900 border-teal-100 hover:bg-teal-50" data-sub="4" aria-selected="false">Interrogantes</button>
+					</div>
+					<div id="t2g4-sub-1" class="t2g4-sub-panel tab-panel space-y-3">
+						<div class="bg-white border border-teal-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-teal-100 text-teal-800 mb-3 uppercase tracking-wide">Subtema 1</span>
+							<h3 class="text-lg font-semibold text-teal-900 mb-3">Métricas de calidad</h3>
+							<div class="subte-viz subte-viz--g4 mb-4 rounded-xl border border-teal-200 bg-teal-50/60 p-4">
+								<p class="text-center text-xs font-bold uppercase tracking-wide text-teal-800 mb-3">Indicadores frecuentes</p>
+								<div class="grid grid-cols-2 gap-2 sm:grid-cols-3 text-[11px]">
+									<div class="subte-card rounded-lg bg-white border border-teal-200 px-2 py-2 text-center font-semibold text-teal-900">Densidad de defectos</div>
+									<div class="subte-card rounded-lg bg-white border border-teal-200 px-2 py-2 text-center font-semibold text-teal-900">Cobertura de pruebas</div>
+									<div class="subte-card rounded-lg bg-white border border-teal-200 px-2 py-2 text-center font-semibold text-teal-900">MTBF</div>
+									<div class="subte-card rounded-lg bg-white border border-teal-200 px-2 py-2 text-center font-semibold text-teal-900">Tasa de errores</div>
+									<div class="subte-card rounded-lg bg-white border border-teal-200 px-2 py-2 text-center font-semibold text-teal-900">Deuda técnica</div>
+									<div class="subte-card rounded-lg bg-white border border-teal-200 px-2 py-2 text-center font-semibold text-teal-900">Complejidad ciclomática</div>
+								</div>
+							</div>
+							<p class="text-sm text-neutral-700">Se miden con indicadores como <strong>tasa de errores</strong>, <strong>cobertura</strong>, <strong>tiempo de respuesta</strong> y <strong>tiempo medio entre fallos (MTBF)</strong>.</p>
+						</div>
+					</div>
+					<div id="t2g4-sub-2" class="t2g4-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-teal-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 mb-3 uppercase tracking-wide">Subtema 2</span>
+							<h3 class="text-lg font-semibold text-teal-900 mb-3">Tres modelos y estándares</h3>
+							<div class="subte-viz subte-viz--g4 mb-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+								<div class="subte-card rounded-xl bg-teal-600 px-3 py-4 text-center text-white shadow-md">
+									<p class="text-xs font-bold uppercase">Uso</p>
+									<p class="mt-1 text-[11px] text-teal-50">Perspectiva del usuario · usabilidad, satisfacción</p>
+								</div>
+								<div class="subte-card rounded-xl bg-cyan-700 px-3 py-4 text-center text-white shadow-md">
+									<p class="text-xs font-bold uppercase">Proceso</p>
+									<p class="mt-1 text-[11px] text-cyan-100">CMMI, ISO/IEC 33000 · madurez organizacional</p>
+								</div>
+								<div class="subte-card rounded-xl bg-teal-800 px-3 py-4 text-center text-white shadow-md">
+									<p class="text-xs font-bold uppercase">Producto</p>
+									<p class="mt-1 text-[11px] text-teal-100">ISO/IEC 25010 · atributos del software</p>
+								</div>
+							</div>
+							<p class="text-sm text-neutral-700"><strong>Estándar</strong>: documento con requisitos técnicos acordados por un organismo reconocido, usado como referencia común de calidad o interoperabilidad.</p>
+						</div>
+					</div>
+					<div id="t2g4-sub-3" class="t2g4-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-teal-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-violet-100 text-violet-800 mb-3 uppercase tracking-wide">Subtema 3</span>
+							<h3 class="text-lg font-semibold text-teal-900 mb-3">Mejora del código y ciclo PDCA</h3>
+							<ul class="list-disc pl-5 text-sm text-neutral-700 space-y-1 mb-4">
+								<li>Revisiones de código (code reviews)</li>
+								<li>Pruebas automatizadas y refactoring</li>
+								<li>Principios <strong>SOLID</strong>, análisis estático, <strong>CI/CD</strong></li>
+							</ul>
+							<div class="subte-viz subte-viz--g4 rounded-xl border border-violet-200 bg-violet-50/50 p-4">
+								<p class="text-center text-xs font-bold uppercase text-violet-900 mb-3">PDCA (4 pasos — Documentar no es un paso)</p>
+								<div class="flex flex-wrap justify-center gap-2">
+									<span class="subte-card rounded-lg bg-violet-600 px-3 py-2 text-xs font-bold text-white">Planificar</span>
+									<span class="text-slate-400">→</span>
+									<span class="subte-card rounded-lg bg-violet-700 px-3 py-2 text-xs font-bold text-white">Hacer</span>
+									<span class="text-slate-400">→</span>
+									<span class="subte-card rounded-lg bg-fuchsia-700 px-3 py-2 text-xs font-bold text-white">Verificar</span>
+									<span class="text-slate-400">→</span>
+									<span class="subte-card rounded-lg bg-fuchsia-800 px-3 py-2 text-xs font-bold text-white">Actuar</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="t2g4-sub-4" class="t2g4-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-teal-100 rounded-2xl p-5 shadow-sm">
+							<span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-teal-100 text-teal-800 mb-3 uppercase tracking-wide">Interrogantes · Tema 2</span>
+							<div id="g4t2-acc-container" class="space-y-2">
+								{[
+									{ q: '¿Cuál es el papel de las métricas en la gestión de calidad?', a: 'Permiten medir objetivamente atributos del producto y del proceso, detectar desviaciones, priorizar mejoras y demostrar cumplimiento ante clientes o auditorías.' },
+									{ q: '¿Qué relación existe entre código y métricas?', a: 'Métricas como complejidad ciclomática, cobertura o densidad de defectos reflejan la salud del código; guían refactoring, pruebas y decisiones de arquitectura.' },
+									{ q: '¿Por qué usar métricas si ya se hacen pruebas?', a: 'Las pruebas validan comportamiento puntual; las métricas ofrecen tendencias y comparabilidad entre versiones, equipos y releases, apoyando mejora continua (PDCA).' },
+								].map((item, idx) => (
+									<div class="g4t2-acc-item rounded-2xl overflow-hidden border border-teal-100 shadow-sm transition hover:shadow-md" onclick="toggleG4T2(this)">
+										<div class="flex items-center gap-3 px-4 py-3 bg-white hover:bg-teal-50 cursor-pointer transition">
+											<span class="flex w-7 h-7 rounded-full bg-teal-100 text-teal-800 text-xs font-bold items-center justify-center flex-shrink-0">{idx + 1}</span>
+											<span class="text-sm font-semibold text-teal-900 flex-1">{item.q}</span>
+											<span class="g4t2-icon text-teal-400 font-light text-xl flex-shrink-0">+</span>
+										</div>
+										<div class="g4t2-body max-h-0 overflow-hidden transition-all duration-400 ease-in-out">
+											<div class="px-4 pb-4 pt-3 text-sm text-neutral-700 leading-relaxed border-t border-teal-100">{item.a}</div>
+										</div>
+									</div>
+								))}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rounded-2xl border border-violet-200/90 bg-gradient-to-br from-violet-50/90 via-white to-fuchsia-50/70 p-5 shadow-lg shadow-violet-500/15">
+				<h3 class="flex items-center gap-2 text-lg font-bold text-violet-900">
+					<span class="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-600 text-sm text-white">A</span>
+					Actividad del tema 2 · V/F (3 preguntas)
+				</h3>
+				<p class="mt-1 text-xs text-neutral-600">Responde Verdadero o Falso; al final verás el resumen.</p>
+				<div class="mt-4 min-h-[140px] rounded-xl border border-violet-100 bg-white/95 p-4 shadow-inner" id="t2g4-carousel-root"></div>
+			</div>
+		</section>
+
+		<!-- ========== PANEL TEMA 3 ========== -->
+		<section id="panel-tema-3" class="tema-panel ambient-tema ambient-tema-3 hidden space-y-6" data-panel="3" role="tabpanel" aria-labelledby="tab-tema-3" hidden>
+			<div class="rounded-2xl border border-cyan-200/80 bg-white/70 p-6 shadow-sm">
+				<h2 class="text-xl font-bold text-cyan-950">3. Normas ISO y gestión de calidad</h2>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
+					<strong>ISO</strong> (International Organization for Standardization) publica estándares internacionales. En Colombia, <strong>UNE</strong> adopta normas ISO; <strong>IEEE</strong> e <strong>IEC</strong> complementan el ámbito técnico en software y electrónica.
+				</p>
+			</div>
+			<div class="rounded-2xl border border-cyan-100/90 bg-white/70 p-4 shadow-inner backdrop-blur-sm">
+				<div class="tema-subte-block max-w-5xl mx-auto">
+					<p class="text-neutral-600 text-center mb-4 text-sm">
+						Pestañas: <strong>Siglas</strong>, <strong>Normas ISO</strong>, <strong>Familia ISO 9000</strong> e <strong>ISO 9001</strong>.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-6 justify-center" role="tablist" aria-label="Subtemas tema 3">
+						<button type="button" class="t3g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-cyan-600 to-sky-600 text-white border-cyan-600" data-sub="1" aria-selected="true">Siglas</button>
+						<button type="button" class="t3g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-cyan-900 border-cyan-100 hover:bg-cyan-50" data-sub="2" aria-selected="false">Normas ISO</button>
+						<button type="button" class="t3g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-cyan-900 border-cyan-100 hover:bg-cyan-50" data-sub="3" aria-selected="false">Familia ISO 9000</button>
+						<button type="button" class="t3g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-cyan-900 border-cyan-100 hover:bg-cyan-50" data-sub="4" aria-selected="false">ISO 9001</button>
+					</div>
+					<div id="t3g4-sub-1" class="t3g4-sub-panel tab-panel space-y-3">
+						<div class="bg-white border border-cyan-100 rounded-2xl p-5 shadow-sm overflow-x-auto">
+							<h3 class="text-lg font-semibold text-cyan-900 mb-3">Siglas de organismos normalizadores</h3>
+							<table class="w-full text-sm border-collapse">
+								<thead><tr class="bg-cyan-50"><th class="border border-cyan-200 px-3 py-2 text-left">Sigla</th><th class="border border-cyan-200 px-3 py-2 text-left">Descripción</th></tr></thead>
+								<tbody class="text-neutral-700">
+									<tr><td class="border border-cyan-100 px-3 py-2 font-semibold">UNE</td><td class="border border-cyan-100 px-3 py-2">Asociación Española de Normalización (adopción en España)</td></tr>
+									<tr><td class="border border-cyan-100 px-3 py-2 font-semibold">IEEE</td><td class="border border-cyan-100 px-3 py-2">Institute of Electrical and Electronics Engineers</td></tr>
+									<tr><td class="border border-cyan-100 px-3 py-2 font-semibold">IEC</td><td class="border border-cyan-100 px-3 py-2">International Electrotechnical Commission</td></tr>
+									<tr><td class="border border-cyan-100 px-3 py-2 font-semibold">ISO</td><td class="border border-cyan-100 px-3 py-2">International Organization for Standardization</td></tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div id="t3g4-sub-2" class="t3g4-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-cyan-100 rounded-2xl p-5 shadow-sm overflow-x-auto">
+							<h3 class="text-lg font-semibold text-cyan-900 mb-3">Normas ISO frecuentes</h3>
+							<table class="w-full text-xs sm:text-sm border-collapse">
+								<thead><tr class="bg-sky-50"><th class="border border-sky-200 px-2 py-2">Norma</th><th class="border border-sky-200 px-2 py-2">Ámbito</th></tr></thead>
+								<tbody class="text-neutral-700">
+									<tr><td class="border px-2 py-1.5 font-semibold">ISO 9001</td><td class="border px-2 py-1.5">Gestión de calidad (SGC)</td></tr>
+									<tr><td class="border px-2 py-1.5 font-semibold">ISO 13485</td><td class="border px-2 py-1.5">Dispositivos médicos</td></tr>
+									<tr><td class="border px-2 py-1.5 font-semibold">ISO 14001</td><td class="border px-2 py-1.5">Gestión ambiental</td></tr>
+									<tr><td class="border px-2 py-1.5 font-semibold">ISO 15189</td><td class="border px-2 py-1.5">Laboratorios clínicos</td></tr>
+									<tr><td class="border px-2 py-1.5 font-semibold">ISO 22000</td><td class="border px-2 py-1.5">Seguridad alimentaria</td></tr>
+									<tr><td class="border px-2 py-1.5 font-semibold">ISO 27001</td><td class="border px-2 py-1.5">Seguridad de la información</td></tr>
+									<tr><td class="border px-2 py-1.5 font-semibold">ISO 37001</td><td class="border px-2 py-1.5">Antisoborno</td></tr>
+									<tr><td class="border px-2 py-1.5 font-semibold">ISO 39001</td><td class="border px-2 py-1.5">Seguridad vial</td></tr>
+									<tr><td class="border px-2 py-1.5 font-semibold">ISO 45001</td><td class="border px-2 py-1.5">Seguridad y salud en el trabajo</td></tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div id="t3g4-sub-3" class="t3g4-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-cyan-100 rounded-2xl p-5 shadow-sm">
+							<h3 class="text-lg font-semibold text-cyan-900 mb-3">Conceptos de la familia ISO 9000</h3>
+							<div class="grid grid-cols-1 gap-2 sm:grid-cols-2 text-xs text-neutral-700">
+								<p class="rounded-lg bg-cyan-50 px-3 py-2"><strong>Gestión de calidad</strong> · enfoque organizacional</p>
+								<p class="rounded-lg bg-cyan-50 px-3 py-2"><strong>No conformidad</strong> · incumplimiento de requisito</p>
+								<p class="rounded-lg bg-cyan-50 px-3 py-2"><strong>Auditoría interna</strong> · verificación del SGC</p>
+								<p class="rounded-lg bg-cyan-50 px-3 py-2"><strong>Liderazgo</strong> y enfoque al <strong>cliente</strong></p>
+								<p class="rounded-lg bg-cyan-50 px-3 py-2"><strong>Registro</strong> · evidencia documentada</p>
+								<p class="rounded-lg bg-cyan-50 px-3 py-2"><strong>SGC</strong> · Sistema de Gestión de Calidad</p>
+								<p class="rounded-lg bg-cyan-50 px-3 py-2"><strong>Indicador de desempeño</strong></p>
+								<p class="rounded-lg bg-cyan-50 px-3 py-2"><strong>Revisión por la dirección</strong></p>
+								<p class="rounded-lg bg-cyan-50 px-3 py-2"><strong>Acción correctiva</strong></p>
+								<p class="rounded-lg bg-cyan-50 px-3 py-2"><strong>Mejora continua (Kaizen)</strong> · ciclo PDCA</p>
+							</div>
+						</div>
+					</div>
+					<div id="t3g4-sub-4" class="t3g4-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-cyan-100 rounded-2xl p-5 shadow-sm">
+							<h3 class="text-lg font-semibold text-cyan-900 mb-3">ISO 9001</h3>
+							<p class="text-sm text-neutral-700 leading-relaxed">
+								La norma <strong>ISO 9001</strong> establece los <strong>requisitos para un SGC</strong> que puede ser <strong>certificado</strong> por un organismo acreditado. Define procesos, responsabilidades y evidencias para demostrar capacidad de entregar productos y servicios conformes.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rounded-2xl border border-cyan-200/90 bg-gradient-to-br from-cyan-50/90 via-white to-sky-50/70 p-5 shadow-lg shadow-cyan-500/10">
+				<h3 class="flex items-center gap-2 text-lg font-bold text-cyan-900">
+					<span class="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-600 text-sm text-white">A</span>
+					Actividad del tema 3 · Relaciona pares (5)
+				</h3>
+				<p class="mt-2 text-sm text-neutral-600">Empareja cada norma ISO con su ámbito principal.</p>
+				<div class="mt-4 grid gap-3 sm:grid-cols-2" id="t3g4-match-root"></div>
+				<p class="mt-3 text-sm font-semibold text-cyan-800" id="t3g4-match-status">Pares encontrados: 0 / 5</p>
+			</div>
+		</section>
+
+		<!-- ========== PANEL TEMA 4 ========== -->
+		<section id="panel-tema-4" class="tema-panel ambient-tema ambient-tema-4 hidden space-y-6 pb-8" data-panel="4" role="tabpanel" aria-labelledby="tab-tema-4" hidden>
+			<div class="rounded-2xl border border-indigo-200/80 bg-white/70 p-6 shadow-sm">
+				<h2 class="text-xl font-bold text-indigo-950">4. Legal, CMS, tecnología e IA</h2>
+				<p class="mt-3 text-sm leading-relaxed text-neutral-700">
+					El desarrollo y operación de software implica <strong>responsabilidades legales</strong> (PI, privacidad, contratos, seguridad, ética) y el uso de <strong>CMS</strong>, infraestructura y herramientas de <strong>IA</strong> con vocabulario técnico propio.
+				</p>
+			</div>
+			<div class="rounded-2xl border border-indigo-100/90 bg-white/70 p-4 shadow-inner backdrop-blur-sm">
+				<div class="tema-subte-block max-w-5xl mx-auto">
+					<p class="text-neutral-600 text-center mb-4 text-sm">
+						Pestañas: <strong>Legal</strong>, <strong>CMS 2025</strong>, <strong>Siglas TI</strong> e <strong>IA y PI</strong>.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-6 justify-center" role="tablist" aria-label="Subtemas tema 4">
+						<button type="button" class="t4g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-indigo-600 to-violet-600 text-white border-indigo-600" data-sub="1" aria-selected="true">Legal</button>
+						<button type="button" class="t4g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-indigo-900 border-indigo-100 hover:bg-indigo-50" data-sub="2" aria-selected="false">CMS 2025</button>
+						<button type="button" class="t4g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-indigo-900 border-indigo-100 hover:bg-indigo-50" data-sub="3" aria-selected="false">Siglas TI</button>
+						<button type="button" class="t4g4-sub-btn tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-indigo-900 border-indigo-100 hover:bg-indigo-50" data-sub="4" aria-selected="false">IA y PI</button>
+					</div>
+					<div id="t4g4-sub-1" class="t4g4-sub-panel tab-panel space-y-3">
+						<div class="bg-white border border-indigo-100 rounded-2xl p-5 shadow-sm">
+							<h3 class="text-lg font-semibold text-indigo-900 mb-3">Responsabilidades legales en TI</h3>
+							<ul class="list-disc pl-5 text-sm text-neutral-700 space-y-2">
+								<li><strong>Propiedad intelectual (PI)</strong>: protección de creaciones del software y contenidos.</li>
+								<li><strong>Privacidad</strong>: GDPR (UE), <strong>Ley 1581 de 2012</strong> (Colombia).</li>
+								<li><strong>Contratos</strong> y <strong>responsabilidad</strong> por fallos o incumplimiento.</li>
+								<li><strong>Seguridad</strong> de la información y <strong>ética</strong> en el uso de datos y IA.</li>
+							</ul>
+						</div>
+					</div>
+					<div id="t4g4-sub-2" class="t4g4-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-indigo-100 rounded-2xl p-5 shadow-sm">
+							<h3 class="text-lg font-semibold text-indigo-900 mb-3">CMS destacados (2025)</h3>
+							<div class="subte-viz subte-viz--g4 flex flex-wrap justify-center gap-2">
+								{['WordPress', 'Shopify', 'Wix', 'Joomla', 'Drupal', 'Webflow', 'Contentful'].map((cms) => (
+									<span class="subte-card rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-xs font-semibold text-indigo-900">{cms}</span>
+								))}
+							</div>
+							<p class="mt-3 text-sm text-neutral-700">Los CMS gestionan contenido web sin programar cada página desde cero; implican licencias, hosting y cumplimiento de privacidad.</p>
+						</div>
+					</div>
+					<div id="t4g4-sub-3" class="t4g4-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-indigo-100 rounded-2xl p-5 shadow-sm">
+							<h3 class="text-lg font-semibold text-indigo-900 mb-3">Siglas tecnológicas</h3>
+							<dl class="grid grid-cols-1 gap-2 sm:grid-cols-2 text-sm">
+								<div><dt class="font-bold text-indigo-800">SSL</dt><dd class="text-neutral-600">Capa segura en conexiones</dd></div>
+								<div><dt class="font-bold text-indigo-800">VPN</dt><dd class="text-neutral-600">Red privada virtual</dd></div>
+								<div><dt class="font-bold text-indigo-800">MFA</dt><dd class="text-neutral-600">Autenticación multifactor</dd></div>
+								<div><dt class="font-bold text-indigo-800">HTTPS</dt><dd class="text-neutral-600">HTTP sobre TLS/SSL</dd></div>
+								<div><dt class="font-bold text-indigo-800">JSON</dt><dd class="text-neutral-600">Intercambio de datos estructurados</dd></div>
+								<div><dt class="font-bold text-indigo-800">JVM</dt><dd class="text-neutral-600">Máquina virtual Java</dd></div>
+							</dl>
+						</div>
+					</div>
+					<div id="t4g4-sub-4" class="t4g4-sub-panel tab-panel hidden space-y-3">
+						<div class="bg-white border border-indigo-100 rounded-2xl p-5 shadow-sm">
+							<h3 class="text-lg font-semibold text-indigo-900 mb-3">IA, términos y propiedad intelectual</h3>
+							<p class="text-sm text-neutral-700 mb-3">
+								<strong>PI</strong> protege las <strong>creaciones de la mente</strong> (obras, software, diseños). El <strong>Derecho Civil</strong> regula, por ejemplo, instituciones como el <strong>matrimonio</strong>, distinto del derecho comercial o informático.
+							</p>
+							<div class="flex flex-wrap gap-2 text-[11px]">
+								{['SDLC', 'UI', 'QA', 'Chatbot', 'Fine-tuning', 'LLM', 'Alucinación', 'Bot'].map((t) => (
+									<span class="rounded-md bg-violet-100 px-2 py-1 font-semibold text-violet-900">{t}</span>
+								))}
+							</div>
+							<p class="mt-3 text-xs text-neutral-600"><strong>LLM</strong>: Large Language Model · <strong>Alucinación</strong>: respuesta plausible pero incorrecta o inventada.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rounded-2xl border border-indigo-200/90 bg-gradient-to-br from-indigo-50/90 via-white to-purple-50/70 p-5 shadow-lg shadow-indigo-500/10">
+				<h3 class="flex items-center gap-2 text-lg font-bold text-indigo-900">
+					<span class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-sm text-white">A</span>
+					Actividad del tema 4 · Mini test (3 preguntas)
+				</h3>
+				<p class="mt-1 text-xs text-neutral-600">Elige la opción correcta; al terminar verás cuántas acertaste.</p>
+				<div class="mt-4 rounded-xl border border-indigo-100 bg-white/90 p-4 shadow-inner" id="t4g4-mcq-root"></div>
+			</div>
+		</section>
+
+		<section class="flex flex-wrap gap-3 pb-8">
+			<a href={`${base}tutoria-tres`} class="rounded-xl border border-emerald-300 bg-white px-4 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-50 transition">Volver a Tutoría Tres</a>
+			<a href={`${base}tutoria-cinco`} class="rounded-xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700 transition">Continuar a Tutoría Cinco</a>
+		</section>
+	</div>
+
+	<style is:global>
+		.sopa-celda {
+			width: 28px;
+			height: 28px;
+			border: 1px solid #e7e5e4;
+			background: #fff;
+			cursor: pointer;
+			font-size: 12px;
+			line-height: 1;
+			touch-action: manipulation;
+			transition: background 0.12s ease, box-shadow 0.12s ease;
+		}
+		.sopa-celda.sopa-pick {
+			background: #bbf7d0;
+			box-shadow: inset 0 0 0 2px #22c55e;
+			font-weight: 700;
+			color: #14532d;
+		}
+		.sopa-celda.sol {
+			background: #fde68a !important;
+			font-weight: 700;
+			color: #92400e;
+			box-shadow: inset 0 0 0 2px #d97706;
+		}
+		.sopa-celda.sopa-found {
+			background: #a7f3d0 !important;
+			color: #065f46;
+			font-weight: 800;
+			text-decoration: underline;
+			text-underline-offset: 2px;
+			box-shadow: inset 0 0 0 2px #059669;
+		}
+		.sopa-chip {
+			transition: background 0.2s, border-color 0.2s, transform 0.15s;
+		}
+		.sopa-chip.sopa-chip-found {
+			border-color: #059669 !important;
+			background: #ecfdf5 !important;
+			color: #047857 !important;
+			text-decoration: underline;
+			text-underline-offset: 3px;
+			transform: scale(1.02);
+		}
+		.match-card {
+			cursor: pointer;
+			border-radius: 0.75rem;
+			border: 2px solid transparent;
+			padding: 0.75rem 1rem;
+			font-size: 0.875rem;
+			font-weight: 600;
+			transition: transform 0.15s, box-shadow 0.15s;
+		}
+		.match-card:hover:not(:disabled) { transform: translateY(-2px); }
+		.match-card.selected {
+			border-color: #7c3aed;
+			box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
+		}
+		.ambient-tema { position: relative; isolation: isolate; }
+		.ambient-tema::before {
+			content: '';
+			position: absolute;
+			inset: -4px;
+			z-index: -1;
+			border-radius: 1.25rem;
+			opacity: 0.55;
+			pointer-events: none;
+			background: radial-gradient(ellipse 90% 60% at 50% 0%, var(--ambient-glow, rgba(45, 212, 191, 0.22)), transparent 55%);
+			animation: ambientBreath 9s ease-in-out infinite;
+		}
+		.ambient-tema-2 { --ambient-glow: rgba(45, 212, 191, 0.28); }
+		.ambient-tema-3 { --ambient-glow: rgba(34, 211, 238, 0.26); }
+		.ambient-tema-4 { --ambient-glow: rgba(129, 140, 248, 0.28); }
+		@keyframes ambientBreath {
+			0%, 100% { opacity: 0.45; transform: scale(1); }
+			50% { opacity: 0.75; transform: scale(1.01); }
+		}
+		.subte-viz { position: relative; overflow: hidden; }
+		.subte-viz::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.35) 45%, transparent 70%);
+			transform: translateX(-120%);
+			animation: vizShine 7s ease-in-out infinite;
+			pointer-events: none;
+			mix-blend-mode: soft-light;
+		}
+		@keyframes vizShine {
+			0%, 100% { transform: translateX(-130%); }
+			40%, 60% { transform: translateX(130%); }
+		}
+		.subte-card {
+			transition: transform 0.35s cubic-bezier(0.34, 1.45, 0.64, 1), box-shadow 0.35s ease;
+		}
+		@media (prefers-reduced-motion: no-preference) {
+			.subte-viz .subte-card { animation: subteCardIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+		}
+		@keyframes subteCardIn {
+			from { opacity: 0; transform: translateY(14px) scale(0.97); }
+			to { opacity: 1; transform: translateY(0) scale(1); }
+		}
+		.subte-card:hover {
+			transform: translateY(-5px) scale(1.02);
+			box-shadow: 0 14px 28px -10px rgba(15, 23, 42, 0.22);
+		}
+		.g4t2-acc-item.open .g4t2-body { max-height: 280px; }
+		.g4t2-acc-item.open .g4t2-icon { transform: rotate(45deg); color: #0d9488; }
+		.g4t2-icon { transition: transform 0.3s; }
+		@media (prefers-reduced-motion: reduce) {
+			.ambient-tema::before, .subte-viz::after { animation: none; }
+			.subte-viz .subte-card { animation: none; }
+		}
+	</style>
+
+	<script is:inline>
+	(function () {
+		const panels = document.querySelectorAll('.tema-panel');
+		const tabs = document.querySelectorAll('.tema-tab');
+		const tabStyles = {
+			active: 'tema-tab rounded-xl border-2 border-emerald-500 bg-emerald-50 px-3 py-2 text-left text-xs font-bold text-emerald-900 shadow-sm sm:text-sm',
+			inactive: 'tema-tab rounded-xl border border-neutral-200 bg-white px-3 py-2 text-left text-xs font-medium text-neutral-700 hover:border-teal-300 sm:text-sm'
+		};
+		function showTema(n) {
+			const num = String(n);
+			panels.forEach((p) => {
+				const on = p.getAttribute('data-panel') === num;
+				p.classList.toggle('hidden', !on);
+				p.toggleAttribute('hidden', !on);
+			});
+			tabs.forEach((t) => {
+				const on = t.getAttribute('data-tema') === num;
+				t.setAttribute('aria-selected', on ? 'true' : 'false');
+				t.className = on ? tabStyles.active : tabStyles.inactive;
+			});
+			try { history.replaceState(null, '', '#tema-' + num); } catch (e) {}
+		}
+		tabs.forEach((t) => t.addEventListener('click', () => showTema(t.getAttribute('data-tema'))));
+		if (location.hash && /^#tema-[1-4]$/.test(location.hash)) {
+			showTema(location.hash.replace('#tema-', ''));
+		} else {
+			showTema('1');
+		}
+
+		function initSubtemaTabs(prefix, activeCls, inactiveCls) {
+			const btns = document.querySelectorAll('.' + prefix + '-sub-btn');
+			const pnls = document.querySelectorAll('.' + prefix + '-sub-panel');
+			if (!btns.length || btns[0].dataset.bound === '1') return;
+			btns[0].dataset.bound = '1';
+			btns.forEach((btn) => {
+				btn.addEventListener('click', () => {
+					const n = btn.getAttribute('data-sub');
+					btns.forEach((b) => {
+						const on = b.getAttribute('data-sub') === n;
+						b.setAttribute('aria-selected', on ? 'true' : 'false');
+						b.className = prefix + '-sub-btn ' + (on ? activeCls : inactiveCls);
+					});
+					pnls.forEach((p) => p.classList.toggle('hidden', p.id !== prefix + '-sub-' + n));
+				});
+			});
+		}
+		const subActive = 'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-emerald-600 to-teal-600 text-white border-emerald-600';
+		const subInactive = 'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-emerald-900 border-emerald-100 hover:bg-emerald-50';
+		initSubtemaTabs('t1g4', subActive, subInactive);
+		initSubtemaTabs('t2g4',
+			'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-teal-600',
+			'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-teal-900 border-teal-100 hover:bg-teal-50');
+		initSubtemaTabs('t3g4',
+			'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-cyan-600 to-sky-600 text-white border-cyan-600',
+			'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-cyan-900 border-cyan-100 hover:bg-cyan-50');
+		initSubtemaTabs('t4g4',
+			'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-gradient-to-r from-indigo-600 to-violet-600 text-white border-indigo-600',
+			'tab-btn px-4 py-2 rounded-xl font-medium border transition shadow-sm bg-white/70 text-indigo-900 border-indigo-100 hover:bg-indigo-50');
+
+		window.toggleG4T2 = function (item) { item.classList.toggle('open'); };
+
+		const T1_WORDS = ['CALIDAD', 'METRICA', 'USO', 'SDLC', 'NORMA', 'PRESSMAN'];
+		const SOPA_ROWS = 10, SOPA_COLS = 14;
+		const ABC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		function randLetter() { return ABC[Math.floor(Math.random() * ABC.length)]; }
+		function emptyGrid() {
+			const g = [];
+			for (let r = 0; r < SOPA_ROWS; r++) {
+				const row = [];
+				for (let c = 0; c < SOPA_COLS; c++) row.push({ ch: randLetter(), sol: false });
+				g.push(row);
+			}
+			return g;
+		}
+		function canPlace(g, w, horiz, r, c) {
+			for (let i = 0; i < w.length; i++) {
+				const rr = horiz ? r : r + i, cc = horiz ? c + i : c;
+				if (g[rr][cc].sol && g[rr][cc].ch !== w[i]) return false;
+			}
+			return true;
+		}
+		function applyPlace(g, w, horiz, r, c) {
+			const cells = [];
+			for (let i = 0; i < w.length; i++) {
+				const rr = horiz ? r : r + i, cc = horiz ? c + i : c;
+				g[rr][cc].ch = w[i]; g[rr][cc].sol = true;
+				cells.push([rr, cc]);
+			}
+			return cells;
+		}
+		function tryPlaceWord(g, word) {
+			const w = word.replace(/\s/g, '').toUpperCase();
+			for (let t = 0; t < 400; t++) {
+				const horiz = Math.random() < 0.5;
+				let r, c;
+				if (horiz) { r = Math.floor(Math.random() * SOPA_ROWS); c = Math.floor(Math.random() * Math.max(1, SOPA_COLS - w.length + 1)); }
+				else { r = Math.floor(Math.random() * Math.max(1, SOPA_ROWS - w.length + 1)); c = Math.floor(Math.random() * SOPA_COLS); }
+				if (canPlace(g, w, horiz, r, c)) return { word, cells: applyPlace(g, w, horiz, r, c) };
+			}
+			return null;
+		}
+		function buildGrid() {
+			const order = [...T1_WORDS].sort((a, b) => b.length - a.length);
+			for (let attempt = 0; attempt < 80; attempt++) {
+				const g = emptyGrid(), placements = [];
+				let ok = true;
+				for (const p of order) {
+					const res = tryPlaceWord(g, p);
+					if (!res) { ok = false; break; }
+					placements.push(res);
+				}
+				if (ok) return { grid: g, placements };
+			}
+			return { grid: emptyGrid(), placements: [] };
+		}
+		function renderSopa(bundle, foundWords) {
+			const tabla = document.getElementById('t1g4-sopa-tabla');
+			const palWrap = document.getElementById('t1g4-sopa-palabras');
+			const g = bundle.grid, placements = bundle.placements;
+			if (!tabla || !palWrap) return;
+			tabla.innerHTML = '';
+			palWrap.innerHTML = T1_WORDS.map((p) => {
+				const done = foundWords.has(p);
+				return '<span data-sopa-word="' + p + '" class="sopa-chip rounded-lg border border-amber-200 bg-white px-2 py-1 text-xs font-bold text-amber-900 ' + (done ? 'sopa-chip-found' : '') + '">' + p + '</span>';
+			}).join('');
+			for (let r = 0; r < SOPA_ROWS; r++) {
+				const tr = document.createElement('tr');
+				for (let c = 0; c < SOPA_COLS; c++) {
+					const td = document.createElement('td');
+					td.className = 'sopa-celda';
+					td.textContent = g[r][c].ch;
+					td.dataset.r = String(r); td.dataset.c = String(c);
+					if (g[r][c].sol) td.dataset.sol = '1';
+					const isFound = placements.some((pl) => foundWords.has(pl.word) && pl.cells.some((x) => x[0] === r && x[1] === c));
+					if (isFound) td.classList.add('sopa-found');
+					tr.appendChild(td);
+				}
+				tabla.appendChild(tr);
+			}
+			function getTd(rr, cc) { const row = tabla.rows[rr]; return row ? row.cells[cc] : null; }
+			function cellMarked(cell) { return cell && (cell.classList.contains('sopa-pick') || cell.classList.contains('sopa-found')); }
+			function checkWords() {
+				placements.forEach((pl) => {
+					if (foundWords.has(pl.word)) return;
+					if (pl.cells.every(([rr, cc]) => cellMarked(getTd(rr, cc)))) {
+						foundWords.add(pl.word);
+						pl.cells.forEach(([rr, cc]) => {
+							const cell = getTd(rr, cc);
+							if (cell) { cell.classList.remove('sopa-pick'); cell.classList.add('sopa-found'); }
+						});
+						const chip = palWrap.querySelector('[data-sopa-word="' + pl.word + '"]');
+						if (chip) chip.classList.add('sopa-chip-found');
+					}
+				});
+				if (foundWords.size === T1_WORDS.length) {
+					const el = document.getElementById('t1g4-sopa-complete');
+					if (el) el.classList.remove('hidden');
+				}
+			}
+			tabla.querySelectorAll('.sopa-celda').forEach((td) => {
+				td.addEventListener('click', function () {
+					if (this.classList.contains('sopa-found')) return;
+					this.classList.toggle('sopa-pick');
+					checkWords();
+				});
+			});
+		}
+		function toggleSol(on) {
+			document.querySelectorAll('#t1g4-sopa-tabla .sopa-celda').forEach((td) => {
+				if (td.dataset.sol === '1') td.classList.toggle('sol', on);
+			});
+		}
+		function initT1Sopa() {
+			const b1 = document.getElementById('t1g4-sopa-sol');
+			const b2 = document.getElementById('t1g4-sopa-hide');
+			const b3 = document.getElementById('t1g4-sopa-new');
+			const bClear = document.getElementById('t1g4-sopa-clear-pick');
+			if (!b1 || b1.dataset.bound === '1') return;
+			b1.dataset.bound = '1';
+			let foundWords = new Set(), currentBundle = { grid: [], placements: [] };
+			function paint() {
+				toggleSol(false);
+				foundWords = new Set();
+				const doneEl = document.getElementById('t1g4-sopa-complete');
+				if (doneEl) doneEl.classList.add('hidden');
+				currentBundle = buildGrid();
+				renderSopa(currentBundle, foundWords);
+			}
+			paint();
+			b1.addEventListener('click', () => toggleSol(true));
+			b2.addEventListener('click', () => toggleSol(false));
+			bClear.addEventListener('click', () => document.querySelectorAll('#t1g4-sopa-tabla .sopa-pick').forEach((td) => td.classList.remove('sopa-pick')));
+			b3.addEventListener('click', paint);
+		}
+
+		const T2_VF = [
+			{ q: 'En el ciclo PDCA, "Documentar" es el quinto paso oficial.', a: false },
+			{ q: 'Las métricas permiten medir objetivamente atributos de calidad del software.', a: true },
+			{ q: 'ISO/IEC 25010 es un modelo de calidad orientado al producto de software.', a: true }
+		];
+		function initT2VF() {
+			const root = document.getElementById('t2g4-carousel-root');
+			if (!root || root.dataset.ready === '1') return;
+			root.dataset.ready = '1';
+			let idx = 0, ok = 0;
+			function render() {
+				if (idx >= T2_VF.length) {
+					root.innerHTML = '<p class="text-sm font-semibold text-violet-900">Resultado: ' + ok + ' / ' + T2_VF.length + ' correctas.</p><button type="button" id="t2g4vf-retry" class="mt-3 rounded-xl bg-violet-600 px-4 py-2 text-sm font-bold text-white">Repetir</button>';
+					document.getElementById('t2g4vf-retry').addEventListener('click', () => { idx = 0; ok = 0; render(); });
+					return;
+				}
+				const item = T2_VF[idx];
+				let answered = false;
+				root.innerHTML = '<p class="text-xs font-bold text-violet-700">Pregunta ' + (idx + 1) + ' / ' + T2_VF.length + '</p><p class="mt-2 text-sm font-medium text-neutral-900">' + item.q + '</p><div class="mt-4 flex flex-wrap gap-2"><button type="button" class="t2g4vf-b rounded-lg bg-emerald-600 px-4 py-2 text-sm font-bold text-white" data-v="1">Verdadero</button><button type="button" class="t2g4vf-b rounded-lg border border-violet-300 bg-white px-4 py-2 text-sm font-bold text-violet-900" data-v="0">Falso</button></div><p id="t2g4vf-fb" class="mt-3 hidden text-sm font-semibold"></p><button type="button" id="t2g4vf-next" class="mt-2 hidden rounded-xl bg-violet-600 px-4 py-2 text-sm font-bold text-white">Siguiente</button>';
+				const fb = document.getElementById('t2g4vf-fb'), next = document.getElementById('t2g4vf-next');
+				root.querySelectorAll('.t2g4vf-b').forEach((b) => {
+					b.addEventListener('click', () => {
+						if (answered) return;
+						answered = true;
+						const v = b.dataset.v === '1', right = item.a === v;
+						if (right) ok++;
+						fb.classList.remove('hidden');
+						fb.textContent = right ? 'Correcto.' : 'Revisa el subtema correspondiente arriba.';
+						fb.className = 'mt-3 text-sm font-semibold ' + (right ? 'text-emerald-700' : 'text-rose-600');
+						root.querySelectorAll('.t2g4vf-b').forEach((x) => (x.disabled = true));
+						next.classList.remove('hidden');
+					});
+				});
+				next.addEventListener('click', () => { idx++; render(); });
+			}
+			render();
+		}
+
+		const T3_PAIRS = [
+			['ISO 9001', 'Sistema de Gestión de Calidad (SGC)'],
+			['ISO 27001', 'Seguridad de la información'],
+			['ISO 14001', 'Gestión ambiental'],
+			['ISO 45001', 'Seguridad y salud en el trabajo'],
+			['ISO 22000', 'Seguridad alimentaria']
+		];
+		function initT3Match() {
+			const root = document.getElementById('t3g4-match-root');
+			const status = document.getElementById('t3g4-match-status');
+			if (!root || root.dataset.ready === '1') return;
+			root.dataset.ready = '1';
+			const left = T3_PAIRS.map((p, i) => ({ id: i, label: p[0], done: false }));
+			const right = T3_PAIRS.map((p, i) => ({ id: i, label: p[1], done: false })).sort(() => Math.random() - 0.5);
+			let selected = null, found = 0;
+			function render() {
+				root.innerHTML = '';
+				const colA = document.createElement('div'), colB = document.createElement('div');
+				colA.className = colB.className = 'space-y-2';
+				const h = (t) => { const p = document.createElement('p'); p.className = 'text-xs font-bold uppercase text-cyan-700'; p.textContent = t; return p; };
+				colA.appendChild(h('Norma')); colB.appendChild(h('Ámbito'));
+				left.forEach((item) => {
+					if (item.done) return;
+					const b = document.createElement('button'); b.type = 'button';
+					b.className = 'match-card w-full bg-cyan-100 text-cyan-900';
+					b.textContent = item.label; b.dataset.side = 'L'; b.dataset.id = String(item.id);
+					b.addEventListener('click', onPick); colA.appendChild(b);
+				});
+				right.forEach((item) => {
+					if (item.done) return;
+					const b = document.createElement('button'); b.type = 'button';
+					b.className = 'match-card w-full bg-sky-100 text-sky-900';
+					b.textContent = item.label; b.dataset.side = 'R'; b.dataset.id = String(item.id);
+					b.addEventListener('click', onPick); colB.appendChild(b);
+				});
+				root.appendChild(colA); root.appendChild(colB);
+			}
+			function onPick(ev) {
+				const btn = ev.currentTarget;
+				if (!selected) { selected = btn; btn.classList.add('selected'); return; }
+				if (selected === btn) { selected.classList.remove('selected'); selected = null; return; }
+				if (selected.dataset.side === btn.dataset.side) { selected.classList.remove('selected'); selected = btn; btn.classList.add('selected'); return; }
+				const idA = selected.dataset.side === 'L' ? +selected.dataset.id : +btn.dataset.id;
+				const idB = selected.dataset.side === 'R' ? +selected.dataset.id : +btn.dataset.id;
+				selected.classList.remove('selected'); selected = null;
+				if (idA === idB) {
+					left.find((x) => x.id === idA).done = true;
+					right.find((x) => x.id === idB).done = true;
+					found++;
+					status.textContent = 'Pares encontrados: ' + found + ' / 5';
+					render();
+				}
+			}
+			render();
+		}
+
+		const T4_MCQ = [
+			{ q: 'La propiedad intelectual (PI) protege principalmente:', opts: ['Creaciones de la mente', 'Solo hardware físico', 'Contratos laborales'], ok: 0 },
+			{ q: 'En Colombia, la protección de datos personales se regula principalmente con:', opts: ['Ley 1581 de 2012', 'Ley 80 de 1993', 'Código Penal únicamente'], ok: 0 },
+			{ q: 'LLM significa:', opts: ['Large Language Model', 'Legal License Manager', 'Low Level Module'], ok: 0 }
+		];
+		function initT4MCQ() {
+			const root = document.getElementById('t4g4-mcq-root');
+			if (!root || root.dataset.ready === '1') return;
+			root.dataset.ready = '1';
+			let i = 0, score = 0;
+			function render() {
+				if (i >= T4_MCQ.length) {
+					root.innerHTML = '<p class="text-sm font-semibold text-indigo-900">Puntuación: ' + score + ' / ' + T4_MCQ.length + '</p><button type="button" id="t4g4-retry" class="mt-3 rounded-xl bg-indigo-600 px-4 py-2 text-sm font-bold text-white">Repetir</button>';
+					document.getElementById('t4g4-retry').addEventListener('click', () => { i = 0; score = 0; render(); });
+					return;
+				}
+				const item = T4_MCQ[i];
+				const optsHtml = item.opts.map((o, j) => '<button type="button" class="t4g4o mb-2 w-full rounded-lg border border-indigo-200 bg-white px-3 py-2 text-left text-sm hover:bg-indigo-50" data-j="' + j + '">' + o + '</button>').join('');
+				root.innerHTML = '<p class="text-xs font-bold text-indigo-700">' + (i + 1) + ' / ' + T4_MCQ.length + '</p><p class="mt-2 text-sm font-medium text-neutral-900">' + item.q + '</p><div class="mt-3">' + optsHtml + '</div><p id="t4g4o-fb" class="mt-2 min-h-[1.25rem] text-xs font-semibold"></p>';
+				root.querySelectorAll('.t4g4o').forEach((btn) => {
+					btn.addEventListener('click', () => {
+						if (root.querySelector('.t4g4o[disabled]')) return;
+						const j = +btn.dataset.j, right = j === item.ok;
+						if (right) score++;
+						const fb = document.getElementById('t4g4o-fb');
+						fb.textContent = right ? 'Correcto.' : 'Revisa el subtema correspondiente arriba.';
+						fb.className = 'mt-2 text-xs font-semibold ' + (right ? 'text-emerald-700' : 'text-rose-600');
+						root.querySelectorAll('.t4g4o').forEach((b) => (b.disabled = true));
+						setTimeout(() => { i++; render(); }, 550);
+					});
+				});
+			}
+			render();
+		}
+
+		function boot() {
+			initT1Sopa();
+			initT2VF();
+			initT3Match();
+			initT4MCQ();
+		}
+		if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+		else boot();
+	})();
+	</script>
 </Page>
